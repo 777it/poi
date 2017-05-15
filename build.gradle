@@ -1,0 +1,46 @@
+buildscript {
+  ext {
+    springBootVersion = '1.4.3.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    classpath("org.springframework:springloaded:1.2.5.RELEASE")
+  }
+}
+
+apply plugin: "java"
+apply plugin: "spring-boot"
+apply plugin: "eclipse"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+  compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
+  // Test
+  testCompile("org.springframework.boot:spring-boot-starter-test:1.2.1.RELEASE")
+}
+task initDirs {
+   sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
+compileJava {
+  options.encoding = 'UTF-8'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+javadoc {
+    options.charSet = 'UTF-8'
+    options.encoding = 'UTF-8'
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.9'
+}
+
