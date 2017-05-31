@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-
-<html>
-
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
-
     <meta charset="UTF-8" />
-
     <title>poi</title>
-
   </head>
-
   <body>
     <h1>Please register first!</h1>
      <form action="/member/login" method="post">
@@ -18,6 +12,9 @@
     <form action="/general/register" method="post">
       <input type="submit" value="Click!" />
     </form>
+    <p>
+    	<span th:text="${hello}">Hello!</span>
+    </p>
 
   </body>
 

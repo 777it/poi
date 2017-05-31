@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("member/poi")
+@RequestMapping("/member/index")
 public class MemberIndexController {
     @RequestMapping(method=RequestMethod.POST)
     public String index() {
