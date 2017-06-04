@@ -5,26 +5,25 @@
 <title>poi</title>
 </head>
 <body>
-<h1>Search</h1>
-    <p>
-    	<span th:text="${hello}">検索</span>
-    </p>
-     <form th:action="@{/member/search}" method="post">
-      <input type="submit" value="search!" />
-    </form>
-     <form th:action="@{/member/create}" method="get">
-      <input type="submit" value="create!" />
-    </form>
-     <form th:action="@{/member/update}" method="get">
-      <input type="submit" value="update" />
-    </form>
-     <form th:action="@{/member/delete}" method="get">
-      <input type="submit" value="delete!" />
-    </form>
+	<h1>Search</h1>
+	<p>
+		<span th:text="${hello}">検索</span>
+	</p>
+	<form th:action="@{/member/search}" method="post">
+		<input type="submit" value="search!" />
+	</form>
+	<form th:action="@{/member/create}" method="get">
+		<input type="submit" value="create!" />
+	</form>
+	<form th:action="@{/member/update}" method="get">
+		<input type="submit" value="update" />
+	</form>
+	<form th:action="@{/member/delete}" method="get">
+		<input type="submit" value="delete!" />
+	</form>
 
-
-     <form th:action="@{/member/logout}" method="post">
-      <input type="submit" value="Logout" />
-    </form>
+	<form th:action="@{/member/logout}" method="post">
+		<input type="submit" value="Logout" />
+	</form>
 </body>
 </html>

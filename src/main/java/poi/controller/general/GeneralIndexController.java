@@ -9,10 +9,9 @@ import poi.constant.UrlConstant;
 
 @Controller
 public class GeneralIndexController {
-    @RequestMapping(value = UrlConstant.Controller.General.ROOT, method=RequestMethod.GET)
-    public String index(Model model) {
-    	model.addAttribute("hello", "Hello World!");
-        return UrlConstant.Page.General.INDEX;
-    }
+	@RequestMapping(value = UrlConstant.Controller.General.ROOT, method = RequestMethod.GET)
+	public String index(Model model) {
+		model.addAttribute("hello", "Hello World!");
+		return UrlConstant.Page.General.INDEX;
+	}
 }
-

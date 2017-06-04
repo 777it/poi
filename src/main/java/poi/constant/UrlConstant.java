@@ -49,7 +49,7 @@ public final class UrlConstant {
 			public static final String INDEX = GENERAL + "/index";
 			/** 新規登録画面. */
 			public static final String REGISTER = GENERAL + "/register";
-			/** 新規登録画面（確認.）*/
+			/** 新規登録画面（確認.） */
 			public static final String CONFIRM = GENERAL + "/confirm";
 		}
 

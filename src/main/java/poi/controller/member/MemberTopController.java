@@ -8,9 +8,8 @@ import poi.constant.UrlConstant;
 
 @Controller
 public class MemberTopController {
-	@RequestMapping(value = UrlConstant.Controller.Member.TOP, method=RequestMethod.POST)
-    public String login() {
-        return UrlConstant.Page.Member.TOP;
-    }
+	@RequestMapping(value = UrlConstant.Controller.Member.TOP, method = RequestMethod.POST)
+	public String login() {
+		return UrlConstant.Page.Member.TOP;
+	}
 }
-
