@@ -5,39 +5,41 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import poi.constant.UrlConstant;
+
 @Controller
 public class KnowledgeController {
-    @RequestMapping(value = "/member/create", method=RequestMethod.GET)
+    @RequestMapping(value = UrlConstant.Controller.Member.CREATE, method=RequestMethod.GET)
     public String displayCreate() {
-        return "member/create";
+        return UrlConstant.Page.Member.CREATE;
     }
-    @RequestMapping(value = "/member/update", method=RequestMethod.GET)
+    @RequestMapping(value = UrlConstant.Controller.Member.UPDATE, method=RequestMethod.GET)
     public String displayUpdate() {
-        return "member/update";
+        return UrlConstant.Page.Member.UPDATE;
     }
-    @RequestMapping(value = "/member/delete", method=RequestMethod.GET)
+    @RequestMapping(value = UrlConstant.Page.Member.DELETE, method=RequestMethod.GET)
     public String displayDelete() {
-        return "member/delete";
+        return UrlConstant.Page.Member.DELETE;
     }
-    @RequestMapping(value = "/member/search", method=RequestMethod.POST)
+    @RequestMapping(value = UrlConstant.Controller.Member.SEARCH, method=RequestMethod.POST)
     public String search(Model model) {
     	model.addAttribute("hello", "検索結果を表示！");
-        return "member/search";
+        return UrlConstant.Controller.Member.TOP;
     }
-    @RequestMapping(value = "/member/create", method=RequestMethod.POST)
+    @RequestMapping(value = UrlConstant.Controller.Member.CREATE, method=RequestMethod.POST)
     public String create(Model model) {
     	model.addAttribute("hello", "新規メモ完成！");
-        return "member/complete";
+        return UrlConstant.Page.Member.COMPLETE;
     }
-    @RequestMapping(value = "/member/update", method=RequestMethod.POST)
+    @RequestMapping(value = UrlConstant.Controller.Member.UPDATE, method=RequestMethod.POST)
     public String update(Model model) {
     	model.addAttribute("hello", "メモを更新！");
-        return "member/complete";
+        return UrlConstant.Page.Member.COMPLETE;
     }
-    @RequestMapping(value = "/member/delete", method=RequestMethod.POST)
+    @RequestMapping(value = UrlConstant.Controller.Member.DELETE, method=RequestMethod.POST)
     public String delete(Model model) {
     	model.addAttribute("hello", "メモを削除!");
-        return "member/complete";
+        return UrlConstant.Page.Member.COMPLETE;
     }
 }
 

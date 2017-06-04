@@ -6,10 +6,10 @@
   </head>
   <body>
     <h1>Please register first!</h1>
-     <form action="/member/login" method="post">
+     <form th:action="@{/member/login}" method="post">
       <input type="submit" value="Login" />
     </form>
-    <form action="/general/register" method="post">
+    <form th:action="@{/general/register}" method="post">
       <input type="submit" value="Click!" />
     </form>
     <p>

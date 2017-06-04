@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>Delete</h1>
-     <form action="/member/delete" method="post">
+     <form th:action="@{/member/delete}" method="post">
       <input type="submit" value="delete!" />
     </form>
-     <form action="/member/index" method="post">
+     <form th:action="@{/member/top}" method="post">
       <input type="submit" value="back" />
     </form>
 </body>

@@ -4,18 +4,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import poi.constant.UrlConstant;
+
 @Controller
 public class RegisterController {
-    @RequestMapping(value = "/general/register", method=RequestMethod.POST)
+    @RequestMapping(value = UrlConstant.Controller.General.REGISTER, method=RequestMethod.POST)
     public String register() {
-        return "general/register";
+        return UrlConstant.Page.General.REGISTER;
     }
-    @RequestMapping(value = "/general/confirm", method=RequestMethod.POST)
+    @RequestMapping(value = UrlConstant.Controller.General.CONFIRM, method=RequestMethod.POST)
     public String confirm() {
-        return "general/confirm";
+        return UrlConstant.Page.General.CONFIRM;
     }
-    @RequestMapping(value = "/general/create", method=RequestMethod.POST)
+    @RequestMapping(value = UrlConstant.Controller.General.CREATE_ACCOUNT, method=RequestMethod.POST)
     public String create() {
-        return "member/index";
+        return UrlConstant.Page.Member.TOP;
     }
 }

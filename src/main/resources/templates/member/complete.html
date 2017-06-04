@@ -9,7 +9,7 @@
     <p>
     	<span th:text="${hello}">Hello!</span>
     </p>
-     <form action="/member/index" method="post">
+     <form th:action="@{/member/top}" method="post">
       <input type="submit" value="back" />
     </form>
 </body>

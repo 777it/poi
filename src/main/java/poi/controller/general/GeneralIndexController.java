@@ -5,13 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import poi.constant.UrlConstant;
+
 @Controller
-@RequestMapping("/poi")
 public class GeneralIndexController {
-    @RequestMapping(method=RequestMethod.GET)
+    @RequestMapping(value = UrlConstant.Controller.General.ROOT, method=RequestMethod.GET)
     public String index(Model model) {
     	model.addAttribute("hello", "Hello World!");
-        return "general/index";
+        return UrlConstant.Page.General.INDEX;
     }
 }
 

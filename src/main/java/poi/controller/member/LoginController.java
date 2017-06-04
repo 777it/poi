@@ -4,14 +4,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import poi.constant.UrlConstant;
+
 @Controller
 public class LoginController {
-    @RequestMapping(value = "/member/login", method=RequestMethod.POST)
-    public String login() {
-        return "member/login";
+    @RequestMapping(value = UrlConstant.Controller.Member.LOGIN, method=RequestMethod.POST)
+    public String displayLogin() {
+        return UrlConstant.Page.Member.LOGIN;
     }
-    @RequestMapping(value = "/member/logout", method=RequestMethod.POST)
+    @RequestMapping(value = UrlConstant.Controller.Member.LOGOUT, method=RequestMethod.POST)
     public String logout() {
-        return "general/index";
+        return UrlConstant.Page.General.INDEX;
     }
 }
