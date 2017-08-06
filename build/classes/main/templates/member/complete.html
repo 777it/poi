@@ -5,12 +5,12 @@
 <title>poi</title>
 </head>
 <body>
-<h1>Complete</h1>
-    <p>
-    	<span th:text="${hello}">Hello!</span>
-    </p>
-     <form action="/member/index" method="post">
-      <input type="submit" value="back" />
-    </form>
+	<h1>Complete</h1>
+	<p>
+		<span th:text="${hello}">Hello!</span>
+	</p>
+	<form th:action="@{/member/top}" method="post">
+		<input type="submit" value="back" />
+	</form>
 </body>
 </html>

@@ -12,7 +12,24 @@
 <body>
 	<h1>Register</h1>
 	<form th:action="@{/general/confirm}" method="post">
-		<input type="text" /> <input type="submit" value="Confirm" />
+	<table>
+      <tr>
+        <td>UserName：</td><td><input type="text" id="username" name="username" /></td>
+      </tr>
+      <tr>
+        <td>Mail：</td><td><input type="text" id="mail" name="mail"/></td>
+      </tr>
+      <tr>
+        <td>Birthday：</td><td><input type="text" id="birthday" name="birthday"/></td>
+      </tr>
+      <tr>
+        <td>Password：</td><td><input type="password" id="password" name="password" /></td>
+      </tr>
+      <tr>
+        <td>Password(check)：</td><td><input type="password" id="password" /></td>
+      </tr>
+	</table>
+		<input type="submit" value="Confirm" />
 	</form>
 </body>
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+	<springProperty scope="context" name="logDir" source="moku2.logging.directory"/>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logDir}/moku2_trace.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d %-5level --- [%15.15thread] %-40.40logger{40} : %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+	</root>
+
+	<!-- Spring MVC -->
+	<logger name="org.springframework.web" level="DEBUG"/>
+	<!-- moku2 -->
+	<logger name="net.kronos.moku2" level="DEBUG"/>
+	<!-- log4jdbc-log4j2 -->
+	<logger name="jdbc.sqlonly"        level="DEBUG"/>
+	<logger name="jdbc.sqltiming"      level="INFO"/>
+	<logger name="jdbc.audit"          level="INFO"/>
+	<logger name="jdbc.resultset"      level="ERROR"/>
+	<logger name="jdbc.resultsettable" level="DEBUG"/>
+	<logger name="jdbc.connection"     level="DEBUG"/>
+
+</configuration>
