@@ -6,9 +6,17 @@
 </head>
 <body>
 	<h1>Login</h1>
-
-	<form th:action="@{/member/top}" method="post">
-		<input type="text" /> <input type="submit" value="OK!" />
+	<form th:action="@{/member/login}" th:object="${loginForm}" method="POST" id="login-form">
+ 	<span class="input_error" th:if="${#fields.hasErrors('auth')}" th:errors="*{auth}"></span>
+	<table>
+      <tr>
+        <td>UserName：</td><td><input type="text" th:field="*{loginId}" id="loginId" placeholder="Enter Username" /><span class="input_error" th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}"></span></td>
+      </tr>
+      <tr>
+        <td>Password：</td><td><input type="password" th:field="*{password}" id="password" placeholder="Password" /><span class="input_error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span></td>
+      </tr>
+	</table>
+		<input type="submit" value="OK!" />
 	</form>
 </body>
 </html>

@@ -1,5 +1,9 @@
 package poi.controller.general;
 
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,13 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import poi.constant.UrlConstant;
+import poi.controller.BaseController;
 import poi.domain.service.DaoService;
 import poi.dto.general.SessionRegisterDto;
 import poi.form.general.AccountCreateForm;
+import poi.form.member.LoginForm;
 
 @Transactional
 @Controller
-public class RegisterController {
+public class RegisterController extends BaseController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 	
 	@Autowired
 	protected DaoService daoService;
@@ -26,7 +34,12 @@ public class RegisterController {
 	
 	@RequestMapping(value = UrlConstant.Controller.General.REGISTER, method = RequestMethod.POST)
 	public String register() {
-		
+		// セッション再作成
+		HttpSession session = request.getSession(true);
+		logger.debug("Session:" + session);
+
+		request.getSession().invalidate();
+		logger.debug("Session:" + request.getSession());	
 		return UrlConstant.Page.General.REGISTER;
 	}
 
@@ -40,9 +53,14 @@ public class RegisterController {
 	}
 
 	@RequestMapping(value = UrlConstant.Controller.General.CREATE_ACCOUNT, method = RequestMethod.POST)
-	public String create() {
+	public String create(LoginForm loginForm, Model model) {
 		
 		daoService.registerUser(sessionRegisterDto);
-		return UrlConstant.Page.Member.TOP;
+		loginForm.setLoginId(sessionRegisterDto.getUsername());
+		loginForm.setPassword(sessionRegisterDto.getPassword());
+		model.addAttribute("loginForm", loginForm);
+		
+		// ログイン後トップ画面へ
+		return UrlConstant.Controller.Member.FORWARD_LOGIN;
 	}
 }

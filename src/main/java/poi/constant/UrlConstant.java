@@ -39,7 +39,8 @@ public final class UrlConstant {
 			public static final String DELETE = MEMBER + "/delete";
 			/** 操作完了画面. */
 			public static final String COMPLETE = MEMBER + "/complete";
-
+			/** 設定画面. */
+			public static final String SETTING = MEMBER + "/setting";
 		}
 
 		/** 一般. */
@@ -85,6 +86,8 @@ public final class UrlConstant {
 			/** ルート */
 			public static final String ROOT = MEMBER + "/";
 
+			/** 初期表示. */
+			public static final String INDEX = MEMBER + "/index";
 			/** ログイン画面. */
 			public static final String LOGIN = MEMBER + "/login";
 			/** トップ画面(検索). */
@@ -99,8 +102,14 @@ public final class UrlConstant {
 			public static final String DELETE = MEMBER + "/delete";
 			/** 操作完了画面. */
 			public static final String COMPLETE = MEMBER + "/complete";
+			/** 設定画面. */
+			public static final String SETTING = MEMBER + "/setting";
 			/** ログアウト画面. */
 			public static final String LOGOUT = MEMBER + "/logout";
+			/** ログイン画面（リダイレクト）. */
+			public static final String REDIRECT_TOP = REDIRECT + TOP;
+			/** ログイン画面（フォワード）. */
+			public static final String FORWARD_LOGIN = FORWARD + LOGIN;
 
 		}
 
@@ -109,6 +118,8 @@ public final class UrlConstant {
 
 			/** ルート */
 			public static final String ROOT = GENERAL + "/";
+			/** 初期表示（リダイレクト）. */
+			public static final String REDIRECT_ROOT = REDIRECT + ROOT;
 			/** 初期表示. */
 			public static final String INDEX = GENERAL + "/index";
 			/** 新規登録画面. */
@@ -117,6 +128,10 @@ public final class UrlConstant {
 			public static final String CONFIRM = GENERAL + "/confirm";
 			/** 新規登録. */
 			public static final String CREATE_ACCOUNT = GENERAL + "/create";
+			/** ログイン画面（リダイレクト）. */
+			public static final String REDIRECT_LOGOUT = REDIRECT + ROOT;
+			/** セッションリセット. */
+			public static final String RESET = GENERAL + "/reset";
 		}
 
 		/** 共通エラー. */

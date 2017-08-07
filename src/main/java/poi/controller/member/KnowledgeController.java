@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import poi.constant.UrlConstant;
+import poi.controller.BaseController;
 
 @Controller
-public class KnowledgeController {
+public class KnowledgeController extends BaseController {
 	@RequestMapping(value = UrlConstant.Controller.Member.CREATE, method = RequestMethod.GET)
 	public String displayCreate() {
 		return UrlConstant.Page.Member.CREATE;
@@ -19,11 +20,16 @@ public class KnowledgeController {
 		return UrlConstant.Page.Member.UPDATE;
 	}
 
-	@RequestMapping(value = UrlConstant.Page.Member.DELETE, method = RequestMethod.GET)
+	@RequestMapping(value = UrlConstant.Controller.Member.DELETE, method = RequestMethod.GET)
 	public String displayDelete() {
 		return UrlConstant.Page.Member.DELETE;
 	}
 
+	@RequestMapping(value = UrlConstant.Controller.Member.SETTING, method = RequestMethod.GET)
+	public String setting() {
+		return UrlConstant.Page.Member.SETTING;
+	}
+	
 	@RequestMapping(value = UrlConstant.Controller.Member.SEARCH, method = RequestMethod.POST)
 	public String search(Model model) {
 		model.addAttribute("hello", "検索結果を表示！");
@@ -45,6 +51,11 @@ public class KnowledgeController {
 	@RequestMapping(value = UrlConstant.Controller.Member.DELETE, method = RequestMethod.POST)
 	public String delete(Model model) {
 		model.addAttribute("hello", "メモを削除!");
+		return UrlConstant.Page.Member.COMPLETE;
+	}
+	@RequestMapping(value = UrlConstant.Controller.Member.SETTING, method = RequestMethod.POST)
+	public String setting(Model model) {
+		model.addAttribute("hello", "ユーザー設定を変更しました!");
 		return UrlConstant.Page.Member.COMPLETE;
 	}
 }

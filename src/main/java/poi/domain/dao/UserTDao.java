@@ -18,4 +18,10 @@ public interface UserTDao {
     
 	@Insert(exclude = {"passwordFailedCount"})
 	int insert(UserT entity);
+	
+	@Select
+	UserT selectByLoginIdAndPasswordAndDeletedAt(final String loginId, final String password);
+	
+	@Select
+	UserT selectByLoginId(final String loginId);
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import poi.domain.dao.UserTDao;
 import poi.domain.entity.UserT;
 import poi.dto.general.SessionRegisterDto;
+import poi.dto.member.SessionUserDto;
 
 @Service
 public class DaoService {
@@ -16,6 +17,8 @@ public class DaoService {
 	
 	@Autowired
 	protected UserTDao userTDao;
+	@Autowired
+	protected SessionUserDto sessionUserDto;
 	
 	protected UserT userEntity = new UserT();
 	
@@ -32,5 +35,11 @@ public class DaoService {
 	public List<UserT> findAll() {
 		List<UserT> user = userTDao.selectAll();
 		return user;
+	}
+	
+	public void selectUser(String loginId) {
+		userEntity = userTDao.selectByLoginId(loginId);
+		sessionUserDto.setId(userEntity.id);
+		sessionUserDto.setUsername(userEntity.username);
 	}
 }

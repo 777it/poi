@@ -2,7 +2,7 @@ package poi.domain.dao;
 
 /** */
 @org.springframework.stereotype.Component()
-@javax.annotation.Generated(value = { "Doma", "2.16.0" }, date = "2017-08-06T15:47:09.048+0900")
+@javax.annotation.Generated(value = { "Doma", "2.16.0" }, date = "2017-08-07T19:10:30.930+0900")
 public class UserTDaoImpl extends org.seasar.doma.internal.jdbc.dao.AbstractDao implements poi.domain.dao.UserTDao {
 
     static {
@@ -12,6 +12,10 @@ public class UserTDaoImpl extends org.seasar.doma.internal.jdbc.dao.AbstractDao 
     private static final java.lang.reflect.Method __method0 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.UserTDao.class, "selectAll");
 
     private static final java.lang.reflect.Method __method1 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.UserTDao.class, "insert", poi.domain.entity.UserT.class);
+
+    private static final java.lang.reflect.Method __method2 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.UserTDao.class, "selectByLoginIdAndPasswordAndDeletedAt", java.lang.String.class, java.lang.String.class);
+
+    private static final java.lang.reflect.Method __method3 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.UserTDao.class, "selectByLoginId", java.lang.String.class);
 
     /**
      * @param config the config
@@ -77,6 +81,69 @@ public class UserTDaoImpl extends org.seasar.doma.internal.jdbc.dao.AbstractDao 
             return __result;
         } catch (java.lang.RuntimeException __e) {
             throwing("poi.domain.dao.UserTDaoImpl", "insert", __e);
+            throw __e;
+        }
+    }
+
+    @Override
+    public poi.domain.entity.UserT selectByLoginIdAndPasswordAndDeletedAt(java.lang.String loginId, java.lang.String password) {
+        entering("poi.domain.dao.UserTDaoImpl", "selectByLoginIdAndPasswordAndDeletedAt", loginId, password);
+        try {
+            org.seasar.doma.jdbc.query.SqlFileSelectQuery __query = getQueryImplementors().createSqlFileSelectQuery(__method2);
+            __query.setMethod(__method2);
+            __query.setConfig(__config);
+            __query.setSqlFilePath("META-INF/poi/domain/dao/UserTDao/selectByLoginIdAndPasswordAndDeletedAt.sql");
+            __query.setEntityType(poi.domain.entity._UserT.getSingletonInternal());
+            __query.addParameter("loginId", java.lang.String.class, loginId);
+            __query.addParameter("password", java.lang.String.class, password);
+            __query.setCallerClassName("poi.domain.dao.UserTDaoImpl");
+            __query.setCallerMethodName("selectByLoginIdAndPasswordAndDeletedAt");
+            __query.setResultEnsured(false);
+            __query.setResultMappingEnsured(false);
+            __query.setFetchType(org.seasar.doma.FetchType.LAZY);
+            __query.setQueryTimeout(-1);
+            __query.setMaxRows(-1);
+            __query.setFetchSize(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.prepare();
+            org.seasar.doma.jdbc.command.SelectCommand<poi.domain.entity.UserT> __command = getCommandImplementors().createSelectCommand(__method2, __query, new org.seasar.doma.internal.jdbc.command.EntitySingleResultHandler<poi.domain.entity.UserT>(poi.domain.entity._UserT.getSingletonInternal()));
+            poi.domain.entity.UserT __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.UserTDaoImpl", "selectByLoginIdAndPasswordAndDeletedAt", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.UserTDaoImpl", "selectByLoginIdAndPasswordAndDeletedAt", __e);
+            throw __e;
+        }
+    }
+
+    @Override
+    public poi.domain.entity.UserT selectByLoginId(java.lang.String loginId) {
+        entering("poi.domain.dao.UserTDaoImpl", "selectByLoginId", loginId);
+        try {
+            org.seasar.doma.jdbc.query.SqlFileSelectQuery __query = getQueryImplementors().createSqlFileSelectQuery(__method3);
+            __query.setMethod(__method3);
+            __query.setConfig(__config);
+            __query.setSqlFilePath("META-INF/poi/domain/dao/UserTDao/selectByLoginId.sql");
+            __query.setEntityType(poi.domain.entity._UserT.getSingletonInternal());
+            __query.addParameter("loginId", java.lang.String.class, loginId);
+            __query.setCallerClassName("poi.domain.dao.UserTDaoImpl");
+            __query.setCallerMethodName("selectByLoginId");
+            __query.setResultEnsured(false);
+            __query.setResultMappingEnsured(false);
+            __query.setFetchType(org.seasar.doma.FetchType.LAZY);
+            __query.setQueryTimeout(-1);
+            __query.setMaxRows(-1);
+            __query.setFetchSize(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.prepare();
+            org.seasar.doma.jdbc.command.SelectCommand<poi.domain.entity.UserT> __command = getCommandImplementors().createSelectCommand(__method3, __query, new org.seasar.doma.internal.jdbc.command.EntitySingleResultHandler<poi.domain.entity.UserT>(poi.domain.entity._UserT.getSingletonInternal()));
+            poi.domain.entity.UserT __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.UserTDaoImpl", "selectByLoginId", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.UserTDaoImpl", "selectByLoginId", __e);
             throw __e;
         }
     }
