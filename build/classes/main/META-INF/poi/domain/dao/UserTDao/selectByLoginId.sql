@@ -3,4 +3,5 @@ select
 from
   user_t
 where
-  username = /* loginId */'poi'
+  username = /* loginId */'poi' and
+  deleted_at is null

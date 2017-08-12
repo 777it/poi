@@ -24,4 +24,11 @@ public interface UserTDao {
 	
 	@Select
 	UserT selectByLoginId(final String loginId);
+	
+	@Select
+	UserT selectCategoryByUsernameAndDeletedAt(final String username);
+	
+	@Select
+	UserT selectArticleByUsernameAndCategoryAndDeletedAt(final String username, final String category);
+	
 }

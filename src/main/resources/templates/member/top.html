@@ -3,30 +3,77 @@
 <head>
 <meta charset="UTF-8" />
 <title>poi</title>
+<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
 </head>
 <body>
-	<h1>Search</h1>
-	<p>
-		<span th:text="${hello}">検索</span>
-	</p>
-	<form th:action="@{/member/search}" method="post">
-		<input type="submit" value="search" />
+	<h1>Poi</h1>
+	<div class="count">
+		You have <span th:text="${articleCount}">0</span> memo...
+	</div>	
+	<form th:action="@{/member/top}" method="post">
+		<input type="button" value="Poi" />
 	</form>
 	<form th:action="@{/member/create}" method="get">
 		<input type="submit" value="create!" />
 	</form>
-	<form th:action="@{/member/update}" method="get">
-		<input type="submit" value="update" />
-	</form>
-	<form th:action="@{/member/delete}" method="get">
-		<input type="submit" value="delete!" />
-	</form>
 	<form th:action="@{/member/setting}" method="get">
 		<input type="submit" value="setting!" />
 	</form>
-
 	<form th:action="@{/member/logout}" method="post">
-		<input type="submit" value="Logout" />
+		<input type="submit" value="logout" />
+	</form>	
+	<form th:action="@{/member/search}" method="get">
+		<select class="category" name="category">
+			<option>Category</option>
+			<option th:each="category : ${categoryList}"><span th:text="${category}"></span></option>
+		</select>
+		<select class="level" name="level">
+			<option value="0">Level</option>
+			<option value="1">Level1</option>
+			<option value="2">Level2</option>
+			<option value="3">Level3</option>
+			<option value="4">Level4</option>
+			<option value="5">Level5</option>
+		</select>	
+		<input type="submit" value="Search!" />
 	</form>
+	<div th:text="${resultArticleMap}"></div>
+<!-- 	<div class="main">
+		<div class="post" id="post-0" th:each="result : ${resultMap}>
+			<h2 class="entry-title" id="${result.postNo}" th:text="${result.tile}"></h2>
+			<p th:text="${result.body}">
+				<span th:text="${result.category}"></span>
+				<span th:text="${result.level}"></span>
+				<span th:text="${result.updateDate}"></span>
+			</p>
+		</div>
+	</div> -->
+<!--  	<table>
+		<tr th:each="result : ${resultArticleMap}">
+			<td th:text="${resultStat.count}">1</td>
+			<td th:text="${result.postNo}">postNo</td>
+			<td th:text="${result.title}">title</td>
+			<td th:text="${result.body}">body</td>
+			<td th:text="${result.category}">category</td>
+			<td th:text="${result.level}">level</td>
+		</tr>
+	</table> -->
+	
+<!--  	<ul>
+		<li th:each="result : ${resultArticleMap.keySet()}" th:object="${resultArticleMap.get(key)}">
+			<span th:text="*{postNo}">postNo</span>
+			<span th:text="*{title}">title</span>
+			<span th:text="*{body}">body</span>
+			<span th:text="*{category}">category</span>
+			<span th:text="*{level}">title</span>
+		</li>
+	</ul> -->
+<!-- 	<ul>
+  		<li th:each="result: ${resultArticleMap}" th:object="${result}">
+    		<span th:text="*{title}">タイトル</span>
+  		</li>
+	</ul> -->
+
+	
 </body>
 </html>

@@ -29,7 +29,7 @@ public final class UrlConstant {
 
 			/** ログイン画面. */
 			public static final String LOGIN = MEMBER + "/login";
-			/** TOP画面(検索). */
+			/** トップ画面(検索). */
 			public static final String TOP = MEMBER + "/top";
 			/** 記事作成画面. */
 			public static final String CREATE = MEMBER + "/create";
@@ -92,7 +92,7 @@ public final class UrlConstant {
 			public static final String LOGIN = MEMBER + "/login";
 			/** トップ画面(検索). */
 			public static final String TOP = MEMBER + "/top";
-			/** 記事検索画面. */
+			/** 記事検索画面(カテゴリ・レベル検索). */
 			public static final String SEARCH = MEMBER + "/search";
 			/** 記事作成画面. */
 			public static final String CREATE = MEMBER + "/create";

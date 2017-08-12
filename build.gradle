@@ -146,7 +146,7 @@ compile("org.projectlombok:lombok:1.14.8")
 
 compile group: 'com.mortennobel', name: 'java-image-scaling', version: '0.8.6'
 
-
+compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
 
 providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
 

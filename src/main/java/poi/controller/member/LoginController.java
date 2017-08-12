@@ -19,7 +19,6 @@ import poi.controller.BaseController;
 import poi.domain.service.DaoService;
 import poi.domain.service.UserService;
 import poi.dto.general.SessionRegisterDto;
-import poi.dto.member.SessionUserDto;
 import poi.form.member.LoginForm;
 
 @Controller
@@ -28,11 +27,9 @@ public class LoginController extends BaseController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
 	@Autowired
-	UserService userService;
+	protected UserService userService;
 	@Autowired
 	protected DaoService daoService;
-	@Autowired
-	protected SessionUserDto sessionUserDto;
 	@Autowired
 	protected SessionRegisterDto sessionRegisterDto;
 	
@@ -61,6 +58,7 @@ public class LoginController extends BaseController {
 		String loginId;
 		String password;
 
+		// 1. ログインボタンから
 		if (StringUtils.isEmpty(sessionRegisterDto.getUsername())) {
 
 			// エラーがある場合
@@ -70,6 +68,7 @@ public class LoginController extends BaseController {
 			loginId = loginForm.getLoginId();
 			password = loginForm.getPassword();
 
+		// 2. 新規登録画面から
 		} else {
 			loginId = sessionRegisterDto.getUsername();
 			password = sessionRegisterDto.getPassword();
@@ -99,11 +98,13 @@ public class LoginController extends BaseController {
 			HttpSession newSession = request.getSession(true);
 			logger.debug("NewSession:" + newSession);
 
+			//セッションが破棄されたことを確認
 			System.out.println(loginId);
 			System.out.println(sessionRegisterDto.getUsername());
+			
 			// ユーザー情報セッション詰め替え
-			daoService.selectUser(loginId);
-
+			daoService.selectUserAndSetSession(loginId);
+			
 			// リダイレクト
 			return UrlConstant.Controller.Member.REDIRECT_TOP;
 		}
