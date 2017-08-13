@@ -7,9 +7,39 @@
 <body>
 	<h1>Create</h1>
 	<form th:action="@{/member/create}" method="post">
+	<input type="hidden" name="username" th:value="${username}" />
+	<table>
+		<tr>
+			<td>タイトル</td><td><input type="text" id="title" name="title" /></td>
+		</tr>
+		<tr>
+			<td>本文</td><td><textarea id="body" name="body"></textarea></td>
+		</tr>
+		<tr>
+			<td>カテゴリ</td>
+			<td>
+				<select class="category" name="category">
+					<option th:each="category : ${categoryList}"><span th:text="${category}"></span></option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>レベル</td>
+			<td>
+				<select class="level" name="level">
+					<option value="0">Level</option>
+					<option value="1">Level1</option>
+					<option value="2">Level2</option>
+					<option value="3">Level3</option>
+					<option value="4">Level4</option>
+					<option value="5">Level5</option>
+				</select>	
+			</td>
+		</tr>
+	</table>		
 		<input type="submit" value="create!" />
 	</form>
-	<form th:action="@{/member/top}" method="post">
+	<form th:action="@{/member/top}" method="get">
 		<input type="submit" value="back" />
 	</form>
 </body>

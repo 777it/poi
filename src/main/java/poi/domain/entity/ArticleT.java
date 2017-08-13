@@ -37,7 +37,7 @@ public class ArticleT {
 
     /** レベル */
 	@Column(name = "level")
-    public String level;
+    public int level;
     
     /** 作成日時 */
 	@Column(name = "created_at")

@@ -1,0 +1,252 @@
+package poi.domain.dao;
+
+/** */
+@org.springframework.stereotype.Component()
+@javax.annotation.Generated(value = { "Doma", "2.16.0" }, date = "2017-08-14T08:48:42.807+0900")
+public class ArticleTDaoImpl extends org.seasar.doma.internal.jdbc.dao.AbstractDao implements poi.domain.dao.ArticleTDao {
+
+    static {
+        org.seasar.doma.internal.Artifact.validateVersion("2.16.0");
+    }
+
+    private static final java.lang.reflect.Method __method0 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.ArticleTDao.class, "selectAll");
+
+    private static final java.lang.reflect.Method __method1 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.ArticleTDao.class, "selectArticleCountByUsernameAndDeletedAt", java.lang.String.class);
+
+    private static final java.lang.reflect.Method __method2 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.ArticleTDao.class, "selectArticleByUsernameAndDeletedAt", java.lang.String.class);
+
+    private static final java.lang.reflect.Method __method3 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.ArticleTDao.class, "selectArticleByUsernameAndCategoryAndDeletedAt", java.lang.String.class, java.lang.String.class);
+
+    private static final java.lang.reflect.Method __method4 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.ArticleTDao.class, "selectArticleByUsernameAndLevelAndDeletedAt", java.lang.String.class, int.class);
+
+    private static final java.lang.reflect.Method __method5 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.ArticleTDao.class, "selectArticleByUsernameAndCategoryAndLevelAndDeletedAt", java.lang.String.class, java.lang.String.class, int.class);
+
+    private static final java.lang.reflect.Method __method6 = org.seasar.doma.internal.jdbc.dao.AbstractDao.getDeclaredMethod(poi.domain.dao.ArticleTDao.class, "insert", poi.domain.entity.ArticleT.class);
+
+    /**
+     * @param config the config
+     */
+    @org.springframework.beans.factory.annotation.Autowired()
+    public ArticleTDaoImpl(org.seasar.doma.jdbc.Config config) {
+        super(config);
+    }
+
+    @Override
+    public java.util.List<poi.domain.entity.ArticleT> selectAll() {
+        entering("poi.domain.dao.ArticleTDaoImpl", "selectAll");
+        try {
+            org.seasar.doma.jdbc.query.SqlFileSelectQuery __query = getQueryImplementors().createSqlFileSelectQuery(__method0);
+            __query.setMethod(__method0);
+            __query.setConfig(__config);
+            __query.setSqlFilePath("META-INF/poi/domain/dao/ArticleTDao/selectAll.sql");
+            __query.setEntityType(poi.domain.entity._ArticleT.getSingletonInternal());
+            __query.setCallerClassName("poi.domain.dao.ArticleTDaoImpl");
+            __query.setCallerMethodName("selectAll");
+            __query.setResultEnsured(false);
+            __query.setResultMappingEnsured(false);
+            __query.setFetchType(org.seasar.doma.FetchType.LAZY);
+            __query.setQueryTimeout(-1);
+            __query.setMaxRows(-1);
+            __query.setFetchSize(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.prepare();
+            org.seasar.doma.jdbc.command.SelectCommand<java.util.List<poi.domain.entity.ArticleT>> __command = getCommandImplementors().createSelectCommand(__method0, __query, new org.seasar.doma.internal.jdbc.command.EntityResultListHandler<poi.domain.entity.ArticleT>(poi.domain.entity._ArticleT.getSingletonInternal()));
+            java.util.List<poi.domain.entity.ArticleT> __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.ArticleTDaoImpl", "selectAll", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.ArticleTDaoImpl", "selectAll", __e);
+            throw __e;
+        }
+    }
+
+    @Override
+    public int selectArticleCountByUsernameAndDeletedAt(java.lang.String username) {
+        entering("poi.domain.dao.ArticleTDaoImpl", "selectArticleCountByUsernameAndDeletedAt", username);
+        try {
+            org.seasar.doma.jdbc.query.SqlFileSelectQuery __query = getQueryImplementors().createSqlFileSelectQuery(__method1);
+            __query.setMethod(__method1);
+            __query.setConfig(__config);
+            __query.setSqlFilePath("META-INF/poi/domain/dao/ArticleTDao/selectArticleCountByUsernameAndDeletedAt.sql");
+            __query.addParameter("username", java.lang.String.class, username);
+            __query.setCallerClassName("poi.domain.dao.ArticleTDaoImpl");
+            __query.setCallerMethodName("selectArticleCountByUsernameAndDeletedAt");
+            __query.setResultEnsured(false);
+            __query.setResultMappingEnsured(false);
+            __query.setFetchType(org.seasar.doma.FetchType.LAZY);
+            __query.setQueryTimeout(-1);
+            __query.setMaxRows(-1);
+            __query.setFetchSize(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.prepare();
+            org.seasar.doma.jdbc.command.SelectCommand<java.lang.Integer> __command = getCommandImplementors().createSelectCommand(__method1, __query, new org.seasar.doma.internal.jdbc.command.BasicSingleResultHandler<java.lang.Integer>(org.seasar.doma.wrapper.IntegerWrapper::new, true));
+            int __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.ArticleTDaoImpl", "selectArticleCountByUsernameAndDeletedAt", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.ArticleTDaoImpl", "selectArticleCountByUsernameAndDeletedAt", __e);
+            throw __e;
+        }
+    }
+
+    @Override
+    public java.util.List<poi.domain.entity.ArticleT> selectArticleByUsernameAndDeletedAt(java.lang.String username) {
+        entering("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndDeletedAt", username);
+        try {
+            org.seasar.doma.jdbc.query.SqlFileSelectQuery __query = getQueryImplementors().createSqlFileSelectQuery(__method2);
+            __query.setMethod(__method2);
+            __query.setConfig(__config);
+            __query.setSqlFilePath("META-INF/poi/domain/dao/ArticleTDao/selectArticleByUsernameAndDeletedAt.sql");
+            __query.setEntityType(poi.domain.entity._ArticleT.getSingletonInternal());
+            __query.addParameter("username", java.lang.String.class, username);
+            __query.setCallerClassName("poi.domain.dao.ArticleTDaoImpl");
+            __query.setCallerMethodName("selectArticleByUsernameAndDeletedAt");
+            __query.setResultEnsured(false);
+            __query.setResultMappingEnsured(false);
+            __query.setFetchType(org.seasar.doma.FetchType.LAZY);
+            __query.setQueryTimeout(-1);
+            __query.setMaxRows(-1);
+            __query.setFetchSize(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.prepare();
+            org.seasar.doma.jdbc.command.SelectCommand<java.util.List<poi.domain.entity.ArticleT>> __command = getCommandImplementors().createSelectCommand(__method2, __query, new org.seasar.doma.internal.jdbc.command.EntityResultListHandler<poi.domain.entity.ArticleT>(poi.domain.entity._ArticleT.getSingletonInternal()));
+            java.util.List<poi.domain.entity.ArticleT> __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndDeletedAt", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndDeletedAt", __e);
+            throw __e;
+        }
+    }
+
+    @Override
+    public java.util.List<poi.domain.entity.ArticleT> selectArticleByUsernameAndCategoryAndDeletedAt(java.lang.String username, java.lang.String category) {
+        entering("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndCategoryAndDeletedAt", username, category);
+        try {
+            org.seasar.doma.jdbc.query.SqlFileSelectQuery __query = getQueryImplementors().createSqlFileSelectQuery(__method3);
+            __query.setMethod(__method3);
+            __query.setConfig(__config);
+            __query.setSqlFilePath("META-INF/poi/domain/dao/ArticleTDao/selectArticleByUsernameAndCategoryAndDeletedAt.sql");
+            __query.setEntityType(poi.domain.entity._ArticleT.getSingletonInternal());
+            __query.addParameter("username", java.lang.String.class, username);
+            __query.addParameter("category", java.lang.String.class, category);
+            __query.setCallerClassName("poi.domain.dao.ArticleTDaoImpl");
+            __query.setCallerMethodName("selectArticleByUsernameAndCategoryAndDeletedAt");
+            __query.setResultEnsured(false);
+            __query.setResultMappingEnsured(false);
+            __query.setFetchType(org.seasar.doma.FetchType.LAZY);
+            __query.setQueryTimeout(-1);
+            __query.setMaxRows(-1);
+            __query.setFetchSize(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.prepare();
+            org.seasar.doma.jdbc.command.SelectCommand<java.util.List<poi.domain.entity.ArticleT>> __command = getCommandImplementors().createSelectCommand(__method3, __query, new org.seasar.doma.internal.jdbc.command.EntityResultListHandler<poi.domain.entity.ArticleT>(poi.domain.entity._ArticleT.getSingletonInternal()));
+            java.util.List<poi.domain.entity.ArticleT> __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndCategoryAndDeletedAt", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndCategoryAndDeletedAt", __e);
+            throw __e;
+        }
+    }
+
+    @Override
+    public java.util.List<poi.domain.entity.ArticleT> selectArticleByUsernameAndLevelAndDeletedAt(java.lang.String username, int level) {
+        entering("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndLevelAndDeletedAt", username, level);
+        try {
+            org.seasar.doma.jdbc.query.SqlFileSelectQuery __query = getQueryImplementors().createSqlFileSelectQuery(__method4);
+            __query.setMethod(__method4);
+            __query.setConfig(__config);
+            __query.setSqlFilePath("META-INF/poi/domain/dao/ArticleTDao/selectArticleByUsernameAndLevelAndDeletedAt.sql");
+            __query.setEntityType(poi.domain.entity._ArticleT.getSingletonInternal());
+            __query.addParameter("username", java.lang.String.class, username);
+            __query.addParameter("level", int.class, level);
+            __query.setCallerClassName("poi.domain.dao.ArticleTDaoImpl");
+            __query.setCallerMethodName("selectArticleByUsernameAndLevelAndDeletedAt");
+            __query.setResultEnsured(false);
+            __query.setResultMappingEnsured(false);
+            __query.setFetchType(org.seasar.doma.FetchType.LAZY);
+            __query.setQueryTimeout(-1);
+            __query.setMaxRows(-1);
+            __query.setFetchSize(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.prepare();
+            org.seasar.doma.jdbc.command.SelectCommand<java.util.List<poi.domain.entity.ArticleT>> __command = getCommandImplementors().createSelectCommand(__method4, __query, new org.seasar.doma.internal.jdbc.command.EntityResultListHandler<poi.domain.entity.ArticleT>(poi.domain.entity._ArticleT.getSingletonInternal()));
+            java.util.List<poi.domain.entity.ArticleT> __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndLevelAndDeletedAt", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndLevelAndDeletedAt", __e);
+            throw __e;
+        }
+    }
+
+    @Override
+    public java.util.List<poi.domain.entity.ArticleT> selectArticleByUsernameAndCategoryAndLevelAndDeletedAt(java.lang.String username, java.lang.String category, int level) {
+        entering("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndCategoryAndLevelAndDeletedAt", username, category, level);
+        try {
+            org.seasar.doma.jdbc.query.SqlFileSelectQuery __query = getQueryImplementors().createSqlFileSelectQuery(__method5);
+            __query.setMethod(__method5);
+            __query.setConfig(__config);
+            __query.setSqlFilePath("META-INF/poi/domain/dao/ArticleTDao/selectArticleByUsernameAndCategoryAndLevelAndDeletedAt.sql");
+            __query.setEntityType(poi.domain.entity._ArticleT.getSingletonInternal());
+            __query.addParameter("username", java.lang.String.class, username);
+            __query.addParameter("category", java.lang.String.class, category);
+            __query.addParameter("level", int.class, level);
+            __query.setCallerClassName("poi.domain.dao.ArticleTDaoImpl");
+            __query.setCallerMethodName("selectArticleByUsernameAndCategoryAndLevelAndDeletedAt");
+            __query.setResultEnsured(false);
+            __query.setResultMappingEnsured(false);
+            __query.setFetchType(org.seasar.doma.FetchType.LAZY);
+            __query.setQueryTimeout(-1);
+            __query.setMaxRows(-1);
+            __query.setFetchSize(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.prepare();
+            org.seasar.doma.jdbc.command.SelectCommand<java.util.List<poi.domain.entity.ArticleT>> __command = getCommandImplementors().createSelectCommand(__method5, __query, new org.seasar.doma.internal.jdbc.command.EntityResultListHandler<poi.domain.entity.ArticleT>(poi.domain.entity._ArticleT.getSingletonInternal()));
+            java.util.List<poi.domain.entity.ArticleT> __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndCategoryAndLevelAndDeletedAt", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.ArticleTDaoImpl", "selectArticleByUsernameAndCategoryAndLevelAndDeletedAt", __e);
+            throw __e;
+        }
+    }
+
+    @Override
+    public int insert(poi.domain.entity.ArticleT entity) {
+        entering("poi.domain.dao.ArticleTDaoImpl", "insert", entity);
+        try {
+            if (entity == null) {
+                throw new org.seasar.doma.DomaNullPointerException("entity");
+            }
+            org.seasar.doma.jdbc.query.AutoInsertQuery<poi.domain.entity.ArticleT> __query = getQueryImplementors().createAutoInsertQuery(__method6, poi.domain.entity._ArticleT.getSingletonInternal());
+            __query.setMethod(__method6);
+            __query.setConfig(__config);
+            __query.setEntity(entity);
+            __query.setCallerClassName("poi.domain.dao.ArticleTDaoImpl");
+            __query.setCallerMethodName("insert");
+            __query.setQueryTimeout(-1);
+            __query.setSqlLogType(org.seasar.doma.jdbc.SqlLogType.FORMATTED);
+            __query.setNullExcluded(false);
+            __query.setIncludedPropertyNames();
+            __query.setExcludedPropertyNames();
+            __query.prepare();
+            org.seasar.doma.jdbc.command.InsertCommand __command = getCommandImplementors().createInsertCommand(__method6, __query);
+            int __result = __command.execute();
+            __query.complete();
+            exiting("poi.domain.dao.ArticleTDaoImpl", "insert", __result);
+            return __result;
+        } catch (java.lang.RuntimeException __e) {
+            throwing("poi.domain.dao.ArticleTDaoImpl", "insert", __e);
+            throw __e;
+        }
+    }
+
+}

@@ -4,6 +4,32 @@
 <meta charset="UTF-8" />
 <title>poi</title>
 <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script type="text/javascript">
+$(function(){
+	$('#deleteArticle').on('click',function(){
+	    if(!confirm('本当に削除しますか？')){
+	        /* キャンセルの時の処理 */
+	        return false;
+	    }else{
+
+	    }
+	});
+});
+</script>
+<style> 
+.heading {
+overflow: auto;
+}
+.heading h3 {
+width: 500px;
+height: 20px;
+float: left;
+}
+.heading img {
+width: 32px;
+height: 32px;
+}
+</style>
 </head>
 <body>
 	<h1>Poi</h1>
@@ -22,9 +48,9 @@
 	<form th:action="@{/member/logout}" method="post">
 		<input type="submit" value="logout" />
 	</form>	
-	<form th:action="@{/member/search}" method="get">
+	<form th:action="@{/member/search}" method="post">
 		<select class="category" name="category">
-			<option>Category</option>
+			<option value="">Category</option>
 			<option th:each="category : ${categoryList}"><span th:text="${category}"></span></option>
 		</select>
 		<select class="level" name="level">
@@ -37,17 +63,38 @@
 		</select>	
 		<input type="submit" value="Search!" />
 	</form>
-	<div th:text="${resultArticleMap}"></div>
-<!-- 	<div class="main">
-		<div class="post" id="post-0" th:each="result : ${resultMap}>
-			<h2 class="entry-title" id="${result.postNo}" th:text="${result.tile}"></h2>
-			<p th:text="${result.body}">
-				<span th:text="${result.category}"></span>
-				<span th:text="${result.level}"></span>
-				<span th:text="${result.updateDate}"></span>
+	
+	<div th:text="${resultNoArticle}"></div>
+	
+	<div class="main">
+		<div class="post" th:each="article : ${resultArticleList}" id="*{article.id}">
+			<form th:action="@{/member/update}" method="post">
+				<div class="heading">
+				 	<h3 class="entry-title" th:text="*{article.title}"></h3>
+				 	<p><a href="/member/update.html" th:href="@{/member/update}"><img src="../images/icon-edit.png" id="updateArticle" th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" /></a>
+				 	   <img src="../images/icon-delete.png" id="deleteArticle" th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" /></p>
+				</div>
+				<div class="body">
+			 		<div th:text="*{article.body}"></div>
+			 		<span th:text="*{article.id}"></span>
+				 	<span id="article-number" th:text="*{article.category}"></span>
+					<span th:text="*{article.level}"></span>
+					<span th:text="*{article.updatedAt}"></span>			
+				</div>
+			</form>
+	 	</div>
+	</div>
+<!--   	<div class="main">
+		<div class="post" th:each="article : ${resultArticleList}">
+			<h2 class="entry-title" th:text="*{title}"></h2>
+			<p th:text="*{body}">
+				<span th:text="*{category}"></span>
+				<span th:text="*{level}"></span>
+				<span th:text="*{updateDate}"></span>
 			</p>
 		</div>
-	</div> -->
+	</div>
+-->
 <!--  	<table>
 		<tr th:each="result : ${resultArticleMap}">
 			<td th:text="${resultStat.count}">1</td>

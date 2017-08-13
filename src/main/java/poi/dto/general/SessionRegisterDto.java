@@ -117,4 +117,8 @@ public class SessionRegisterDto implements Serializable {
 		this.deletedAt = deletedAt;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }

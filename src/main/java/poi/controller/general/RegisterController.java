@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
-import poi.domain.service.DaoService;
+import poi.domain.service.UserService;
 import poi.dto.general.SessionRegisterDto;
 import poi.form.general.AccountCreateForm;
 import poi.form.member.LoginForm;
@@ -27,7 +27,7 @@ public class RegisterController extends BaseController {
 	private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 	
 	@Autowired
-	protected DaoService daoService;
+	protected UserService userService;
 	
 	@Autowired
 	protected SessionRegisterDto sessionRegisterDto;
@@ -55,9 +55,9 @@ public class RegisterController extends BaseController {
 	@RequestMapping(value = UrlConstant.Controller.General.CREATE_ACCOUNT, method = RequestMethod.POST)
 	public String create(LoginForm loginForm, Model model) {
 		
-		daoService.registerUser(sessionRegisterDto);
-		loginForm.setLoginId(sessionRegisterDto.getUsername());
-		loginForm.setPassword(sessionRegisterDto.getPassword());
+		userService.registerUser(sessionRegisterDto);
+		loginForm.setLoginId(sessionRegisterDto.username);
+		loginForm.setPassword(sessionRegisterDto.password);
 		model.addAttribute("loginForm", loginForm);
 		
 		// ログイン後トップ画面へ

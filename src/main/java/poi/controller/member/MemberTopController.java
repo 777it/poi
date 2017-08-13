@@ -1,31 +1,24 @@
 package poi.controller.member;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
-import poi.domain.service.DaoService;
+import poi.domain.service.ArticleService;
 import poi.dto.member.SessionUserDto;
 
-
-/**
- * @author kaihatsu
- *
- */
 @Controller
 public class MemberTopController extends BaseController {
 	
 	@Autowired
-	protected DaoService daoService;
+	protected ArticleService articleService;
 	@Autowired
 	protected SessionUserDto sessionUserDto;
 	
@@ -36,18 +29,17 @@ public class MemberTopController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = UrlConstant.Controller.Member.TOP, method = RequestMethod.GET)
-	public String index(@ModelAttribute("model")ModelMap modelMap, Model model) {
+	public String index(Model model) {
 
 		String username = sessionUserDto.getUsername();
-		int articleCount = daoService.selectArticleCount(username);
-		List<String> categoryList = daoService.selectCategory(username);
+		int articleCount = articleService.selectArticleCount(username);
+		List<String> categoryList = articleService.selectCategory(username);
 		
 		// 記事の件数を表示
 		model.addAttribute("articleCount", articleCount);
+		// ユーザーに紐づくカテゴリを表示
 		model.addAttribute("categoryList", categoryList);
 		
-		Map<String, String> map = (Map<String, String>)modelMap.get("articleMap");
-		model.addAttribute("resultArticleMap", map);
 		return UrlConstant.Page.Member.TOP;
 	}
 	
@@ -57,7 +49,10 @@ public class MemberTopController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = UrlConstant.Controller.Member.TOP, method = RequestMethod.POST)
-	public String indexFromMember() {
-		return UrlConstant.Page.Member.TOP;
+	@ResponseBody
+	public String indexFromMember(String number) {
+		System.out.println(number);
+		
+		return "処理が完了しました。";
 	}
 }

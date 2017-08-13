@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
-import poi.domain.service.DaoService;
 import poi.domain.service.UserService;
 import poi.dto.general.SessionRegisterDto;
 import poi.form.member.LoginForm;
@@ -28,8 +27,6 @@ public class LoginController extends BaseController {
 	
 	@Autowired
 	protected UserService userService;
-	@Autowired
-	protected DaoService daoService;
 	@Autowired
 	protected SessionRegisterDto sessionRegisterDto;
 	
@@ -103,7 +100,7 @@ public class LoginController extends BaseController {
 			System.out.println(sessionRegisterDto.getUsername());
 			
 			// ユーザー情報セッション詰め替え
-			daoService.selectUserAndSetSession(loginId);
+			userService.selectUserAndSetSession(loginId);
 			
 			// リダイレクト
 			return UrlConstant.Controller.Member.REDIRECT_TOP;
