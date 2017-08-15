@@ -15,7 +15,6 @@ import poi.controller.BaseController;
 import poi.domain.entity.ArticleT;
 import poi.domain.service.ArticleService;
 import poi.dto.member.SessionUserDto;
-import poi.form.member.ArticleForm;
 
 @Controller
 public class SearchController extends BaseController {
@@ -33,49 +32,60 @@ public class SearchController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = UrlConstant.Controller.Member.SEARCH, method = RequestMethod.POST)
-	public String displayArticleselectedByCategory(RedirectAttributes attribute, @RequestParam("category") String category, @RequestParam("level") String level) {
+	public String displayArticleselectedByCategory(RedirectAttributes attribute, @RequestParam("category") String category, @RequestParam("level") String level) {		
 		String username = sessionUserDto.getUsername();
     	List<ArticleT> resultArticleList = articleService.selectArticle(username, category, level);
-
+    	
     	// 検索結果が0件の場合
     	if (resultArticleList.isEmpty()) {
     		attribute.addFlashAttribute("resultNoArticle", "検索結果0件");
     	}
     	attribute.addFlashAttribute("resultArticleList", resultArticleList);
     	
+    	// 見出しに表示する検索条件
+    	String headerStr = null;
+		if (category == "" && level.equals("0")) {	
+			headerStr = "全件検索";
+		//カテゴリに紐づく記事を取得(レベル未選択)
+	    } else if (level.equals("0")) {
+	    	headerStr = category;		//レベルに紐づく記事を取得(カテゴリ未選択)
+	    } else if (category == "") {
+	    	headerStr = "Level" + level;	    //カテゴリとレベル紐づく記事を取得
+		} else {
+			headerStr = category + "&Level: " + level;
+		}
+		attribute.addFlashAttribute("headerStr", headerStr);
+    	attribute.addFlashAttribute("categoryStatus", category);
+    	attribute.addFlashAttribute("levelStatus", level);
 		return UrlConstant.Controller.Member.REDIRECT_TOP;
 	}
 	
 	/**
-	 * 記事作成画面へ遷移 */	
-	@RequestMapping(value = UrlConstant.Controller.Member.CREATE, method = RequestMethod.GET)
-	public String displayCreate(Model model) {
+	 *  選択された記事を表示する画面へ遷移
+	 * 
+	 * @param model
+	 * @param articleId
+	 * @param category
+	 * @param level
+	 * @return
+	 */
+	@RequestMapping(value = UrlConstant.Controller.Member.SELECT, method = RequestMethod.POST)
+	public String selectedArticle(Model model, @RequestParam("articleId") String articleId, @RequestParam("categoryStatus") String category, @RequestParam("levelStatus") String level) {
 		String username = sessionUserDto.getUsername();
+		int articleCount = articleService.selectArticleCount(username);
 		List<String> categoryList = articleService.selectCategory(username);
 		
+		// 記事の件数を表示
+		model.addAttribute("articleCount", articleCount);
 		// ユーザーに紐づくカテゴリを表示
-		model.addAttribute("username", username);
 		model.addAttribute("categoryList", categoryList);
-		return UrlConstant.Page.Member.CREATE;
+		
+		// 選択された記事、リスト表示へ戻るための検索条件をモデルにセット
+		ArticleT article = articleService.selectArticleByArticleId(articleId);
+		model.addAttribute("article", article);
+		model.addAttribute("category", category);
+		model.addAttribute("level", level);
+		
+		return UrlConstant.Page.Member.SELECT;
 	}
-	
-	/**
-	 * ユーザー設定画面へ遷移 */
-	@RequestMapping(value = UrlConstant.Controller.Member.SETTING, method = RequestMethod.GET)
-	public String setting() {
-		return UrlConstant.Page.Member.SETTING;
-	}
-	/**
-	 * 編集画面へ遷移 */	
-	@RequestMapping(value = UrlConstant.Controller.Member.UPDATE, method = RequestMethod.GET)
-	public String displayUpdate(Model model) {
-		model.addAttribute("articleForm", new ArticleForm());
-
-		return UrlConstant.Page.Member.UPDATE;
-	}
-
-//	@RequestMapping(value = UrlConstant.Controller.Member.DELETE, method = RequestMethod.GET)
-//	public String displayDelete() {
-//		return UrlConstant.Page.Member.DELETE;
-//	}
 }

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
@@ -49,10 +48,8 @@ public class MemberTopController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = UrlConstant.Controller.Member.TOP, method = RequestMethod.POST)
-	@ResponseBody
-	public String indexFromMember(String number) {
-		System.out.println(number);
+	public String indexFromMember() {
 		
-		return "処理が完了しました。";
+		return UrlConstant.Page.Member.TOP;
 	}
 }

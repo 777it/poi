@@ -31,6 +31,8 @@ public final class UrlConstant {
 			public static final String LOGIN = MEMBER + "/login";
 			/** トップ画面(検索). */
 			public static final String TOP = MEMBER + "/top";
+			/** 記事画面. */
+			public static final String SELECT = MEMBER + "/select";
 			/** 記事作成画面. */
 			public static final String CREATE = MEMBER + "/create";
 			/** 記事編集画面. */
@@ -92,14 +94,20 @@ public final class UrlConstant {
 			public static final String LOGIN = MEMBER + "/login";
 			/** トップ画面(検索). */
 			public static final String TOP = MEMBER + "/top";
+			/** 記事画面. */
+			public static final String SELECT = MEMBER + "/select";
 			/** 記事検索画面(カテゴリ・レベル検索). */
 			public static final String SEARCH = MEMBER + "/search";
+			/** 記事検索画面(カテゴリ・レベル検索)（リダイレクト). */
+			public static final String REDIRECT_SEARCH = REDIRECT + SEARCH;
 			/** 記事作成画面. */
 			public static final String CREATE = MEMBER + "/create";
 			/** 記事編集画面. */
 			public static final String UPDATE = MEMBER + "/update";
+			/** 記事編集画面(URLにパラメータ). */
+			public static final String UPDATE_ID = MEMBER + "/update/{articleId}";
 			/** 記事削除画面. */
-			public static final String DELETE = MEMBER + "/delete";
+			public static final String DELETE = MEMBER + "/delete/{articleId}";
 			/** 操作完了画面. */
 			public static final String COMPLETE = MEMBER + "/complete";
 			/** 設定画面. */

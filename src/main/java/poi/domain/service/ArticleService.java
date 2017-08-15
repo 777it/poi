@@ -73,6 +73,18 @@ public class ArticleService {
 	}
 	
 	/**
+	 * 選択された記事を取得
+	 * 
+	 * @param articleId
+	 * @return
+	 */
+	public ArticleT selectArticleByArticleId(String articleId) {
+		int articleIdInt = Integer.parseInt(articleId);
+		ArticleT article = new ArticleT();
+		article = articleTDao.selectArticleByArticleId(articleIdInt);
+		return article;
+	}
+	/**
 	 * 記事を新規登録する
 	 * @param articleTDto
 	 */
@@ -86,5 +98,30 @@ public class ArticleService {
 		articleEntity.updatedAt = LocalDateTime.now();
 		int result = articleTDao.insert(articleEntity);
 		System.out.println("「article_t」に" + result + "件の記事を登録");
+	}
+	
+	/**
+	 * 記事を編集する
+	 * @param articleTDto
+	 * @param articleId
+	 */
+	public void updateArticle(ArticleTDto articleTDto, String articleId) {
+		int articleIdInt = Integer.parseInt(articleId);
+		articleEntity.title = articleTDto.title;
+		articleEntity.body = articleTDto.body;
+		articleEntity.category = articleTDto.category;
+		articleEntity.level = articleTDto.level;
+		int result = articleTDao.update(articleEntity, articleIdInt);
+		System.out.println("「article_t」の" + result + "件の記事を更新");	
+	}
+	
+	/**
+	 * 記事を削除する
+	 * @param articleId
+	 */
+	public void deleteArticle(String articleId) {
+		int articleIdInt = Integer.parseInt(articleId);
+		int result = articleTDao.delete(articleIdInt);
+		System.out.println("「article_t」の" + result + "件の記事を削除");
 	}
 }

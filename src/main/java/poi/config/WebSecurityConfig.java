@@ -53,12 +53,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.INDEX),
 				// トップ画面(検索)
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.TOP),
+				// 記事画面
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.SELECT),
 				// 記事検索画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.SEARCH),
+				// 記事検索画面(リダイレクト)
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.REDIRECT_SEARCH),
 			    // 記事作成画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.CREATE),
 				// 記事編集画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.UPDATE),
+				// 記事編集画面(パラメータ)
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.UPDATE_ID),
 				// 記事削除画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.DELETE),
 				// 操作完了画面
