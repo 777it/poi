@@ -5,6 +5,7 @@ import java.util.List;
 import org.seasar.doma.Dao;
 import org.seasar.doma.Insert;
 import org.seasar.doma.Select;
+import org.seasar.doma.Update;
 
 import poi.domain.entity.UserT;
 import poi.util.doma.DataSourceConfiguration;
@@ -31,4 +32,6 @@ public interface UserTDao {
 	@Select
 	UserT selectArticleByUsernameAndCategoryAndDeletedAt(final String username, final String category);
 	
+	@Update
+	int update(UserT entity);
 }

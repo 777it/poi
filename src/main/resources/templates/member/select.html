@@ -14,19 +14,17 @@ function confirmDelete ( obj ) {
     	var deleteUrl = obj.getAttribute('name');
     	location.href =　deleteUrl;
     }
-
 }
-$(function(){
-	$('#deleteArticle').on('click',function(){
-	    if(!confirm('本当に削除しますか？')){
-	        /* キャンセルの時の処理 */
-	        return false;
-	    }else{
-	    	/* OKの時の処理 */
-	    	location.href = "http://pori2.net/";
-	    }
-	});
-});
+function confirmLogout ( obj ) {
+    if(!confirm('本当に削除しますか？')){
+        /* キャンセルの時の処理 */
+        return false;
+    }else{
+    	/* OKの時の処理 */
+    	var logputUrl = obj.getAttribute('name');
+    	location.href =　logputUrl;
+    }	
+}
 </script>
 <style> 
 .heading {

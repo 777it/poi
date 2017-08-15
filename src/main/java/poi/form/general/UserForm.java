@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-public class AccountCreateForm implements Serializable {
+public class UserForm implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	/** ユーザー名 */

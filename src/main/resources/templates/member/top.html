@@ -12,8 +12,19 @@ function selectArticle ( obj ) {
 	var formname = obj.getAttribute('name');
 	document.forms[formname].submit();
 }
+function confirmLogout ( obj ) {
+    if(!confirm('本当に削除しますか？')){
+        /* キャンセルの時の処理 */
+        return false;
+    }else{
+    	/* OKの時の処理 */
+    	var logputUrl = obj.getAttribute('name');
+    	location.href =　logputUrl;
+    }	
+}
 </script>
 	<h1>Poi</h1>
+	<div th:text="${message}"></div>
 	<div class="count">
 		You have <span th:text="${articleCount}">0</span> memo...
 	</div>	
@@ -23,12 +34,13 @@ function selectArticle ( obj ) {
 	<form th:action="@{/member/create}" method="get">
 		<input type="submit" value="create!" />
 	</form>
+	<a href="setting.html" th:href="@{/member/setting}">ユーザー設定</a>
+	<a href="">ヘルプ(未実装)</a>
+	<a href="" th:name="@{/member/logout}" onclick="confirmLogout(this); return false;">ログアウト</a>	
+	
 	<form th:action="@{/member/setting}" method="get">
 		<input type="submit" value="setting!" />
 	</form>
-	<form th:action="@{/member/logout}" method="post">
-		<input type="submit" value="logout" />
-	</form>	
 	<form th:action="@{/member/search}" method="post">
 		<select class="category" name="category">
 			<option value="">Category</option>

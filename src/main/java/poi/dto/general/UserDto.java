@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class SessionRegisterDto implements Serializable {
+public class UserDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

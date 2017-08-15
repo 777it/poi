@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
 import poi.domain.service.UserService;
-import poi.dto.general.SessionRegisterDto;
+import poi.dto.general.UserDto;
 import poi.form.member.LoginForm;
 
 @Controller
@@ -28,7 +28,7 @@ public class LoginController extends BaseController {
 	@Autowired
 	protected UserService userService;
 	@Autowired
-	protected SessionRegisterDto sessionRegisterDto;
+	protected UserDto sessionRegisterDto;
 	
 	/**
 	 * ログイン画面初期表示 */
@@ -109,7 +109,7 @@ public class LoginController extends BaseController {
 	
 	/**
 	 * ログアウト処理 */
-	@RequestMapping(value = UrlConstant.Controller.Member.LOGOUT, method = RequestMethod.POST)
+	@RequestMapping(value = UrlConstant.Controller.Member.LOGOUT, method = RequestMethod.GET)
 	public String logout(Model model) {
 		// セッション再作成
 		HttpSession session = request.getSession(true);

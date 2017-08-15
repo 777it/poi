@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class ArticleForm implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	/** ユーザー名 */
 	private String username;
 	

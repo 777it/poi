@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import poi.domain.dao.UserTDao;
 import poi.domain.entity.UserT;
-import poi.dto.general.SessionRegisterDto;
+import poi.dto.general.UserDto;
 import poi.dto.member.SessionUserDto;
 
 
@@ -48,13 +48,13 @@ public class UserService {
 	
 	/**
 	 * ユーザーテーブルに情報を登録する
-	 * @param sessionRegisterDto
+	 * @param userDto
 	 */
-	public void registerUser(SessionRegisterDto sessionRegisterDto) {
-		userEntity.username = sessionRegisterDto.username;
-		userEntity.mail = sessionRegisterDto.mail;
-		userEntity.password = sessionRegisterDto.password;
-		userEntity.birthday = sessionRegisterDto.birthday;
+	public void registerUser(UserDto userDto) {
+		userEntity.username = userDto.username;
+		userEntity.mail = userDto.mail;
+		userEntity.password = userDto.password;
+		userEntity.birthday = userDto.birthday;
 		userEntity.createdAt = LocalDateTime.now();
 		userEntity.updatedAt = LocalDateTime.now();
 		userTDao.insert(userEntity);
@@ -70,6 +70,16 @@ public class UserService {
 	}
 	
 	/**
+	 * ユーザー名を元にユーザー情報を取得する
+	 * @param username
+	 * @return
+	 */
+	public UserT selectByUserInfo(String username) {
+		userEntity = userTDao.selectByLoginId(username);
+		return userEntity;
+	}
+	
+	/**
 	 * フォームに入力されたユーザーの情報を取得し、セッションにセットする
 	 * @param loginId
 	 */
@@ -79,4 +89,16 @@ public class UserService {
 		sessionUserDto.setUsername(userEntity.username);
 	}
 
+	/**
+	 * フォームに入力されたユーザー情報を編集する
+	 * @param userDto
+	 */
+	public void editUser(UserDto userDto) {
+		userEntity.username = userDto.username;
+		userEntity.mail = userDto.mail;
+		userEntity.password = userDto.password;
+		userEntity.birthday = userDto.birthday;
+		userEntity.updatedAt = LocalDateTime.now();
+		userTDao.update(userEntity);	
+	}
 }

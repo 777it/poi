@@ -112,6 +112,8 @@ public final class UrlConstant {
 			public static final String COMPLETE = MEMBER + "/complete";
 			/** 設定画面. */
 			public static final String SETTING = MEMBER + "/setting";
+			/** 設定画面(リダイレクト). */
+			public static final String REDIRECT_SETTING = REDIRECT + SETTING;
 			/** ログアウト画面. */
 			public static final String LOGOUT = MEMBER + "/logout";
 			/** ログイン画面（リダイレクト）. */

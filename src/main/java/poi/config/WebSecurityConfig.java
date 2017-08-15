@@ -71,6 +71,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.COMPLETE),
 				// 設定画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.SETTING),
+				// 設定画面(リダイレクト)
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.REDIRECT_SETTING),
 				// ログアウト画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.LOGOUT),
 				// ログアウト画面（リダイレクト）

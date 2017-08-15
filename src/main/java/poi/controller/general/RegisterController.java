@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
 import poi.domain.service.UserService;
-import poi.dto.general.SessionRegisterDto;
-import poi.form.general.AccountCreateForm;
+import poi.dto.general.UserDto;
+import poi.form.general.UserForm;
 import poi.form.member.LoginForm;
 
 @Transactional
@@ -30,7 +32,7 @@ public class RegisterController extends BaseController {
 	protected UserService userService;
 	
 	@Autowired
-	protected SessionRegisterDto sessionRegisterDto;
+	protected UserDto userDto;
 	
 	@RequestMapping(value = UrlConstant.Controller.General.REGISTER, method = RequestMethod.POST)
 	public String register() {
@@ -44,10 +46,13 @@ public class RegisterController extends BaseController {
 	}
 
 	@RequestMapping(value = UrlConstant.Controller.General.CONFIRM, method = RequestMethod.POST)
-	public String confirm(@ModelAttribute AccountCreateForm accountCreateForm, Model model) {
-		
-		model.addAttribute("accountCreateForm", accountCreateForm);
-		BeanUtils.copyProperties(accountCreateForm, sessionRegisterDto);
+	public String confirm(@Validated @ModelAttribute UserForm userForm, BindingResult result, Model model) {
+		// エラーがある場合
+		if (result.hasErrors()) {
+			return UrlConstant.Page.Member.CREATE;
+		}		
+		model.addAttribute("accountCreateForm", userForm);
+		BeanUtils.copyProperties(userForm, userDto);
 		
 		return UrlConstant.Page.General.CONFIRM;
 	}
@@ -55,9 +60,9 @@ public class RegisterController extends BaseController {
 	@RequestMapping(value = UrlConstant.Controller.General.CREATE_ACCOUNT, method = RequestMethod.POST)
 	public String create(LoginForm loginForm, Model model) {
 		
-		userService.registerUser(sessionRegisterDto);
-		loginForm.setLoginId(sessionRegisterDto.username);
-		loginForm.setPassword(sessionRegisterDto.password);
+		userService.registerUser(userDto);
+		loginForm.setLoginId(userDto.username);
+		loginForm.setPassword(userDto.password);
 		model.addAttribute("loginForm", loginForm);
 		
 		// ログイン後トップ画面へ

@@ -6,22 +6,27 @@
 </head>
 <body>
 	<h1>Setting</h1>
-	<form th:action="@{/member/setting}" method="post">
-	<table>
+	<form th:action="@{/member/setting}" method="post" th:object="${userForm}">
+    <ul>
+        <li th:each="error : ${#fields.detailedErrors()}">
+            <span th:text="${error.message}">Error message</span>
+        </li>
+    </ul>
+	<table th:object="${userInfo}">
       <tr>
-        <td>UserName：</td><td><input type="text" id="username" name="username" /></td>
+        <td>UserName：</td><td><input type="text" id="username" th:field="*{username}" /></td>
       </tr>
       <tr>
-        <td>Mail：</td><td><input type="text" id="mail" name="mail"/></td>
+        <td>Mail：</td><td><input type="text" id="mail" th:field="*{mail}"/></td>
       </tr>
       <tr>
-        <td>Birthday：</td><td><input type="text" id="birthday" name="birthday"/></td>
+        <td>Birthday：</td><td><input type="text" id="birthday" th:field="*{birthday}"/></td>
       </tr>
       <tr>
-        <td>Password：</td><td><input type="password" id="password" name="password" /></td>
+        <td>Password：</td><td><input type="password" id="password" th:field="*{password}" /></td>
       </tr>
       <tr>
-        <td>Password(check)：</td><td><input type="password" id="password" /></td>
+        <td>Password(check)：</td><td><input type="password" id="password_check" /></td>
       </tr>
 	</table>
 	<input type="submit" value="設定変更" />	
