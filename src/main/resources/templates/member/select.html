@@ -42,22 +42,18 @@ height: 32px;
 </style>
 </head>
 <body>
-	<h1>Poi</h1>
-	<div class="count">
-		You have <span th:text="${articleCount}">0</span> memo...
-	</div>	
-	<form th:action="@{/member/top}" method="post">
-		<input type="button" value="Poi" />
-	</form>
+	<h1><a href="top.html" th:href="@{/member/top}">Poi</a></h1>
 	<form th:action="@{/member/create}" method="get">
 		<input type="submit" value="create!" />
 	</form>
-	<form th:action="@{/member/setting}" method="get">
-		<input type="submit" value="setting!" />
-	</form>
-	<form th:action="@{/member/logout}" method="post">
-		<input type="submit" value="logout" />
-	</form>	
+	<a href="setting.html" th:href="@{/member/setting}">ユーザー設定</a>
+	<a href="">ヘルプ(未実装)</a>
+	<a href="" th:name="@{/member/logout}" onclick="confirmLogout(this); return false;">ログアウト</a>	
+	<hr />
+	<div th:text="${message}"></div>
+	<div class="count">
+		You have <span th:text="${articleCount}">0</span> memo...
+	</div>	
 	<form th:action="@{/member/search}" method="post">
 		<select class="category" name="category">
 			<option value="">Category</option>

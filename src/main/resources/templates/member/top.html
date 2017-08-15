@@ -4,16 +4,13 @@
 <meta charset="UTF-8" />
 <title>poi</title>
 <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
-
-</head>
-<body>
 <script type="text/javascript">
 function selectArticle ( obj ) {
 	var formname = obj.getAttribute('name');
 	document.forms[formname].submit();
 }
 function confirmLogout ( obj ) {
-    if(!confirm('本当に削除しますか？')){
+    if(!confirm('本当にログアウトしますか？')){
         /* キャンセルの時の処理 */
         return false;
     }else{
@@ -23,24 +20,21 @@ function confirmLogout ( obj ) {
     }	
 }
 </script>
-	<h1>Poi</h1>
-	<div th:text="${message}"></div>
-	<div class="count">
-		You have <span th:text="${articleCount}">0</span> memo...
-	</div>	
-	<form th:action="@{/member/top}" method="get">
-		<input type="button" value="Poi" />
-	</form>
+</head>
+<body>
+
+	<h1><a href="top.html" th:href="@{/member/top}">Poi</a></h1>
 	<form th:action="@{/member/create}" method="get">
 		<input type="submit" value="create!" />
 	</form>
 	<a href="setting.html" th:href="@{/member/setting}">ユーザー設定</a>
 	<a href="">ヘルプ(未実装)</a>
 	<a href="" th:name="@{/member/logout}" onclick="confirmLogout(this); return false;">ログアウト</a>	
-	
-	<form th:action="@{/member/setting}" method="get">
-		<input type="submit" value="setting!" />
-	</form>
+	<hr />
+	<div th:text="${message}"></div>
+	<div class="count">
+		You have <span th:text="${articleCount}">0</span> memo...
+	</div>	
 	<form th:action="@{/member/search}" method="post">
 		<select class="category" name="category">
 			<option value="">Category</option>
