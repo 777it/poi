@@ -1,1 +1,1 @@
-web: java -jar build/libs/poi.jar
+web: java $JAVA_OPTS -jar build/libs/poi.jar
