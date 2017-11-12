@@ -1,1 +1,13 @@
-/bin/
+.apt_generated
+.gradle
+.settings
+bin
+build
+lib
+log
+temp
+.classpath
+.DS_Store
+.factorypath
+.project
+gradlew.bat

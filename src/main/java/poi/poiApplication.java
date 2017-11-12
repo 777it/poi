@@ -37,7 +37,8 @@ public class poiApplication extends SpringBootServletInitializer {
 		public void customize(ConfigurableEmbeddedServletContainer container) {
 			container.addErrorPages(new ErrorPage(HttpStatus.BAD_REQUEST, UrlConstant.Controller.Error.NOT_FOUND));
 			container.addErrorPages(new ErrorPage(HttpStatus.FORBIDDEN, UrlConstant.Controller.Error.NOT_FOUND));
-			container.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, UrlConstant.Controller.Error.NOT_FOUND));			container.addErrorPages(new ErrorPage(HttpStatus.METHOD_NOT_ALLOWED, UrlConstant.Controller.Error.NOT_FOUND));
+			container.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, UrlConstant.Controller.Error.NOT_FOUND));
+			container.addErrorPages(new ErrorPage(HttpStatus.METHOD_NOT_ALLOWED, UrlConstant.Controller.Error.NOT_FOUND));
 			container.addErrorPages(new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, UrlConstant.Controller.Error.SYSTEM_ERROR));
 			container.addErrorPages(new ErrorPage(Throwable.class, UrlConstant.Controller.Error.SYSTEM_ERROR));
 		}
