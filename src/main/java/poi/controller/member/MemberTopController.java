@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
+import poi.domain.entity.CategoryT;
 import poi.domain.service.ArticleService;
 import poi.dto.member.SessionUserDto;
 
@@ -32,7 +33,7 @@ public class MemberTopController extends BaseController {
 
 		String username = sessionUserDto.getUsername();
 		int articleCount = articleService.selectArticleCount(username);
-		List<String> categoryList = articleService.selectCategory(username);
+		List<CategoryT> categoryList = articleService.selectCategory(username);
 		
 		// 記事の件数を表示
 		model.addAttribute("articleCount", articleCount);

@@ -43,6 +43,10 @@ public final class UrlConstant {
 			public static final String COMPLETE = MEMBER + "/complete";
 			/** 設定画面. */
 			public static final String SETTING = MEMBER + "/setting";
+			/** 設定画面. */
+			public static final String SETTING_CATEGORY = MEMBER + "/setting-category";
+			/** ヘルプ画面. */
+			public static final String HELP = MEMBER + "/help";
 		}
 
 		/** 一般. */
@@ -102,6 +106,8 @@ public final class UrlConstant {
 			public static final String REDIRECT_SEARCH = REDIRECT + SEARCH;
 			/** 記事作成画面. */
 			public static final String CREATE = MEMBER + "/create";
+			/** 記事作成画面(リダイレクト). */
+			public static final String REDIRECT_CREATE = REDIRECT + CREATE;
 			/** 記事編集画面. */
 			public static final String UPDATE = MEMBER + "/update";
 			/** 記事編集画面(URLにパラメータ). */
@@ -110,17 +116,24 @@ public final class UrlConstant {
 			public static final String DELETE = MEMBER + "/delete/{articleId}";
 			/** 操作完了画面. */
 			public static final String COMPLETE = MEMBER + "/complete";
-			/** 設定画面. */
+			/** 設定画面(アカウント). */
 			public static final String SETTING = MEMBER + "/setting";
-			/** 設定画面(リダイレクト). */
-			public static final String REDIRECT_SETTING = REDIRECT + SETTING;
+			/** 設定画面(カテゴリ). */
+			public static final String SETTING_CATEGORY = MEMBER + "/setting-category";
+			/** ヘルプ画面. */
+			public static final String HELP = MEMBER + "/help";
 			/** ログアウト画面. */
 			public static final String LOGOUT = MEMBER + "/logout";
 			/** ログイン画面（リダイレクト）. */
 			public static final String REDIRECT_TOP = REDIRECT + TOP;
 			/** ログイン画面（フォワード）. */
 			public static final String FORWARD_LOGIN = FORWARD + LOGIN;
-
+			
+			/** カテゴリ作成. */
+			public static final String ADD_CATEGORY = MEMBER + "/add-category/{category}";
+			/** カテゴリ削除. */
+			public static final String DELETE_CATEGORY = MEMBER + "/delete-category/{categoryId}";
+			
 		}
 
 		/** 一般. */

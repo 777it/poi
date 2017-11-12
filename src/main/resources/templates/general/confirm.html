@@ -1,27 +1,104 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>poi</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/materialize.css}"
+	media="screen,projection" />
+<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/materialize.js}"></script>
+<script type="text/javascript" th:src="@{/js/poi.js}"></script>
 </head>
 
 <body>
-	<h1>Confirm</h1>
-	<form th:action="@{/general/create}" method="post">
-	<table>
-      <tr>
-        <td>UserName：</td><td><span th:text="${@sessionRegisterDto.username}"></span></td>
-      </tr>
-      <tr>
-        <td>Mail：</td><td><span th:text="${@sessionRegisterDto.mail}"></span></td>
-      </tr>
-      <tr>
-        <td>Birthday：</td><td><span th:text="${@sessionRegisterDto.birthday}"></span></td>
-      </tr>
-	</table>
-		<input type="submit" value="OK!" />
-	</form>
+	<nav>
+		<div class="nav-wrapper red darken-4">
+			&nbsp;&nbsp;&nbsp; <a href="http://localhost:8080/poi/general/"
+				class="brand-logo">Poi</a>
+			<ul id="nav-mobile" class="right">
+				<li><form th:action="@{/member/index}" method="get"
+						name="loginForm">
+						<a href="javascript:document.loginForm.submit()"
+							class="waves-effect waves-light btn">Login</a>
+					</form></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col s3"></div>
+		<div class="col s6">
+			<h1>Confirm</h1>
+			<form th:action="@{/general/create}" method="post">
+				<div class="col s12">
+					<span>UserName</span> <input type="text" id="username"
+						name="username" th:value="${username}" disabled="disabled"
+						style="text-align: right; color: black;" />
+				</div>
+				<div class="col s12">
+					<span>Email</span> <input type="text" id="mail" name="mail"
+						th:value="${mail}" disabled="disabled"
+						style="text-align: right; color: black;" />
+				</div>
+				<div class="col s12">
+					<span>Date of Birth</span>
+				</div>
+				<div class="col s6">
+					<div th:if="${not #strings.isEmpty(month)}">
+						<select dir="rtl" name="month" disabled="disabled"
+							style="color: black;">
+							<option th:text="${month}">Month</option>
+						</select>
+					</div>
+					<div th:unless="${not #strings.isEmpty(month)}">
+						<select dir="rtl" name="month" disabled="disabled"
+							style="color: black;">
+							<option value="">-</option>
+						</select>
+					</div>
+				</div>
+				<div class="col s3">
+					<div th:if="${not #strings.isEmpty(day)}">
+						<select dir="rtl" name="day" disabled="disabled"
+							style="color: black;">
+							<option th:text="${day}">Day</option>
+						</select>
+					</div>
+					<div th:unless="${not #strings.isEmpty(day)}">
+						<select dir="rtl" name="day" disabled="disabled"
+							style="color: black;">
+							<option value="">-</option>
+						</select>
+					</div>
+				</div>
+				<div class="col s3">
+					<div th:if="${not #strings.isEmpty(year)}">
+						<select dir="rtl" name="year" disabled="disabled"
+							style="color: black;">
+							<option th:text="${year}">Year</option>
+						</select>
+					</div>
+					<div th:unless="${not #strings.isEmpty(year)}">
+						<select dir="rtl" name="year" disabled="disabled"
+							style="color: black;">
+							<option value="">-</option>
+						</select>
+					</div>
+				</div>
+				<div class="col s12">
+				<button class="btn waves-effect waves-light" id="ok" type="submit">OK!</button>
+				</div>
+			</form>
+			<form th:action="@{/general/register}" method="post">
+				<input type="submit" class="backBtn" value="back" />
+			</form>
+		</div>
+		<div class="col s3"></div>
+	</div>
 </body>
 
 </html>

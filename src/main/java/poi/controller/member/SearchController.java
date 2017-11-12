@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
 import poi.domain.entity.ArticleT;
+import poi.domain.entity.CategoryT;
 import poi.domain.service.ArticleService;
 import poi.dto.member.SessionUserDto;
 
@@ -38,16 +39,16 @@ public class SearchController extends BaseController {
     	
     	// 検索結果が0件の場合
     	if (resultArticleList.isEmpty()) {
-    		attribute.addFlashAttribute("resultNoArticle", "検索結果0件");
+    		attribute.addFlashAttribute("resultNoArticle", "No articles found.");
     	}
     	attribute.addFlashAttribute("resultArticleList", resultArticleList);
     	
     	// 見出しに表示する検索条件
     	String headerStr = null;
-		if (category == "" && level.equals("0")) {	
-			headerStr = "全件検索";
+		if (category == "" && level == "") {	
+			headerStr = "Search all";
 		//カテゴリに紐づく記事を取得(レベル未選択)
-	    } else if (level.equals("0")) {
+	    } else if (level == "") {
 	    	headerStr = category;		//レベルに紐づく記事を取得(カテゴリ未選択)
 	    } else if (category == "") {
 	    	headerStr = "Level" + level;	    //カテゴリとレベル紐づく記事を取得
@@ -73,7 +74,7 @@ public class SearchController extends BaseController {
 	public String selectedArticle(Model model, @RequestParam("articleId") String articleId, @RequestParam("categoryStatus") String category, @RequestParam("levelStatus") String level) {
 		String username = sessionUserDto.getUsername();
 		int articleCount = articleService.selectArticleCount(username);
-		List<String> categoryList = articleService.selectCategory(username);
+		List<CategoryT> categoryList = articleService.selectCategory(username);
 		
 		// 記事の件数を表示
 		model.addAttribute("articleCount", articleCount);

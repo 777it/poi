@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import poi.domain.dao.ArticleTDao;
 import poi.domain.dao.CategoryTDao;
 import poi.domain.entity.ArticleT;
+import poi.domain.entity.CategoryT;
 import poi.dto.member.ArticleTDto;
 
 @Service
@@ -38,8 +39,8 @@ public class ArticleService {
 	 * @param username
 	 * @return
 	 */
-	public List<String> selectCategory(String username) {
-		List<String> categoryList = categoryTDao.selectCategoryByUsernameAndDeletedAt(username);
+	public List<CategoryT> selectCategory(String username) {
+		List<CategoryT> categoryList = categoryTDao.selectCategoryByUsernameAndDeletedAt(username);
 		return categoryList;
 	}
 	
@@ -52,21 +53,20 @@ public class ArticleService {
 	 */
 	public List<ArticleT> selectArticle(String username, String category, String level) {
 		
-		int levelInt = Integer.parseInt(level);
 		List<ArticleT> articleList = new LinkedList<>();
 		// 全記事を取得
-		if (category == "" && levelInt == 0) {
+		if (category == "" && level == "") {
 			articleList = articleTDao.selectArticleByUsernameAndDeletedAt(username);
 		
 		//カテゴリに紐づく記事を取得(レベル未選択)
-	    } else if (levelInt == 0) {
+	    } else if (level == "") {
 			articleList = articleTDao.selectArticleByUsernameAndCategoryAndDeletedAt(username, category);
 		//レベルに紐づく記事を取得(カテゴリ未選択)
 	    } else if (category == "") {
-			articleList = articleTDao.selectArticleByUsernameAndLevelAndDeletedAt(username, levelInt);
+			articleList = articleTDao.selectArticleByUsernameAndLevelAndDeletedAt(username, Integer.parseInt(level));
 	    //カテゴリとレベル紐づく記事を取得
 		} else {
-			articleList = articleTDao.selectArticleByUsernameAndCategoryAndLevelAndDeletedAt(username, category, levelInt);
+			articleList = articleTDao.selectArticleByUsernameAndCategoryAndLevelAndDeletedAt(username, category, Integer.parseInt(level));
 		}
 
 		return articleList;			

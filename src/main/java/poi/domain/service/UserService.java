@@ -51,10 +51,10 @@ public class UserService {
 	 * @param userDto
 	 */
 	public void registerUser(UserDto userDto) {
-		userEntity.username = userDto.username;
-		userEntity.mail = userDto.mail;
-		userEntity.password = userDto.password;
-		userEntity.birthday = userDto.birthday;
+		userEntity.username = userDto.getUsername();
+		userEntity.mail = userDto.getMail();
+		userEntity.password = userDto.getPassword();
+		userEntity.birthday = userDto.getBirthday();
 		userEntity.createdAt = LocalDateTime.now();
 		userEntity.updatedAt = LocalDateTime.now();
 		userTDao.insert(userEntity);
@@ -94,10 +94,10 @@ public class UserService {
 	 * @param userDto
 	 */
 	public void editUser(UserDto userDto) {
-		userEntity.username = userDto.username;
-		userEntity.mail = userDto.mail;
-		userEntity.password = userDto.password;
-		userEntity.birthday = userDto.birthday;
+		userEntity.username = userDto.getUsername();
+		userEntity.mail = userDto.getMail();
+		userEntity.password = userDto.getPassword();
+		userEntity.birthday = userDto.getBirthday();
 		userEntity.updatedAt = LocalDateTime.now();
 		userTDao.update(userEntity);	
 	}

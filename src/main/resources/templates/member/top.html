@@ -2,72 +2,172 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>poi</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/materialize.css}"
+	media="screen,projection" />
 <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
-<script type="text/javascript">
-function selectArticle ( obj ) {
-	var formname = obj.getAttribute('name');
-	document.forms[formname].submit();
-}
-function confirmLogout ( obj ) {
-    if(!confirm('本当にログアウトしますか？')){
-        /* キャンセルの時の処理 */
-        return false;
-    }else{
-    	/* OKの時の処理 */
-    	var logputUrl = obj.getAttribute('name');
-    	location.href =　logputUrl;
-    }	
-}
-</script>
+<script type="text/javascript" th:src="@{/js/materialize.js}"></script>
+<script type="text/javascript" th:src="@{/js/poi.js}"></script>
 </head>
 <body>
-
-	<h1><a href="top.html" th:href="@{/member/top}">Poi</a></h1>
-	<form th:action="@{/member/create}" method="get">
-		<input type="submit" value="create!" />
-	</form>
-	<a href="setting.html" th:href="@{/member/setting}">ユーザー設定</a>
-	<a href="">ヘルプ(未実装)</a>
-	<a href="" th:name="@{/member/logout}" onclick="confirmLogout(this); return false;">ログアウト</a>	
-	<hr />
-	<div th:text="${message}"></div>
-	<div class="count">
-		You have <span th:text="${articleCount}">0</span> memo...
-	</div>	
-	<form th:action="@{/member/search}" method="post">
-		<select class="category" name="category">
-			<option value="">Category</option>
-			<option th:each="category : ${categoryList}"><span th:text="${category}"></span></option>
-		</select>
-		<select class="level" name="level">
-			<option value="0">Level</option>
-			<option value="1">Level1</option>
-			<option value="2">Level2</option>
-			<option value="3">Level3</option>
-			<option value="4">Level4</option>
-			<option value="5">Level5</option>
-		</select>	
-		<input type="submit" value="Search!" />
-	</form>
-	
-	<div th:text="${resultNoArticle}"></div>
-	
-	<div class="main">
-	<h3 th:text="${headerStr}"></h3>
-		<div class="post" th:each="article : ${resultArticleList}">
-			<form th:name="form + *{article.id}" method="post" th:action="@{/member/select}">
-			<a href="" th:name="form + *{article.id}" onclick="selectArticle(this);return false;">
-				<img src="../images/icon-edit.png" id="updateArticle" th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" />
-				<span th:hidden="*{article.id}"></span>
-				<span th:text="*{article.level}"></span>
-				<span th:text="*{article.title}"></span>
-				<span th:text="*{article.updatedAt}"></span>
-				<input type="hidden" name="articleId" th:value="*{article.id}" />
-				<input type="hidden" name="categoryStatus" th:value="${categoryStatus}" />
-				<input type="hidden" name="levelStatus" th:value="${levelStatus}" />
-				</a>
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="top.html" th:href="@{/member/top}">MyPage</a></li>
+		<li><a href="setting.html" th:href="@{/member/setting}">Setting</a></li>
+		<li class="divider"></li>
+		<li><a href="" th:name="@{/member/logout}"
+			onclick="confirmLogout(this); return false;">Logout</a></li>
+	</ul>
+	<nav>
+		<div class="nav-wrapper red darken-4">
+			&nbsp;&nbsp;&nbsp; 
+			<a href="http://localhost:8080/poi/general/" class="brand-logo">Poi</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<!-- Dropdown Trigger -->
+				<li><a class="waves-effect waves-light btn" href="create.html"
+					th:href="@{/member/create}"><i class="material-icons right">note_add</i>Create</a></li>
+				<li><a class="dropdown-button" href="#!"
+					data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col s4">
+			<div th:text="${message}"></div>
+			<div class="count">
+				<span>You have <span th:text="${articleCount}">0</span>
+					memo...
+				</span>
+			</div>
+			<div th:if="${articleCount == 0}">
+				<img src="../images/water_0.png" />
+			</div>
+			<div th:if="${articleCount != 0}">
+			<script type="text/javascript">
+			   var imglist = new Array(
+			      "../images/water_1.png",
+			      "../images/water_2.png",
+			      "../images/water_3.png" );
+			   var selectnum = Math.floor(Math.random() * imglist.length);
+			   var output = "<img src=" + imglist[selectnum] + " />";
+			   document.write(output);
+			</script>
+			</div>
+			<form th:action="@{/member/search}" method="post">
+			<input type="hidden" name="username" th:value="${username}" />
+				<select class="category" name="category">
+					<option value="">Category</option>
+					<option th:each="category : ${categoryList}"><span
+							th:text="${category.category}"></span></option>
+				</select> <select class="level" name="level">
+					<option value="">Level</option>
+					<option value="1">Level1</option>
+					<option value="2">Level2</option>
+					<option value="3">Level3</option>
+					<option value="4">Level4</option>
+					<option value="5">Level5</option>
+				</select>
+				<button class="btn waves-effect waves-light" id="search"
+					type="submit"
+					onclick="Materialize.showStaggeredList('#staggered-test')">
+					<i class="material-icons right">search</i>Search
+				</button>
 			</form>
+		</div>
+		<div class="col s8">
+			<div class="row">
+				<div class="col s12 m12">
+					<div th:if="${not #strings.isEmpty(headerStr)}">
+						<div class="card-panel teal">
+							<span class="white-text" th:text="${headerStr}"></span>
+						</div>
+					</div>
+					<div th:if="${#strings.isEmpty(headerStr)}">
+						<div class="card-panel teal">
+							<span class="white-text">Welcome to Poi</span>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m12">
+					<div class="card-panel">
+						<div class="main">
+						  <!-- 初期表示 -->
+						  <div th:if="${#strings.isEmpty(headerStr)}">					  	
+						  	<span>1. Let's create a memo.</span>
+						  	<p>
+						  		<img src="../images/create2.png" class="introduction" id="intro-1" />
+						  	</p>
+						  	<span>2. You can use the search function.</span>
+						  	<p>
+						  		<img src="../images/search3.png" class="introduction" id="intro-2" />
+						  	</p>	
+						  	<span>3. How you use depends on you!</span>
+						  	<p>
+						  		<img src="../images/you.png" class="introduction" id="intro-3" />
+						  	</p>
+						  </div>
+						  <!-- 記事が見つからなかった場合 -->
+						  <div th:if="${resultNoArticle != null}">
+						     	<div th:text="${resultNoArticle}"></div>
+						  </div>
+							<!-- 記事が見つかった場合 -->
+							<div class="post" th:each="article : ${resultArticleList}">
+								<div class="hidden_box">
+									<label th:for="*{article.id}">
+										<div th:switch="*{article.level}">
+											<span th:case="1"> <img src="../images/level1.png"
+												class="icon-level" id="level1"
+												th:attr="src=@{/images/level1.png},alt=#{icon-level1}" />
+											</span> <span th:case="2"> <img src="../images/level2.png"
+												class="icon-level" id="level2"
+												th:attr="src=@{/images/level2.png},alt=#{icon-level2}" />
+											</span> <span th:case="3"> <img src="../images/level3.png"
+												class="icon-level" id="level3"
+												th:attr="src=@{/images/level3.png},alt=#{icon-level3}" />
+											</span> <span th:case="4"> <img src="../images/level4.png"
+												class="icon-level" id="level4"
+												th:attr="src=@{/images/level4.png},alt=#{icon-level4}" />
+											</span> <span th:case="5"> <img src="../images/level5.png"
+												class="icon-level" id="level5"
+												th:attr="src=@{/images/level5.png},alt=#{icon-level5}" />
+											</span> <span th:hidden="*{article.id}"></span> <span
+												th:hidden="*{article.level}"></span> <span
+												th:text="*{article.title}"></span>
+											<input type="hidden" name="articleId"
+												th:value="*{article.id}" /> <input type="hidden"
+												name="categoryStatus" th:value="${categoryStatus}" /> <input
+												type="hidden" name="levelStatus" th:value="${levelStatus}" />
+											<a href="" th:name="@{/member/delete/__${article.id}__}"
+												onclick="confirmDelete(this); return false;"><img
+												src="../images/icon-delete.png" class="right"
+												id="deleteArticle"
+												th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" /></a>
+											<a href="/member/update.html"
+												th:href="@{/member/update/__${article.id}__}"><img
+												src="../images/icon-edit.png" class="right"
+												id="updateArticle"
+												th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" /></a>
+											</div>
+											<span class="right" id="updateTime"
+												th:text="*{#temporals.format(article.updatedAt, 'yyyy/MM/dd HH:mm')}">
+											</span>
+									</label> <input type="checkbox" th:id="*{article.id}" />
+									<div class="hidden_show">
+										<!--非表示ここから-->
+										<span th:text="*{article.body}"></span>
+										<!--ここまで-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

@@ -1,0 +1,1025 @@
+2017-08-31 08:07:48,361 DEBUG --- [io-8080-exec-10] poi.util.TokenUtility                    : CSRF対象外：/poi/member/create
+2017-08-31 08:07:48,377 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/member/create]
+2017-08-31 08:07:48,379 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/create
+2017-08-31 08:07:48,382 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.WorkController.displayCreate(org.springframework.ui.Model)]
+2017-08-31 08:07:48,383 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/member/create] is: -1
+2017-08-31 08:07:48,385 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : Session:null
+2017-08-31 08:07:48,405 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : id:null
+2017-08-31 08:07:48,405 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : セッションが切れました。再度ログインして下さい。
+2017-08-31 08:07:48,408 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/general/]
+2017-08-31 08:07:48,411 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /general/
+2017-08-31 08:07:48,414 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.general.GeneralIndexController.index()]
+2017-08-31 08:07:48,416 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/general/] is: -1
+2017-08-31 08:07:48,428 DEBUG --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-08-31 08:07:48,430 DEBUG --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@10656ca9] based on requested media type 'text/html'
+2017-08-31 08:07:48,430 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@10656ca9] in DispatcherServlet with name 'dispatcherServlet'
+2017-08-31 08:07:48,460 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:48,462 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@10b32da6
+2017-08-31 08:07:48,462 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : id:null
+2017-08-31 08:07:48,462 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : セッションが切れました。再度ログインして下さい。
+2017-08-31 08:07:48,464 DEBUG --- [io-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolving exception from handler [public java.lang.String poi.controller.member.WorkController.displayCreate(org.springframework.ui.Model)]: java.lang.IllegalStateException: Cannot forward after response has been committed
+2017-08-31 08:07:48,464 DEBUG --- [io-8080-exec-10] .w.s.m.a.ResponseStatusExceptionResolver : Resolving exception from handler [public java.lang.String poi.controller.member.WorkController.displayCreate(org.springframework.ui.Model)]: java.lang.IllegalStateException: Cannot forward after response has been committed
+2017-08-31 08:07:48,465 DEBUG --- [io-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolving exception from handler [public java.lang.String poi.controller.member.WorkController.displayCreate(org.springframework.ui.Model)]: java.lang.IllegalStateException: Cannot forward after response has been committed
+2017-08-31 08:07:48,473 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Could not complete request
+java.lang.IllegalStateException: Cannot forward after response has been committed
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:311)
+	at poi.SessionInterceptor.preHandle(SessionInterceptor.java:51)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:958)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:169)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2017-08-31 08:07:48,482 ERROR --- [io-8080-exec-10] o.a.c.c.C.[.[.[/poi].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [/poi] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Cannot forward after response has been committed] with root cause
+java.lang.IllegalStateException: Cannot forward after response has been committed
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:311)
+	at poi.SessionInterceptor.preHandle(SessionInterceptor.java:51)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:958)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:169)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2017-08-31 08:07:48,487 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/error]
+2017-08-31 08:07:48,487 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /error
+2017-08-31 08:07:48,488 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)]
+2017-08-31 08:07:48,489 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/error] is: -1
+2017-08-31 08:07:48,503 DEBUG --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, text/html;q=0.8] based on Accept header types and producible media types [text/html])
+2017-08-31 08:07:48,503 DEBUG --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@7a378c81] based on requested media type 'text/html'
+2017-08-31 08:07:48,504 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@7a378c81] in DispatcherServlet with name 'dispatcherServlet'
+2017-08-31 08:07:48,507 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:48,616 DEBUG --- [nio-8080-exec-4] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style-index.css
+2017-08-31 08:07:48,624 DEBUG --- [nio-8080-exec-2] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-08-31 08:07:48,624 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style-index.css]
+2017-08-31 08:07:48,625 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-08-31 08:07:48,626 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style-index.css
+2017-08-31 08:07:48,627 DEBUG --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-08-31 08:07:48,628 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-08-31 08:07:48,629 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style-index.css]
+2017-08-31 08:07:48,630 DEBUG --- [nio-8080-exec-8] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-08-31 08:07:48,632 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-08-31 08:07:48,632 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style-index.css] are [/**]
+2017-08-31 08:07:48,632 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-08-31 08:07:48,632 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-08-31 08:07:48,632 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style-index.css] are {}
+2017-08-31 08:07:48,634 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style-index.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:48,635 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style-index.css] is: -1
+2017-08-31 08:07:48,637 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-08-31 08:07:48,639 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-08-31 08:07:48,639 DEBUG --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-08-31 08:07:48,639 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-08-31 08:07:48,639 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:48,640 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-08-31 08:07:48,640 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-08-31 08:07:48,640 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:48,641 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-08-31 08:07:48,641 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-08-31 08:07:48,641 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:48,647 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:48,648 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-08-31 08:07:48,648 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-08-31 08:07:48,649 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-08-31 08:07:48,650 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-08-31 08:07:48,651 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:48,651 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-08-31 08:07:48,659 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:48,659 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:48,662 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:48,662 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:48,664 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:48,664 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:48,801 DEBUG --- [nio-8080-exec-7] poi.util.TokenUtility                    : CSRF対象外：/poi/images/background.png
+2017-08-31 08:07:48,801 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/images/background.png]
+2017-08-31 08:07:48,801 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /images/background.png
+2017-08-31 08:07:48,801 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/images/background.png]
+2017-08-31 08:07:48,802 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/images/background.png] are [/**]
+2017-08-31 08:07:48,802 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/images/background.png] are {}
+2017-08-31 08:07:48,803 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/images/background.png] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:48,803 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/images/background.png] is: -1
+2017-08-31 08:07:48,808 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:48,808 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:48,823 DEBUG --- [nio-8080-exec-9] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:07:48,824 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:07:48,824 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:07:48,825 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:07:48,826 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-08-31 08:07:48,826 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-08-31 08:07:48,826 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:48,827 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-08-31 08:07:48,828 DEBUG --- [nio-8080-exec-9] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-08-31 08:07:48,831 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:48,835 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:50,593 DEBUG --- [nio-8080-exec-1] poi.util.TokenUtility                    : CSRF対象外：/poi/general/register
+2017-08-31 08:07:50,594 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing POST request for [/poi/general/register]
+2017-08-31 08:07:50,595 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /general/register
+2017-08-31 08:07:50,596 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.general.RegisterController.register(org.springframework.ui.Model)]
+2017-08-31 08:07:50,600 DEBUG --- [nio-8080-exec-1] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-08-31 08:07:50,607 DEBUG --- [nio-8080-exec-1] p.controller.general.RegisterController  : Session:org.apache.catalina.session.StandardSessionFacade@10b32da6
+2017-08-31 08:07:50,609 DEBUG --- [nio-8080-exec-1] p.controller.general.RegisterController  : Session:org.apache.catalina.session.StandardSessionFacade@7474bd1f
+2017-08-31 08:07:50,613 DEBUG --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-08-31 08:07:50,615 DEBUG --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@cf74f55] based on requested media type 'text/html'
+2017-08-31 08:07:50,615 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@cf74f55] in DispatcherServlet with name 'dispatcherServlet'
+2017-08-31 08:07:50,643 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:50,681 DEBUG --- [nio-8080-exec-3] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-08-31 08:07:50,681 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-08-31 08:07:50,681 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-08-31 08:07:50,682 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-08-31 08:07:50,682 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-08-31 08:07:50,682 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-08-31 08:07:50,683 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:50,688 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-08-31 08:07:50,691 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:50,692 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:50,698 DEBUG --- [io-8080-exec-10] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-08-31 08:07:50,700 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-08-31 08:07:50,700 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-08-31 08:07:50,701 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-08-31 08:07:50,704 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-08-31 08:07:50,704 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-08-31 08:07:50,704 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:50,704 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-08-31 08:07:50,711 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:50,712 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:50,712 DEBUG --- [nio-8080-exec-6] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-08-31 08:07:50,712 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-08-31 08:07:50,713 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-08-31 08:07:50,713 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-08-31 08:07:50,713 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-08-31 08:07:50,713 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-08-31 08:07:50,713 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:50,714 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-08-31 08:07:50,716 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:50,717 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:50,723 DEBUG --- [nio-8080-exec-3] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-08-31 08:07:50,724 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-08-31 08:07:50,725 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-08-31 08:07:50,726 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-08-31 08:07:50,726 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-08-31 08:07:50,726 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-08-31 08:07:50,726 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:50,727 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-08-31 08:07:50,737 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:50,738 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:50,826 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:07:50,826 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:07:50,827 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:07:50,827 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:07:50,827 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-08-31 08:07:50,827 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-08-31 08:07:50,827 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:50,827 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-08-31 08:07:50,828 DEBUG --- [nio-8080-exec-5] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-08-31 08:07:50,830 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:50,830 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:52,682 DEBUG --- [nio-8080-exec-8] poi.util.TokenUtility                    : CSRF対象外：/poi/member/index
+2017-08-31 08:07:52,682 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/member/index]
+2017-08-31 08:07:52,683 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/index
+2017-08-31 08:07:52,683 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.LoginController.displayLogin(org.springframework.ui.Model)]
+2017-08-31 08:07:52,683 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/member/index] is: -1
+2017-08-31 08:07:52,686 DEBUG --- [nio-8080-exec-8] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@7474bd1f
+2017-08-31 08:07:52,686 DEBUG --- [nio-8080-exec-8] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@79f715d7
+2017-08-31 08:07:52,688 DEBUG --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-08-31 08:07:52,689 DEBUG --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@406ef56e] based on requested media type 'text/html'
+2017-08-31 08:07:52,689 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@406ef56e] in DispatcherServlet with name 'dispatcherServlet'
+2017-08-31 08:07:52,706 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:52,732 DEBUG --- [nio-8080-exec-2] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-08-31 08:07:52,733 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-08-31 08:07:52,734 DEBUG --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-08-31 08:07:52,735 DEBUG --- [nio-8080-exec-7] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-08-31 08:07:52,736 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-08-31 08:07:52,736 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-08-31 08:07:52,736 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-08-31 08:07:52,736 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-08-31 08:07:52,737 DEBUG --- [nio-8080-exec-9] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-08-31 08:07:52,737 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-08-31 08:07:52,737 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-08-31 08:07:52,737 DEBUG --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-08-31 08:07:52,737 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:52,737 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-08-31 08:07:52,739 DEBUG --- [nio-8080-exec-1] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-08-31 08:07:52,743 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-08-31 08:07:52,743 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-08-31 08:07:52,744 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-08-31 08:07:52,745 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-08-31 08:07:52,752 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-08-31 08:07:52,752 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-08-31 08:07:52,755 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-08-31 08:07:52,758 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:52,758 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:52,759 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-08-31 08:07:52,759 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:52,760 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-08-31 08:07:52,760 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-08-31 08:07:52,760 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:52,761 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-08-31 08:07:52,761 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-08-31 08:07:52,761 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-08-31 08:07:52,766 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:52,766 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:52,767 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:52,767 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-08-31 08:07:52,789 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:52,789 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:52,794 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:52,794 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:52,884 DEBUG --- [io-8080-exec-10] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:07:52,884 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:07:52,885 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:07:52,885 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:07:52,885 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-08-31 08:07:52,886 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-08-31 08:07:52,886 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:52,886 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-08-31 08:07:52,886 DEBUG --- [io-8080-exec-10] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-08-31 08:07:52,889 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:52,889 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:59,366 DEBUG --- [nio-8080-exec-4] poi.util.TokenUtility                    : CSRF対象外：/poi/member/login
+2017-08-31 08:07:59,367 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing POST request for [/poi/member/login]
+2017-08-31 08:07:59,367 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/login
+2017-08-31 08:07:59,367 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.LoginController.login(poi.form.member.LoginForm,org.springframework.validation.BindingResult,org.springframework.ui.Model)]
+2017-08-31 08:07:59,368 DEBUG --- [nio-8080-exec-4] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-08-31 08:07:59,377 DEBUG --- [nio-8080-exec-4] poi.controller.member.LoginController    : Username:user
+2017-08-31 08:07:59,377 DEBUG --- [nio-8080-exec-4] poi.controller.member.LoginController    : Password:1*******(1桁)
+2017-08-31 08:07:59,379 INFO  --- [nio-8080-exec-4] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginIdAndPasswordAndDeletedAt]
+2017-08-31 08:07:59,390 INFO  --- [nio-8080-exec-4] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/UserTDao/selectByLoginIdAndPasswordAndDeletedAt.sql],
+select
+  id, username, mail, password, password_failed_count, birthday, created_at, updated_at, deleted_at
+from
+  user_t
+where
+  username = 'user' and
+  password = '1' and
+  deleted_at is null
+2017-08-31 08:07:59,471 INFO  --- [nio-8080-exec-4] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginIdAndPasswordAndDeletedAt]
+2017-08-31 08:07:59,471 DEBUG --- [nio-8080-exec-4] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@79f715d7
+2017-08-31 08:07:59,471 DEBUG --- [nio-8080-exec-4] poi.controller.member.LoginController    : NewSession:org.apache.catalina.session.StandardSessionFacade@6be4c984
+2017-08-31 08:07:59,474 INFO  --- [nio-8080-exec-4] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginId]
+2017-08-31 08:07:59,480 INFO  --- [nio-8080-exec-4] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/UserTDao/selectByLoginId.sql],
+select
+  id, username, mail, password, password_failed_count, birthday, created_at, updated_at, deleted_at
+from
+  user_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-08-31 08:07:59,487 INFO  --- [nio-8080-exec-4] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginId]
+2017-08-31 08:07:59,491 DEBUG --- [nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-08-31 08:07:59,491 DEBUG --- [nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Returning redirect view [org.springframework.web.servlet.view.RedirectView: unnamed; URL [/member/top]]
+2017-08-31 08:07:59,491 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Rendering view [org.springframework.web.servlet.view.RedirectView: unnamed; URL [/member/top]] in DispatcherServlet with name 'dispatcherServlet'
+2017-08-31 08:07:59,492 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:59,498 DEBUG --- [nio-8080-exec-6] poi.util.TokenUtility                    : CSRF対象外：/poi/member/top
+2017-08-31 08:07:59,498 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/member/top]
+2017-08-31 08:07:59,498 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/top
+2017-08-31 08:07:59,499 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.MemberTopController.index(org.springframework.ui.Model)]
+2017-08-31 08:07:59,500 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/member/top] is: -1
+2017-08-31 08:07:59,500 DEBUG --- [nio-8080-exec-6] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@6be4c984
+2017-08-31 08:07:59,500 DEBUG --- [nio-8080-exec-6] poi.controller.member.LoginController    : id:19
+2017-08-31 08:07:59,500 DEBUG --- [nio-8080-exec-6] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@6be4c984
+2017-08-31 08:07:59,500 DEBUG --- [nio-8080-exec-6] poi.controller.member.LoginController    : id:19
+2017-08-31 08:07:59,503 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.ArticleTDaoImpl], メソッド=[selectArticleCountByUsernameAndDeletedAt]
+2017-08-31 08:07:59,505 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/ArticleTDao/selectArticleCountByUsernameAndDeletedAt.sql],
+select
+    count(*)
+from
+    article_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-08-31 08:07:59,513 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.ArticleTDaoImpl], メソッド=[selectArticleCountByUsernameAndDeletedAt]
+2017-08-31 08:07:59,513 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.CategoryTDaoImpl], メソッド=[selectCategoryByUsernameAndDeletedAt]
+2017-08-31 08:07:59,515 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/CategoryTDao/selectCategoryByUsernameAndDeletedAt.sql],
+select
+    category
+from
+    category_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-08-31 08:07:59,517 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.CategoryTDaoImpl], メソッド=[selectCategoryByUsernameAndDeletedAt]
+2017-08-31 08:07:59,519 DEBUG --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-08-31 08:07:59,519 DEBUG --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@5475b0d1] based on requested media type 'text/html'
+2017-08-31 08:07:59,519 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@5475b0d1] in DispatcherServlet with name 'dispatcherServlet'
+2017-08-31 08:07:59,527 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:59,570 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-08-31 08:07:59,570 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-08-31 08:07:59,570 DEBUG --- [nio-8080-exec-3] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-08-31 08:07:59,570 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-08-31 08:07:59,570 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-08-31 08:07:59,571 DEBUG --- [nio-8080-exec-8] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-08-31 08:07:59,571 DEBUG --- [nio-8080-exec-7] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-08-31 08:07:59,572 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-08-31 08:07:59,572 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-08-31 08:07:59,572 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-08-31 08:07:59,572 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-08-31 08:07:59,573 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-08-31 08:07:59,573 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-08-31 08:07:59,573 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-08-31 08:07:59,574 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-08-31 08:07:59,574 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-08-31 08:07:59,574 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-08-31 08:07:59,577 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-08-31 08:07:59,577 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-08-31 08:07:59,579 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-08-31 08:07:59,579 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:59,579 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-08-31 08:07:59,579 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-08-31 08:07:59,580 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-08-31 08:07:59,579 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:59,580 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-08-31 08:07:59,580 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-08-31 08:07:59,583 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:59,586 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-08-31 08:07:59,586 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:59,586 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:59,587 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:59,589 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:59,590 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-08-31 08:07:59,591 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-08-31 08:07:59,592 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:59,597 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:59,598 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:59,601 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:59,602 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:07:59,702 DEBUG --- [nio-8080-exec-2] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:07:59,702 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:07:59,702 DEBUG --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:07:59,704 DEBUG --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:07:59,705 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-08-31 08:07:59,705 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-08-31 08:07:59,705 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:07:59,705 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-08-31 08:07:59,705 DEBUG --- [nio-8080-exec-2] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-08-31 08:07:59,708 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:07:59,708 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:08:01,719 DEBUG --- [nio-8080-exec-9] poi.util.TokenUtility                    : CSRF対象外：/poi/member/create
+2017-08-31 08:08:01,721 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/member/create]
+2017-08-31 08:08:01,721 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/create
+2017-08-31 08:08:01,722 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.WorkController.displayCreate(org.springframework.ui.Model)]
+2017-08-31 08:08:01,722 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/member/create] is: -1
+2017-08-31 08:08:01,722 DEBUG --- [nio-8080-exec-9] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@6be4c984
+2017-08-31 08:08:01,723 DEBUG --- [nio-8080-exec-9] poi.controller.member.LoginController    : id:19
+2017-08-31 08:08:01,724 DEBUG --- [nio-8080-exec-9] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@6be4c984
+2017-08-31 08:08:01,724 DEBUG --- [nio-8080-exec-9] poi.controller.member.LoginController    : id:19
+2017-08-31 08:08:01,736 INFO  --- [nio-8080-exec-9] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.CategoryTDaoImpl], メソッド=[selectCategoryByUsernameAndDeletedAt]
+2017-08-31 08:08:01,741 INFO  --- [nio-8080-exec-9] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/CategoryTDao/selectCategoryByUsernameAndDeletedAt.sql],
+select
+    category
+from
+    category_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-08-31 08:08:01,750 INFO  --- [nio-8080-exec-9] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.CategoryTDaoImpl], メソッド=[selectCategoryByUsernameAndDeletedAt]
+2017-08-31 08:08:01,757 DEBUG --- [nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-08-31 08:08:01,758 DEBUG --- [nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@6cb41b89] based on requested media type 'text/html'
+2017-08-31 08:08:01,758 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@6cb41b89] in DispatcherServlet with name 'dispatcherServlet'
+2017-08-31 08:08:01,768 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:08:01,808 DEBUG --- [nio-8080-exec-1] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-08-31 08:08:01,808 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-08-31 08:08:01,808 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-08-31 08:08:01,809 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-08-31 08:08:01,809 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-08-31 08:08:01,809 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-08-31 08:08:01,809 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:08:01,809 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-08-31 08:08:01,818 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:08:01,820 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:08:01,822 DEBUG --- [nio-8080-exec-1] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-08-31 08:08:01,823 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-08-31 08:08:01,823 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-08-31 08:08:01,824 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-08-31 08:08:01,824 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-08-31 08:08:01,824 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-08-31 08:08:01,824 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:08:01,824 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-08-31 08:08:01,828 DEBUG --- [io-8080-exec-10] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-08-31 08:08:01,828 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-08-31 08:08:01,828 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-08-31 08:08:01,830 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-08-31 08:08:01,830 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-08-31 08:08:01,831 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:08:01,832 DEBUG --- [nio-8080-exec-4] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-08-31 08:08:01,832 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-08-31 08:08:01,834 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:08:01,835 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-08-31 08:08:01,835 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:08:01,838 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-08-31 08:08:01,838 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-08-31 08:08:01,848 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-08-31 08:08:01,849 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-08-31 08:08:01,850 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-08-31 08:08:01,850 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:08:01,851 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-08-31 08:08:01,857 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:08:01,858 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:08:01,858 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:08:01,889 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:08:01,924 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:08:01,924 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:08:01,925 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:08:01,925 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:08:01,926 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-08-31 08:08:01,926 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-08-31 08:08:01,926 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:08:01,928 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-08-31 08:08:01,928 DEBUG --- [nio-8080-exec-5] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-08-31 08:08:01,933 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:08:01,934 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:13:29,726 DEBUG --- [nio-8080-exec-9] poi.util.TokenUtility                    : CSRF対象外：/poi/member/create
+2017-08-31 08:13:29,727 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/member/create]
+2017-08-31 08:13:29,727 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/create
+2017-08-31 08:13:29,728 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.WorkController.displayCreate(org.springframework.ui.Model)]
+2017-08-31 08:13:29,728 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/member/create] is: -1
+2017-08-31 08:13:29,728 DEBUG --- [nio-8080-exec-9] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@6be4c984
+2017-08-31 08:13:29,728 DEBUG --- [nio-8080-exec-9] poi.controller.member.LoginController    : id:19
+2017-08-31 08:13:29,728 DEBUG --- [nio-8080-exec-9] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@6be4c984
+2017-08-31 08:13:29,729 DEBUG --- [nio-8080-exec-9] poi.controller.member.LoginController    : id:19
+2017-08-31 08:13:29,730 INFO  --- [nio-8080-exec-9] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.CategoryTDaoImpl], メソッド=[selectCategoryByUsernameAndDeletedAt]
+2017-08-31 08:13:29,738 INFO  --- [nio-8080-exec-9] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/CategoryTDao/selectCategoryByUsernameAndDeletedAt.sql],
+select
+    category
+from
+    category_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-08-31 08:13:29,744 INFO  --- [nio-8080-exec-9] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.CategoryTDaoImpl], メソッド=[selectCategoryByUsernameAndDeletedAt]
+2017-08-31 08:13:29,745 DEBUG --- [nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-08-31 08:13:29,746 DEBUG --- [nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@626345] based on requested media type 'text/html'
+2017-08-31 08:13:29,746 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@626345] in DispatcherServlet with name 'dispatcherServlet'
+2017-08-31 08:13:29,758 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:13:29,771 DEBUG --- [nio-8080-exec-6] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-08-31 08:13:29,772 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-08-31 08:13:29,772 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-08-31 08:13:29,773 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-08-31 08:13:29,775 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-08-31 08:13:29,776 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-08-31 08:13:29,777 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:13:29,777 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-08-31 08:13:29,793 DEBUG --- [nio-8080-exec-1] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-08-31 08:13:29,794 DEBUG --- [nio-8080-exec-4] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-08-31 08:13:29,795 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-08-31 08:13:29,795 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-08-31 08:13:29,795 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-08-31 08:13:29,796 DEBUG --- [io-8080-exec-10] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-08-31 08:13:29,796 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-08-31 08:13:29,797 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-08-31 08:13:29,797 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-08-31 08:13:29,798 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:13:29,801 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-08-31 08:13:29,801 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-08-31 08:13:29,801 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-08-31 08:13:29,801 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:13:29,801 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-08-31 08:13:29,801 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-08-31 08:13:29,802 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-08-31 08:13:29,803 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-08-31 08:13:29,803 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-08-31 08:13:29,806 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:13:29,809 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-08-31 08:13:29,809 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:13:29,810 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-08-31 08:13:29,810 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:13:29,811 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-08-31 08:13:29,811 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-08-31 08:13:29,819 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:13:29,819 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:13:29,827 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:13:29,828 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:13:29,828 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:13:29,829 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:13:29,947 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:13:29,949 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:13:29,951 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-08-31 08:13:29,954 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-08-31 08:13:29,954 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-08-31 08:13:29,955 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-08-31 08:13:29,955 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1aed6f0b]]] and 1 interceptor
+2017-08-31 08:13:29,955 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-08-31 08:13:29,956 DEBUG --- [nio-8080-exec-5] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-08-31 08:13:29,960 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-08-31 08:13:29,961 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-08-31 08:14:08,054 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:08,067 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:08,068 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:08,069 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:08,070 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:08,183 INFO  --- [           main] poi.poiApplication                       : Starting poiApplication on 777 with PID 3013 (/Users/kaihatsu/Documents/Work/poi/build/classes/main started by kaihatsu in /Users/kaihatsu/Documents/Work/poi)
+2017-08-31 08:14:08,276 DEBUG --- [           main] poi.poiApplication                       : Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
+2017-08-31 08:14:08,277 INFO  --- [           main] poi.poiApplication                       : The following profiles are active: dev
+2017-08-31 08:14:08,940 INFO  --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f0b0a5e: startup date [Thu Aug 31 08:14:08 JST 2017]; root of context hierarchy
+2017-08-31 08:14:10,359 INFO  --- [           main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [transaction-context.xml]
+2017-08-31 08:14:11,161 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [applicationConfig: [classpath:/application-dev.properties]] PropertySource with search precedence immediately lower than [applicationConfigurationProperties]
+2017-08-31 08:14:11,162 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [applicationConfig: [classpath:/application.properties]] PropertySource with search precedence immediately lower than [applicationConfig: [classpath:/application-dev.properties]]
+2017-08-31 08:14:11,162 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Removing [applicationConfigurationProperties] PropertySource
+2017-08-31 08:14:11,162 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Removing [defaultProperties] PropertySource
+2017-08-31 08:14:11,371 INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-31 08:14:11,431 INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e5dcf8c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-31 08:14:12,638 INFO  --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-08-31 08:14:12,657 INFO  --- [           main] org.apache.catalina.core.StandardService : Starting service Tomcat
+2017-08-31 08:14:12,659 INFO  --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-08-31 08:14:12,995 INFO  --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/poi]    : Initializing Spring embedded WebApplicationContext
+2017-08-31 08:14:12,996 DEBUG --- [ost-startStop-1] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2017-08-31 08:14:12,996 INFO  --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4057 ms
+2017-08-31 08:14:13,269 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,270 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,271 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:13,271 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:13,272 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:13,299 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,300 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,300 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:13,301 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:13,301 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:13,321 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,321 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,322 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:13,322 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:13,322 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:13,345 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,346 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,346 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:13,347 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:13,347 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:13,371 INFO  --- [ost-startStop-1] o.s.b.web.servlet.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-31 08:14:13,372 INFO  --- [ost-startStop-1] o.s.b.web.servlet.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-31 08:14:13,372 INFO  --- [ost-startStop-1] o.s.b.web.servlet.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-31 08:14:13,372 INFO  --- [ost-startStop-1] o.s.b.web.servlet.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-31 08:14:13,374 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,375 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:13,375 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:13,375 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:13,376 DEBUG --- [ost-startStop-1] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:13,376 INFO  --- [ost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-08-31 08:14:13,376 INFO  --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-31 08:14:13,429 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+2017-08-31 08:14:14,542 INFO  --- [           main] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: c89b92f4-d5f8-4d86-a0d0-7b600feda59a
+
+2017-08-31 08:14:14,654 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,654 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,654 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,655 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,655 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,678 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,678 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,679 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,679 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,679 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,680 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,681 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,682 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,682 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,682 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,684 DEBUG --- [           main] poi.util.TokenUtility                    : セッションタイムアウト：900
+2017-08-31 08:14:14,738 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,738 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,739 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,739 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,739 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,757 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,758 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,758 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,759 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,759 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,782 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,782 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,782 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,782 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,783 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,800 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,800 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,801 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,801 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,801 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,815 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,815 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,816 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,816 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,817 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,829 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,830 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,830 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,830 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,831 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,840 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,840 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,840 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,840 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,841 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,865 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,866 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,866 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,867 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,868 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,878 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,878 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,878 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,879 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,879 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:14,896 INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c8f4bc7, org.springframework.security.web.context.SecurityContextPersistenceFilter@935d3f9, org.springframework.security.web.header.HeaderWriterFilter@307af381, org.springframework.security.web.csrf.CsrfFilter@7ab63838, org.springframework.security.web.authentication.logout.LogoutFilter@7c4b5ceb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5db0003d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12567179, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@712cd5d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@714e861f, org.springframework.security.web.session.SessionManagementFilter@6bf570c, org.springframework.security.web.access.ExceptionTranslationFilter@59e7564b]
+2017-08-31 08:14:14,897 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,898 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-08-31 08:14:14,898 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-08-31 08:14:14,899 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-08-31 08:14:14,899 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-08-31 08:14:15,129 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f0b0a5e: startup date [Thu Aug 31 08:14:08 JST 2017]; root of context hierarchy
+2017-08-31 08:14:15,251 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking for request mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f0b0a5e: startup date [Thu Aug 31 08:14:08 JST 2017]; root of context hierarchy
+2017-08-31 08:14:15,278 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 request handler methods found on class poi.controller.ErrorController: {public java.lang.String poi.controller.ErrorController.notFound()={[/404]}}
+2017-08-31 08:14:15,279 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/404]}" onto public java.lang.String poi.controller.ErrorController.notFound()
+2017-08-31 08:14:15,280 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 request handler methods found on class poi.controller.general.GeneralIndexController: {public java.lang.String poi.controller.general.GeneralIndexController.index()={[/general/],methods=[GET]}}
+2017-08-31 08:14:15,280 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/general/],methods=[GET]}" onto public java.lang.String poi.controller.general.GeneralIndexController.index()
+2017-08-31 08:14:15,281 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 request handler methods found on class poi.controller.general.RegisterController: {public java.lang.String poi.controller.general.RegisterController.register(org.springframework.ui.Model)={[/general/register],methods=[POST]}, public java.lang.String poi.controller.general.RegisterController.create(poi.form.member.LoginForm,org.springframework.ui.Model)={[/general/create],methods=[POST]}, public java.lang.String poi.controller.general.RegisterController.confirm(poi.form.general.UserForm,org.springframework.validation.BindingResult,org.springframework.ui.Model)={[/general/confirm],methods=[POST]}}
+2017-08-31 08:14:15,282 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/general/register],methods=[POST]}" onto public java.lang.String poi.controller.general.RegisterController.register(org.springframework.ui.Model)
+2017-08-31 08:14:15,283 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/general/create],methods=[POST]}" onto public java.lang.String poi.controller.general.RegisterController.create(poi.form.member.LoginForm,org.springframework.ui.Model)
+2017-08-31 08:14:15,284 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/general/confirm],methods=[POST]}" onto public java.lang.String poi.controller.general.RegisterController.confirm(poi.form.general.UserForm,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-08-31 08:14:15,285 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 request handler methods found on class poi.controller.member.LoginController: {public java.lang.String poi.controller.member.LoginController.logout(org.springframework.ui.Model)={[/member/logout],methods=[GET]}, public java.lang.String poi.controller.member.LoginController.displayLogin(org.springframework.ui.Model)={[/member/index],methods=[GET]}, public java.lang.String poi.controller.member.LoginController.login(poi.form.member.LoginForm,org.springframework.validation.BindingResult,org.springframework.ui.Model)={[/member/login],methods=[POST]}}
+2017-08-31 08:14:15,286 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/logout],methods=[GET]}" onto public java.lang.String poi.controller.member.LoginController.logout(org.springframework.ui.Model)
+2017-08-31 08:14:15,286 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/index],methods=[GET]}" onto public java.lang.String poi.controller.member.LoginController.displayLogin(org.springframework.ui.Model)
+2017-08-31 08:14:15,286 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/login],methods=[POST]}" onto public java.lang.String poi.controller.member.LoginController.login(poi.form.member.LoginForm,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-08-31 08:14:15,287 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 request handler methods found on class poi.controller.member.MemberTopController: {public java.lang.String poi.controller.member.MemberTopController.index(org.springframework.ui.Model)={[/member/top],methods=[GET]}, public java.lang.String poi.controller.member.MemberTopController.indexFromMember()={[/member/top],methods=[POST]}}
+2017-08-31 08:14:15,287 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/top],methods=[GET]}" onto public java.lang.String poi.controller.member.MemberTopController.index(org.springframework.ui.Model)
+2017-08-31 08:14:15,288 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/top],methods=[POST]}" onto public java.lang.String poi.controller.member.MemberTopController.indexFromMember()
+2017-08-31 08:14:15,289 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 request handler methods found on class poi.controller.member.SearchController: {public java.lang.String poi.controller.member.SearchController.displayArticleselectedByCategory(org.springframework.web.servlet.mvc.support.RedirectAttributes,java.lang.String,java.lang.String)={[/member/search],methods=[POST]}, public java.lang.String poi.controller.member.SearchController.selectedArticle(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String)={[/member/select],methods=[POST]}}
+2017-08-31 08:14:15,289 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/search],methods=[POST]}" onto public java.lang.String poi.controller.member.SearchController.displayArticleselectedByCategory(org.springframework.web.servlet.mvc.support.RedirectAttributes,java.lang.String,java.lang.String)
+2017-08-31 08:14:15,290 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/select],methods=[POST]}" onto public java.lang.String poi.controller.member.SearchController.selectedArticle(org.springframework.ui.Model,java.lang.String,java.lang.String,java.lang.String)
+2017-08-31 08:14:15,294 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 request handler methods found on class poi.controller.member.WorkController: {public java.lang.String poi.controller.member.WorkController.update(org.springframework.web.servlet.mvc.support.RedirectAttributes,poi.form.member.ArticleForm,java.lang.String)={[/member/update],methods=[POST]}, public java.lang.String poi.controller.member.WorkController.create(poi.form.member.ArticleForm,org.springframework.validation.BindingResult,org.springframework.web.servlet.mvc.support.RedirectAttributes)={[/member/create],methods=[POST]}, public java.lang.String poi.controller.member.WorkController.displayCreate(org.springframework.ui.Model)={[/member/create],methods=[GET]}, public java.lang.String poi.controller.member.WorkController.displayUpdate(poi.form.member.ArticleForm,org.springframework.ui.Model,java.lang.String)={[/member/update/{articleId}],methods=[GET]}, public java.lang.String poi.controller.member.WorkController.displayDelete(org.springframework.web.servlet.mvc.support.RedirectAttributes,java.lang.String)={[/member/delete/{articleId}],methods=[GET]}, public java.lang.String poi.controller.member.WorkController.displaySetting(poi.form.general.UserForm,org.springframework.ui.Model)={[/member/setting],methods=[GET]}, public java.lang.String poi.controller.member.WorkController.editSetting(poi.form.general.UserForm,org.springframework.validation.BindingResult,org.springframework.web.servlet.mvc.support.RedirectAttributes)={[/member/setting],methods=[POST]}}
+2017-08-31 08:14:15,294 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/update],methods=[POST]}" onto public java.lang.String poi.controller.member.WorkController.update(org.springframework.web.servlet.mvc.support.RedirectAttributes,poi.form.member.ArticleForm,java.lang.String)
+2017-08-31 08:14:15,294 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/create],methods=[POST]}" onto public java.lang.String poi.controller.member.WorkController.create(poi.form.member.ArticleForm,org.springframework.validation.BindingResult,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2017-08-31 08:14:15,295 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/create],methods=[GET]}" onto public java.lang.String poi.controller.member.WorkController.displayCreate(org.springframework.ui.Model)
+2017-08-31 08:14:15,295 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/update/{articleId}],methods=[GET]}" onto public java.lang.String poi.controller.member.WorkController.displayUpdate(poi.form.member.ArticleForm,org.springframework.ui.Model,java.lang.String)
+2017-08-31 08:14:15,296 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/delete/{articleId}],methods=[GET]}" onto public java.lang.String poi.controller.member.WorkController.displayDelete(org.springframework.web.servlet.mvc.support.RedirectAttributes,java.lang.String)
+2017-08-31 08:14:15,296 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/setting],methods=[GET]}" onto public java.lang.String poi.controller.member.WorkController.displaySetting(poi.form.general.UserForm,org.springframework.ui.Model)
+2017-08-31 08:14:15,296 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/member/setting],methods=[POST]}" onto public java.lang.String poi.controller.member.WorkController.editSetting(poi.form.general.UserForm,org.springframework.validation.BindingResult,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2017-08-31 08:14:15,300 DEBUG --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 request handler methods found on class org.springframework.boot.autoconfigure.web.BasicErrorController: {public org.springframework.http.ResponseEntity org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)={[/error]}, public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/error],produces=[text/html]}}
+2017-08-31 08:14:15,301 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-31 08:14:15,302 INFO  --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-31 08:14:15,366 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Looking for URL mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f0b0a5e: startup date [Thu Aug 31 08:14:08 JST 2017]; root of context hierarchy
+2017-08-31 08:14:15,366 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+2017-08-31 08:14:15,366 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+2017-08-31 08:14:15,366 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerProcessor': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerFactory': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'poiApplication': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceConfiguration': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'poiProperites': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webApplicationConfiguration': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webSecurityConfig': no URL paths identified
+2017-08-31 08:14:15,367 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorController': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'generalIndexController': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'registerController': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'loginController': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'memberTopController': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'searchController': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'workController': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'articleTDaoImpl': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'categoryTDaoImpl': no URL paths identified
+2017-08-31 08:14:15,368 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'userTDaoImpl': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'articleService': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'userService': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'scopedTarget.userDto': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'userDto': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'scopedTarget.sessionUserDto': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'sessionUserDto': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSource': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'sessionInterceptor': no URL paths identified
+2017-08-31 08:14:15,369 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'interceptor': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webMvcConfigurerAdapter': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'authenticationManagerBuilder': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'enableGlobalAuthenticationAutowiredConfigurer': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'initializeUserDetailsBeanManagerConfigurer': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'initializeAuthenticationProviderBeanManagerConfigurer': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'delegatingApplicationListener': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webSecurityExpressionHandler': no URL paths identified
+2017-08-31 08:14:15,370 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springSecurityFilterChain': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'privilegeEvaluator': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'autowiredWebSecurityConfigurersIgnoreParents': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'objectPostProcessor': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestDataValueProcessor': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'accessDeniedHandler': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'containerCustomizer': no URL paths identified
+2017-08-31 08:14:15,371 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'txAdvice': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'pointcutController': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.MessageSourceAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageSource': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store': no URL paths identified
+2017-08-31 08:14:15,372 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,374 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'propertySourcesPlaceholderConfigurer': no URL paths identified
+2017-08-31 08:14:15,374 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration': no URL paths identified
+2017-08-31 08:14:15,374 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'standardJacksonObjectMapperBuilderCustomizer': no URL paths identified
+2017-08-31 08:14:15,374 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties': no URL paths identified
+2017-08-31 08:14:15,374 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapper': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jsonComponentModule': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration$TomcatWebSocketConfiguration': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'websocketContainerCustomizer': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatEmbeddedServletContainerFactory': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'embeddedServletContainerCustomizerBeanPostProcessor': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageRegistrarBeanPostProcessor': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServlet': no URL paths identified
+2017-08-31 08:14:15,375 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.mvc-org.springframework.boot.autoconfigure.web.WebMvcProperties': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorAttributes': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'basicErrorController': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageCustomizer': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'conventionErrorViewResolver': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'preserveErrorControllerTargetClassPostProcessor': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcPathMatcher': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+2017-08-31 08:14:15,376 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'resourceHandlerMapping': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcConversionService': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcValidator': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'handlerExceptionResolver': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcViewResolver': no URL paths identified
+2017-08-31 08:14:15,377 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+2017-08-31 08:14:15,378 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconHandlerMapping': no URL paths identified
+2017-08-31 08:14:15,378 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconRequestHandler': no URL paths identified
+2017-08-31 08:14:15,378 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+2017-08-31 08:14:15,378 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultViewResolver': no URL paths identified
+2017-08-31 08:14:15,378 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewResolver': no URL paths identified
+2017-08-31 08:14:15,378 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'welcomePageHandlerMapping': no URL paths identified
+2017-08-31 08:14:15,379 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestContextFilter': no URL paths identified
+2017-08-31 08:14:15,379 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,379 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+2017-08-31 08:14:15,379 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpPutFormContentFilter': no URL paths identified
+2017-08-31 08:14:15,379 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mbeanExporter': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'objectNamingStrategy': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mbeanServer': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springApplicationAdminRegistrar': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$JdkDynamicAutoProxyConfiguration': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$TomcatDataSourcePoolMetadataProviderConfiguration': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatPoolDataSourceMetadataProvider': no URL paths identified
+2017-08-31 08:14:15,380 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializer': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializerPostProcessor': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'persistenceExceptionTranslationPostProcessor': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'stringHttpMessageConverter': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.http.encoding-org.springframework.boot.autoconfigure.web.HttpEncodingProperties': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration': no URL paths identified
+2017-08-31 08:14:15,381 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageConverters': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.security.AuthenticationManagerConfiguration$AuthenticationManagerConfigurationListener': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.security.AuthenticationManagerConfiguration': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'authenticationManager': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootAuthenticationConfigurerAdapter': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.security.BootGlobalAuthenticationConfiguration': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'bootGlobalAuthenticationConfigurationAdapter': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'authenticationEventPublisher': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'securityProperties': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,382 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionAdvisor': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionAttributeSource': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionInterceptor': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionalEventListenerFactory': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$TransactionManagementConfiguration': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionManager': no URL paths identified
+2017-08-31 08:14:15,383 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,384 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,384 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jdbcTemplate': no URL paths identified
+2017-08-31 08:14:15,384 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'namedParameterJdbcTemplate': no URL paths identified
+2017-08-31 08:14:15,384 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafResourceHandlingConfig': no URL paths identified
+2017-08-31 08:14:15,384 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafWebLayoutConfiguration': no URL paths identified
+2017-08-31 08:14:15,385 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'layoutDialect': no URL paths identified
+2017-08-31 08:14:15,386 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration': no URL paths identified
+2017-08-31 08:14:15,386 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'templateEngine': no URL paths identified
+2017-08-31 08:14:15,386 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$Thymeleaf2Configuration$Thymeleaf2ViewResolverConfiguration': no URL paths identified
+2017-08-31 08:14:15,386 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'thymeleafViewResolver': no URL paths identified
+2017-08-31 08:14:15,386 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$Thymeleaf2Configuration$DefaultTemplateResolverConfiguration': no URL paths identified
+2017-08-31 08:14:15,386 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'thymeleafResourceResolver': no URL paths identified
+2017-08-31 08:14:15,386 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultTemplateResolver': no URL paths identified
+2017-08-31 08:14:15,387 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$Thymeleaf2Configuration': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.thymeleaf-org.springframework.boot.autoconfigure.thymeleaf.ThymeleafProperties': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.security.SecurityFilterAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'securityFilterChainRegistration': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionTemplate': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'characterEncodingFilter': no URL paths identified
+2017-08-31 08:14:15,388 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'localeCharsetMappingsCustomizer': no URL paths identified
+2017-08-31 08:14:15,389 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,389 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartConfigElement': no URL paths identified
+2017-08-31 08:14:15,390 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartResolver': no URL paths identified
+2017-08-31 08:14:15,390 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.http.multipart-org.springframework.boot.autoconfigure.web.MultipartProperties': no URL paths identified
+2017-08-31 08:14:15,390 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,390 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'serverProperties': no URL paths identified
+2017-08-31 08:14:15,390 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'duplicateServerPropertiesDetector': no URL paths identified
+2017-08-31 08:14:15,390 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration$RestTemplateConfiguration': no URL paths identified
+2017-08-31 08:14:15,391 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'restTemplateBuilder': no URL paths identified
+2017-08-31 08:14:15,391 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration': no URL paths identified
+2017-08-31 08:14:15,391 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'autoConfigurationReport': no URL paths identified
+2017-08-31 08:14:15,391 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springApplicationArguments': no URL paths identified
+2017-08-31 08:14:15,391 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootBanner': no URL paths identified
+2017-08-31 08:14:15,391 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootLoggingSystem': no URL paths identified
+2017-08-31 08:14:15,392 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'environment': no URL paths identified
+2017-08-31 08:14:15,392 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemProperties': no URL paths identified
+2017-08-31 08:14:15,392 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemEnvironment': no URL paths identified
+2017-08-31 08:14:15,392 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+2017-08-31 08:14:15,392 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'applicationEventMulticaster': no URL paths identified
+2017-08-31 08:14:15,392 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'servletContext': no URL paths identified
+2017-08-31 08:14:15,392 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextParameters': no URL paths identified
+2017-08-31 08:14:15,392 DEBUG --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextAttributes': no URL paths identified
+2017-08-31 08:14:15,423 INFO  --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-31 08:14:15,424 INFO  --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-31 08:14:15,461 DEBUG --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : Looking for exception mappings: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f0b0a5e: startup date [Thu Aug 31 08:14:08 JST 2017]; root of context hierarchy
+2017-08-31 08:14:15,518 INFO  --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-31 08:14:16,912 INFO  --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-08-31 08:14:16,934 DEBUG --- [           main] o.s.w.s.resource.ResourceUrlProvider     : Looking for resource handler mappings
+2017-08-31 08:14:16,935 DEBUG --- [           main] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@485451d8]
+2017-08-31 08:14:16,935 DEBUG --- [           main] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@35e07e19]
+2017-08-31 08:14:16,935 DEBUG --- [           main] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/**", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@a1e912f]
+2017-08-31 08:14:17,032 INFO  --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-08-31 08:14:17,037 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [server.ports] PropertySource with highest search precedence
+2017-08-31 08:14:17,047 INFO  --- [           main] poi.poiApplication                       : Started poiApplication in 9.811 seconds (JVM running for 11.073)

@@ -19,33 +19,30 @@ public class UserDto implements Serializable {
     /** ID */
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer id;
+	private Integer id;
 	
 	/** ユーザー名 */
-	public String username;
+	private String username;
 	
 	/** メールアドレス */
-    public String mail;
+	private String mail;
     
     /** パスワード */
-    public String password;
+	private String password;
     
     /** パスワード失敗回数 */
-    public Integer passwordFailedCount;
+	private Integer passwordFailedCount;
 
     /** 生年月日 */
-    public String birthday;
+	private String birthday;
     
     /** 作成日時 */
-    public LocalDateTime createdAt;
+	private LocalDateTime createdAt;
 
     /** 更新日時 */
-    public LocalDateTime updatedAt;
+	private LocalDateTime updatedAt;
 
-    /** 削除日時 */
-    public LocalDateTime deletedAt;
-
-	public Integer getId() {
+    public Integer getId() {
 		return id;
 	}
 
@@ -117,8 +114,7 @@ public class UserDto implements Serializable {
 		this.deletedAt = deletedAt;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
+	/** 削除日時 */
+	private LocalDateTime deletedAt;
+	
 }

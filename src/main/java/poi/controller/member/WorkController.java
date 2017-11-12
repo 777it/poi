@@ -2,7 +2,6 @@ package poi.controller.member;
 
 import java.util.List;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,14 +18,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
 import poi.domain.entity.ArticleT;
+import poi.domain.entity.CategoryT;
 import poi.domain.entity.UserT;
 import poi.domain.service.ArticleService;
+import poi.domain.service.CategoryService;
 import poi.domain.service.UserService;
 import poi.dto.general.UserDto;
 import poi.dto.member.ArticleTDto;
+import poi.dto.member.CategoryTDto;
 import poi.dto.member.SessionUserDto;
 import poi.form.general.UserForm;
 import poi.form.member.ArticleForm;
+import poi.validator.seq.All;
 
 @Transactional
 @Controller
@@ -36,6 +39,8 @@ public class WorkController extends BaseController {
 	protected UserService userService;
 	@Autowired
 	protected ArticleService articleService;
+	@Autowired
+	protected CategoryService categoryService;
 	@Autowired
 	protected SessionUserDto sessionUserDto;
 
@@ -48,11 +53,12 @@ public class WorkController extends BaseController {
 	@RequestMapping(value = UrlConstant.Controller.Member.CREATE, method = RequestMethod.GET)
 	public String displayCreate(Model model) {
 		String username = sessionUserDto.getUsername();
-		List<String> categoryList = articleService.selectCategory(username);
+		List<CategoryT> categoryList = articleService.selectCategory(username);
 		
 		// ユーザーに紐づくカテゴリを表示
 		model.addAttribute("username", username);
 		model.addAttribute("categoryList", categoryList);
+		model.addAttribute("articleForm", new ArticleForm());	
 		return UrlConstant.Page.Member.CREATE;
 	}
 	
@@ -63,7 +69,18 @@ public class WorkController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = UrlConstant.Controller.Member.CREATE, method = RequestMethod.POST)
-	public String create(@Validated @ModelAttribute ArticleForm articleForm, BindingResult result, RedirectAttributes attribute) {
+	public String create(@Validated(All.class) @ModelAttribute  ArticleForm articleForm, BindingResult result, Model model, RedirectAttributes attribute) {
+		// エラーがある場合
+		if (result.hasErrors()) {
+			String username = sessionUserDto.getUsername();
+			List<CategoryT> categoryList = articleService.selectCategory(username);
+			model.addAttribute("username", username);
+			model.addAttribute("categoryList", categoryList);
+			model.addAttribute("title", articleForm.getTitle());
+			model.addAttribute("body", articleForm.getBody());
+			
+			return UrlConstant.Page.Member.CREATE;
+		}
 		ArticleTDto articleTDto = new ArticleTDto();
 		articleTDto.username = articleForm.getUsername();
 		articleTDto.title = articleForm.getTitle();
@@ -72,7 +89,7 @@ public class WorkController extends BaseController {
 		articleTDto.level = Integer.parseInt(articleForm.getLevel());
 
 		articleService.registerArticle(articleTDto);
-		attribute.addFlashAttribute("message", "新規メモ完成！");
+		attribute.addFlashAttribute("message", "The note has been created.");
 		return UrlConstant.Controller.Member.REDIRECT_TOP;
 	}	
 	
@@ -81,7 +98,7 @@ public class WorkController extends BaseController {
 	@RequestMapping(value = UrlConstant.Controller.Member.UPDATE_ID, method = RequestMethod.GET)
 	public String displayUpdate(@ModelAttribute ArticleForm articleForm, Model model, @PathVariable("articleId") String articleId) {
 		String username = sessionUserDto.getUsername();
-		List<String> categoryList = articleService.selectCategory(username);
+		List<CategoryT> categoryList = articleService.selectCategory(username);
 		
 		// ユーザーに紐づくカテゴリを表示
 		model.addAttribute("username", username);
@@ -103,7 +120,12 @@ public class WorkController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = UrlConstant.Controller.Member.UPDATE, method = RequestMethod.POST)
-	public String update(RedirectAttributes attribute, @ModelAttribute ArticleForm articleForm, @RequestParam("articleId") String articleId) {
+	public String update(@Validated(All.class) @ModelAttribute  ArticleForm articleForm, BindingResult result, RedirectAttributes attribute, @RequestParam("articleId") String articleId) {
+		// エラーがある場合
+		if (result.hasErrors()) {
+			// TODO エラー内容が引き継がれない
+			return UrlConstant.Controller.Member.UPDATE;
+		}
 		ArticleTDto articleTDto = new ArticleTDto();
 		articleTDto.username = articleForm.getUsername();
 		articleTDto.title = articleForm.getTitle();
@@ -112,7 +134,7 @@ public class WorkController extends BaseController {
 		articleTDto.level = Integer.parseInt(articleForm.getLevel());
 		
 		articleService.updateArticle(articleTDto, articleId);
-		attribute.addFlashAttribute("message", "メモを更新！");
+		attribute.addFlashAttribute("message", "The note has been updated.");
 		return UrlConstant.Controller.Member.REDIRECT_TOP;
 	}	
 	
@@ -125,22 +147,38 @@ public class WorkController extends BaseController {
 	@RequestMapping(value = UrlConstant.Controller.Member.DELETE, method = RequestMethod.GET)
 	public String displayDelete(RedirectAttributes attribute, @PathVariable("articleId") String articleId) {
 		articleService.deleteArticle(articleId);
-		attribute.addFlashAttribute("message", "記事を削除！");
+		attribute.addFlashAttribute("message", "The note has been deleted.");
 		return UrlConstant.Controller.Member.REDIRECT_TOP;
 	}
 	
 	/**
 	 * ユーザー設定画面へ遷移 */
 	@RequestMapping(value = UrlConstant.Controller.Member.SETTING, method = RequestMethod.GET)
-	public String displaySetting(@ModelAttribute UserForm userForm, Model model) {
+	public String displaySetting(Model model) {
 		// ユーザー情報を取得
 		String username = sessionUserDto.getUsername();
 		UserT userInfo = userService.selectByUserInfo(username);
+		
+		String birthday = userInfo.birthday;
+		
+		//誕生日が登録されてる場合
+		if (!birthday.isEmpty()) {
+			//誕生日を年月日に分ける
+			String month = birthday.substring(4, 6); 
+			String day = birthday.substring(6, 8); 
+			String year = birthday.substring(0, 4);	
+			
+			//月の数字を英語変換
+			month = getMonthEn(month);
+			
+			birthday = month + " " + day + "th " + year;
+			
+		}
 		UserDto userDto = new UserDto();
-		userDto.username = userInfo.username;
-		userDto.mail = userInfo.mail;
-		userDto.birthday = userInfo.birthday;
-		userDto.password = userInfo.password;
+		userDto.setUsername(userInfo.username);
+		userDto.setMail(userInfo.mail);
+		userDto.setPassword(userInfo.password);
+		userDto.setBirthday(birthday);
 		
 		model.addAttribute("userForm", new UserForm());
 		model.addAttribute("userInfo", userDto);
@@ -154,23 +192,152 @@ public class WorkController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = UrlConstant.Controller.Member.SETTING, method = RequestMethod.POST)
-	public String editSetting(@Validated @ModelAttribute UserForm userForm, BindingResult result, RedirectAttributes attribute) {
+	public String editSetting(@Validated(All.class) @ModelAttribute UserForm userForm, BindingResult result, Model model, RedirectAttributes attribute) {
 		// エラーがある場合
 		if (result.hasErrors()) {
-			// TODO エラー内容が引き継がれない
-			return UrlConstant.Controller.Member.REDIRECT_SETTING;
+			// ユーザー情報を取得
+			String username = sessionUserDto.getUsername();
+			UserT userInfo = userService.selectByUserInfo(username);
+			
+			String birthday = userInfo.birthday;
+			
+			//誕生日が登録されてる場合
+			if (!birthday.isEmpty()) {
+				//誕生日を年月日に分ける
+				String month = birthday.substring(4, 6); 
+				String day = birthday.substring(6, 8); 
+				String year = birthday.substring(0, 4);	
+				
+				//月の数字を英語変換
+				month = getMonthEn(month);
+				
+				birthday = month + " " + day + "th " + year;
+				
+			}
+			UserDto userDto = new UserDto();
+			userDto.setUsername(userInfo.username);
+			userDto.setMail(userInfo.mail);
+			userDto.setPassword(userInfo.password);
+			userDto.setBirthday(birthday);
+			
+			model.addAttribute("userInfo", userDto);
+			//エラーで戻った時
+			model.addAttribute("name", userForm.getUsername());
+			model.addAttribute("mail", userForm.getMail());
+			
+			return UrlConstant.Page.Member.SETTING;
 		}
 		UserDto userDto = new UserDto();
-		userDto.username = userForm.getUsername();
-		userDto.mail = userForm.getMail();
-		userDto.birthday = userForm.getBirthday();
-		userDto.password = userForm.getPassword();
+		String date = userForm.getYear() + userForm.getMonth() + userForm.getDay();
+		userDto.setUsername(userForm.getUsername());
+		userDto.setMail(userForm.getMail());
+		userDto.setBirthday(date);
+		userDto.setPassword(userForm.getPassword());
 		userService.editUser(userDto);
 		// ユーザー名を変更した可能性があるので新たにセッションユーザーをセット
-		userService.selectUserAndSetSession(userDto.username);
-		attribute.addFlashAttribute("message", "ユーザー設定を変更しました!");
+		userService.selectUserAndSetSession(userDto.getUsername());
+		attribute.addFlashAttribute("message", "Account updated.");
 		return UrlConstant.Controller.Member.REDIRECT_TOP;
 	}
+	/**
+	 * ヘルプ画面へ遷移
+	 * 
+	 * @param model
+	 * @return ヘルプ画面
+	 */
+	@RequestMapping(value = UrlConstant.Controller.Member.HELP, method = RequestMethod.GET)
+	public String displayHelp(Model model) {
+		return UrlConstant.Page.Member.HELP;
+	}
 
+	/**
+	 * カテゴリ追加
+	 * 
+	 * @param model
+	 * @return 
+	 */
+	@RequestMapping(value = UrlConstant.Controller.Member.ADD_CATEGORY, method = RequestMethod.GET)
+	public String addCategory(@PathVariable("category") String category) {
+		// ユーザー情報を取得
+		String username = sessionUserDto.getUsername();
+		
+		CategoryTDto categoryTDto = new CategoryTDto();
+		categoryTDto.username = username;
+		categoryTDto.category = category;
+		categoryService.register(categoryTDto);
+		return UrlConstant.Controller.Member.REDIRECT_CREATE;
+	}
+	/**
+	 *カテゴリ設定画面へ遷移 */
+	@RequestMapping(value = UrlConstant.Controller.Member.SETTING_CATEGORY, method = RequestMethod.GET)
+	public String displaySettingCategory(Model model) {
+		String username = sessionUserDto.getUsername();
+		List<CategoryT> categoryList = articleService.selectCategory(username);
+		
+		// ユーザーに紐づくカテゴリを表示
+		model.addAttribute("categoryList", categoryList);
+		return UrlConstant.Page.Member.SETTING_CATEGORY;
+	}
+	/**
+	 *選択されたカテゴリを削除する
+	 * @param model
+	 * @param categoryId
+	 * @return
+	 */
+	@RequestMapping(value = UrlConstant.Controller.Member.DELETE_CATEGORY, method = RequestMethod.GET)
+	public String displayDelete(Model model, @PathVariable("categoryId") String categoryId) {
+		categoryService.deletecategory(categoryId);
+		String username = sessionUserDto.getUsername();
+		List<CategoryT> categoryList = articleService.selectCategory(username);
+		
+		// ユーザーに紐づくカテゴリを表示
+		model.addAttribute("categoryList", categoryList);
+		return UrlConstant.Page.Member.SETTING_CATEGORY;
+	}
+	private String getMonthEn(String month) {
+		String monthEn;
+		switch (month) {
+		case "01":
+			monthEn = "January";
+			break;
+		case "02":
+			monthEn = "February";
+			break;
+		case "03":
+			monthEn = "March";
+			break;
+		case "04":
+			monthEn = "April";
+			break;
+		case "05":
+			monthEn = "May";
+			break;
+		case "06":
+			monthEn = "June";
+			break;
+		case "07":
+			monthEn = "July";
+			break;
+		case "08":
+			monthEn = "August";
+			break;
+		case "09":
+			monthEn = "September";
+			break;
+		case "10":
+			monthEn = "October";
+			break;
+		case "11":
+			monthEn = "November";
+			break;
+		case "12":
+			monthEn = "December";
+			break;
+		default:
+			monthEn = "";
+			break;
+		}
+		return monthEn;
+	}
 
 }

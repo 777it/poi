@@ -28,7 +28,7 @@ public class LoginController extends BaseController {
 	@Autowired
 	protected UserService userService;
 	@Autowired
-	protected UserDto sessionRegisterDto;
+	protected UserDto userDto;
 	
 	/**
 	 * ログイン画面初期表示 */
@@ -56,7 +56,7 @@ public class LoginController extends BaseController {
 		String password;
 
 		// 1. ログインボタンから
-		if (StringUtils.isEmpty(sessionRegisterDto.getUsername())) {
+		if (StringUtils.isEmpty(userDto.getUsername())) {
 
 			// エラーがある場合
 			if (result.hasErrors()) {
@@ -67,8 +67,8 @@ public class LoginController extends BaseController {
 
 		// 2. 新規登録画面から
 		} else {
-			loginId = sessionRegisterDto.getUsername();
-			password = sessionRegisterDto.getPassword();
+			loginId = userDto.getUsername();
+			password = userDto.getPassword();
 		}
 
 		logger.debug("Username:" + loginId);
@@ -97,7 +97,7 @@ public class LoginController extends BaseController {
 
 			//セッションが破棄されたことを確認
 			System.out.println(loginId);
-			System.out.println(sessionRegisterDto.getUsername());
+			System.out.println(userDto.getUsername());
 			
 			// ユーザー情報セッション詰め替え
 			userService.selectUserAndSetSession(loginId);

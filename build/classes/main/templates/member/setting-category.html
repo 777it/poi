@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>poi</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/materialize.css}"
+	media="screen,projection" />
+<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/materialize.js}"></script>
+<script type="text/javascript" th:src="@{/js/poi.js}"></script>
+
+</head>
+<body>
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="top.html" th:href="@{/member/top}">MyPage</a></li>
+		<li><a href="setting.html" th:href="@{/member/setting}">Setting</a></li>
+		<li class="divider"></li>
+		<li><a href="" th:name="@{/member/logout}"
+			onclick="confirmLogout(this); return false;">Logout</a></li>
+	</ul>
+	<nav>
+		<div class="nav-wrapper red darken-4">
+			&nbsp;&nbsp;&nbsp; <a href="http://localhost:8080/poi/general/"
+				class="brand-logo">Poi</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<!-- Dropdown Trigger -->
+				<li><a class="waves-effect waves-light btn" href="create.html"
+					th:href="@{/member/create}"><i class="material-icons right">note_add</i>Create</a></li>
+				<li><a class="dropdown-button" href="#!"
+					data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col s3"></div>
+		<div class="col s6">
+
+			<h1>Setting</h1>
+			<nav>
+				<div class="nav-wrapper #e0e0e0 grey lighten-2">
+					<ul class="right hide-on-med-and-down">
+						<li><a href="setting.html" th:href="@{/member/setting}">Account</a></li>
+						<li class="active"><a href="setting-category.html"
+							th:href="@{/member/setting-category}">Category</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="col s12 m12">
+				<div th:each="category : ${categoryList}">
+					<div class="card-panel">
+						<a href="" th:name="@{/member/delete-category/__${category.id}__}"
+							onclick="confirmDelete(this); return false;"><img
+							src="../images/icon-delete.png" id="deleteArticle"
+							th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" /></a> <span
+							th:text="${category.category}"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col s3"></div>
+		</div>
+	</div>
+</body>
+</html>

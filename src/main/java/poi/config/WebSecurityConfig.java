@@ -60,6 +60,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				// 記事検索画面(リダイレクト)
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.REDIRECT_SEARCH),
 			    // 記事作成画面
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.REDIRECT_CREATE),
+				// 記事作成画面(リダイレクト)
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.CREATE),
 				// 記事編集画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.UPDATE),
@@ -69,10 +71,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.DELETE),
 				// 操作完了画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.COMPLETE),
-				// 設定画面
+				// 設定画面(アカウント)
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.SETTING),
-				// 設定画面(リダイレクト)
-				new AntPathRequestMatcher(UrlConstant.Controller.Member.REDIRECT_SETTING),
+				// 設定画面(カテゴリ)
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.SETTING_CATEGORY),
+				// ヘルプ画面
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.HELP),
 				// ログアウト画面
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.LOGOUT),
 				// ログアウト画面（リダイレクト）
@@ -81,7 +85,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.REDIRECT_TOP),
 				// ログイン画面（フォワード）
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.FORWARD_LOGIN),
-
+				
+				// カテゴリ追加
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.ADD_CATEGORY),
+				// カテゴリ追加
+				new AntPathRequestMatcher(UrlConstant.Controller.Member.DELETE_CATEGORY),
 				
 				// ルート
 				new AntPathRequestMatcher(UrlConstant.Controller.GENERAL + UrlConstant.SLASH),

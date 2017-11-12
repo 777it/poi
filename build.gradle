@@ -146,6 +146,8 @@ compile("org.projectlombok:lombok:1.14.8")
 
 compile group: 'com.mortennobel', name: 'java-image-scaling', version: '0.8.6'
 
+compile('org.thymeleaf.extras:thymeleaf-extras-java8time:2.1.0.RELEASE')
+
 providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
 
 

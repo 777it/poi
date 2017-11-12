@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<title>poi</title>
-</head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+	<title>poi</title>
+	
+	<link rel="stylesheet" th:href="@{/css/style-index.css}" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" th:href="@{/css/materialize.css}" media="screen,projection"/>
+	<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/materialize.js}"></script>
+	
+	</head>
 <body>
-	<h1>Please register first!</h1>
-	<form th:action="@{/member/index}" method="get">
-		<input type="submit" value="Login" />
-	</form>
-	<form th:action="@{/general/register}" method="post">
-		<input type="submit" value="Click!" />
-    </form>
+  <nav>
+    <div class="nav-wrapper red darken-4">
+      &nbsp;&nbsp;&nbsp;
+      <a href="http://localhost:8080/poi/general/" class="brand-logo">Poi</a>
+       <ul id="nav-mobile" class="right">
+    	<li><form th:action="@{/member/index}" method="get" name="loginForm"><a href="javascript:document.loginForm.submit()" class="waves-effect waves-light btn">Login</a></form></li>
+       </ul>
+    </div>
+  </nav>
+		  <div class="container">
+		        <h1 class="header center teal-text text-lighten-2">Please register first!</h1>
+		        <div class="row center">
+		          <i class="large material-icons">search</i>
+		          <h5>Poi can start using it as soon as you register as a member</h5>
+		        </div>
+		        <div class="row center">
+		          <form th:action="@{/general/register}" method="post" name="registerForm"><a href="javascript:document.registerForm.submit()" id="register-button" class="btn-large waves-effect waves-light teal lighten-1">Sign Up!</a></form>
+		        </div>
+		   </div>
+
 
 </body>
 

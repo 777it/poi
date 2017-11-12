@@ -6,6 +6,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import poi.validator.seq.First;
+import poi.validator.seq.Second;
+
 public class ArticleForm implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -13,12 +16,12 @@ public class ArticleForm implements Serializable {
 	private String username;
 	
 	/** タイトル */
-	@NotBlank(message = "{error.NotBlank}")
-	@Size(max = 20, message = "{error.Size}")
+	@NotBlank(message = "{error.NotBlank}", groups = First.class)
+	@Size(max = 20, message = "{error.Size}", groups = Second.class)
 	private String title;
 	
 	/** 本文 */
-	@NotBlank(message = "{error.NotBlank}")
+	@NotBlank(message = "{error.NotBlank}", groups = First.class)
 	private String body;
 
 	/** カテゴリ */

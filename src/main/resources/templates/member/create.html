@@ -2,45 +2,98 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>poi</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/materialize.css}"
+	media="screen,projection" />
+<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/materialize.js}"></script>
+<script type="text/javascript" th:src="@{/js/poi.js}"></script>
 </head>
 <body>
-	<h1>Create</h1>
-	<form th:action="@{/member/create}" method="post">
-	<input type="hidden" name="username" th:value="${username}" />
-	<table>
-		<tr>
-			<td>タイトル</td><td><input type="text" id="title" name="title" /></td>
-		</tr>
-		<tr>
-			<td>本文</td><td><textarea id="body" name="body"></textarea></td>
-		</tr>
-		<tr>
-			<td>カテゴリ</td>
-			<td>
-				<select class="category" name="category">
-					<option th:each="category : ${categoryList}"><span th:text="${category}"></span></option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>レベル</td>
-			<td>
-				<select class="level" name="level">
-					<option value="0">Level</option>
-					<option value="1">Level1</option>
-					<option value="2">Level2</option>
-					<option value="3">Level3</option>
-					<option value="4">Level4</option>
-					<option value="5">Level5</option>
-				</select>	
-			</td>
-		</tr>
-	</table>		
-		<input type="submit" value="create!" />
-	</form>
-	<form th:action="@{/member/top}" method="get">
-		<input type="submit" value="back" />
-	</form>
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="top.html" th:href="@{/member/top}">MyPage</a></li>
+		<li><a href="setting.html" th:href="@{/member/setting}">Setting</a></li>
+		<li class="divider"></li>
+		<li><a href="" th:name="@{/member/logout}"
+			onclick="confirmLogout(this); return false;">Logout</a></li>
+	</ul>
+	<nav>
+		<div class="nav-wrapper red darken-4">
+			&nbsp;&nbsp;&nbsp; 
+			<a href="http://localhost:8080/poi/general/" class="brand-logo">Poi</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<!-- Dropdown Trigger -->
+				<li><a class="waves-effect waves-light btn" href="create.html"
+					th:href="@{/member/create}"><i class="material-icons right">note_add</i>Create</a></li>
+				<li><a class="dropdown-button" href="#!"
+					data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col s3"></div>
+		<div class="col s6">
+			<h1>Create</h1>
+			<form th:action="@{/member/create}" th:object="${articleForm}"
+				name="articleForm" method="post">
+				<input type="hidden" name="username" th:value="${username}" />
+				<ul>
+					<li th:each="error : ${#fields.detailedErrors()}"><span
+						class="red-text text-darken-4" th:text="${error.message}">Error
+							message</span></li>
+				</ul>
+				<div class="col s12">
+					<span>Title</span><span class="red-text text-darken-4">*</span> <input
+						type="text" id="title" name="title" th:field="*{title}" />
+				</div>
+				<div class="col s12">
+					<span>Body</span><span class="red-text text-darken-4">*</span>
+					<textarea id="body" name="body" rows="4" th:field="*{body}" ></textarea>
+				</div>
+				<div class="col s8">
+					<span>Category</span>&nbsp; <a href=""
+						th:name="@{/member/add-category}"
+						onclick="addCategory(this); return false;">
+						<label class="btn-floating waves-effect waves-light red darken-2"
+						id="create-category"><i class="material-icons">add</i></label></a>
+				</div>
+				<div class="col s4">
+					<div id="boxContainer">
+						<div class="box">
+							<select class="category" name="category">
+								<option th:each="category : ${categoryList}"><span
+										th:text="${category.category}"></span>
+								</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col s8">
+					<span>Level</span>
+				</div>
+				<div class="col s4">
+					<select class="level" name="level">
+						<option value="1">Level1</option>
+						<option value="2">Level2</option>
+						<option value="3">Level3</option>
+						<option value="4">Level4</option>
+						<option value="5">Level5</option>
+					</select>
+				</div>
+				<button class="btn waves-effect waves-light" id="create"
+					type="submit">Create!</button>
+			</form>
+			<form th:action="@{/member/top}" method="get">
+				<input type="submit" class="backBtn" value="back" />
+			</form>
+		</div>
+		<div class="col s3"></div>
+	</div>
 </body>
 </html>

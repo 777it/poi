@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<title>poi</title>
-<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+	<title>poi</title>
+	
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" th:href="@{/css/materialize.css}" media="screen,projection"/>
+	<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/materialize.js}"></script>
 <script type="text/javascript">
 function confirmDelete ( obj ) {
     if(!confirm('本当に削除しますか？')){
@@ -16,13 +22,13 @@ function confirmDelete ( obj ) {
     }
 }
 function confirmLogout ( obj ) {
-    if(!confirm('本当に削除しますか？')){
+    if(!confirm('本当にログアウトしますか？')){
         /* キャンセルの時の処理 */
         return false;
     }else{
     	/* OKの時の処理 */
-    	var logputUrl = obj.getAttribute('name');
-    	location.href =　logputUrl;
+    	var logoutUrl = obj.getAttribute('name');
+    	location.href =　logoutUrl;
     }	
 }
 </script>
@@ -42,55 +48,69 @@ height: 32px;
 </style>
 </head>
 <body>
-	<h1><a href="top.html" th:href="@{/member/top}">Poi</a></h1>
-	<form th:action="@{/member/create}" method="get">
-		<input type="submit" value="create!" />
-	</form>
-	<a href="setting.html" th:href="@{/member/setting}">ユーザー設定</a>
-	<a href="">ヘルプ(未実装)</a>
-	<a href="" th:name="@{/member/logout}" onclick="confirmLogout(this); return false;">ログアウト</a>	
-	<hr />
-	<div th:text="${message}"></div>
-	<div class="count">
-		You have <span th:text="${articleCount}">0</span> memo...
-	</div>	
-	<form th:action="@{/member/search}" method="post">
-		<select class="category" name="category">
-			<option value="">Category</option>
-			<option th:each="category : ${categoryList}"><span th:text="${category}"></span></option>
-		</select>
-		<select class="level" name="level">
-			<option value="0">Level</option>
-			<option value="1">Level1</option>
-			<option value="2">Level2</option>
-			<option value="3">Level3</option>
-			<option value="4">Level4</option>
-			<option value="5">Level5</option>
-		</select>	
-		<input type="submit" value="Search!" />
-	</form>
-	<hr />
-	<h1>選択された記事画面</h1>
-	<hr />
-	<form th:action="@{/member/search}" method="post">
-		<input type="hidden" name="category" th:value="${category}" />
-		<input type="hidden" name="level" th:value="${level}" />
-		<input type="submit" value="戻る" />
-	</form>
-	
-	<div class="heading">
-	 	<h3 th:text="*{article.title}"></h3>
- 	 	<p>
-	 		<a href="/member/update.html" th:href="@{/member/update/__*{article.id}__}"><img src="../images/icon-edit.png" id="updateArticle" th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" /></a>
-	 		<a href="" th:name="@{/member/delete/__*{article.id}__}" onclick="confirmDelete(this); return false;"><img src="../images/icon-delete.png" id="deleteArticle" th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" /></a>	 	
-	 	</p> 
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="setting.html" th:href="@{/member/setting}">Setting</a></li>
+  <li class="divider"></li>
+  <li><a href="help.html" th:href="@{/member/help}">Help</a></li>
+  <li class="divider"></li>
+  <li><a href="" th:name="@{/member/logout}" onclick="confirmLogout(this); return false;">Logout</a></li>
+</ul>
+  <nav>
+    <div class="nav-wrapper red darken-4">
+      &nbsp;&nbsp;&nbsp;
+      <a class="brand-logo" href="top.html" th:href="@{/member/top}">Poi</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <!-- Dropdown Trigger -->
+        <li><a class="waves-effect waves-light btn" href="create.html" th:href="@{/member/create}"><i class="material-icons right">note_add</i>Create</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+       </ul>
+    </div>
+  </nav>
+  <div class="row">
+	<div class="col s4">
+		<div th:text="${message}"></div>
+			<div class="count">
+				<span>You have <span th:text="${articleCount}">0</span> memo...</span>
+			</div>
+		<form th:action="@{/member/search}" method="post">
+			<select class="category" name="category">
+				<option value="">Category</option>
+				<option th:each="category : ${categoryList}"><span th:text="${category}"></span></option>
+			</select>
+			<select class="level" name="level">
+				<option value="">Level</option>
+				<option value="1">Level1</option>
+				<option value="2">Level2</option>
+				<option value="3">Level3</option>
+				<option value="4">Level4</option>
+				<option value="5">Level5</option>
+			</select>
+			<button class="btn waves-effect waves-light" id="search" type="submit" onclick="Materialize.showStaggeredList('#staggered-test')"><i class="material-icons right">search</i>Search</button>
+		</form>
 	</div>
-	<div class="body">
- 		<div th:text="*{article.body}"></div>
- 		<span th:text="*{article.id}"></span>
-	 	<span th:text="*{article.category}"></span>
-		<span th:text="*{article.level}"></span>
-		<span th:text="*{article.updatedAt}"></span>			
+	<div class="col s8">
+    <div class="row">
+      <div class="col s12 m12">
+        <div class="card-panel teal">
+			<span class="white-text" th:text="${article.title}"></span>
+      	</div>
+      </div>
+      <div class="col s12 m12">
+        <div class="card-panel">
+	 		<div class="main">	
+	 			<a href="/member/update.html" th:href="@{/member/update/__${article.id}__}"><img src="../images/icon-edit.png" id="updateArticle" th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" /></a>
+	 		    <a href="" th:name="@{/member/delete/__${article.id}__}" onclick="confirmDelete(this); return false;"><img src="../images/icon-delete.png" id="deleteArticle" th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" /></a>
+		 		<div th:text="${article.body}"></div>
+		 		<span th:text="${article.id}"></span>
+			 	<span th:text="${article.category}"></span>
+				<span th:text="${article.level}"></span>
+				<span th:text="${article.updatedAt}"></span>	
+			</div>	
+		</div>	
+	  </div>
 	</div>
+	</div>
+  </div>
 </body>
 </html>

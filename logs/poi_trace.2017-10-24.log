@@ -1,0 +1,318 @@
+2017-10-24 07:28:33,866 DEBUG --- [nio-8080-exec-7] poi.util.TokenUtility                    : CSRF対象外：/poi/general/register
+2017-10-24 07:28:33,890 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing POST request for [/poi/general/register]
+2017-10-24 07:28:33,895 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /general/register
+2017-10-24 07:28:33,899 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.general.RegisterController.register(org.springframework.ui.Model)]
+2017-10-24 07:28:33,908 DEBUG --- [nio-8080-exec-7] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-10-24 07:28:33,922 DEBUG --- [nio-8080-exec-7] p.controller.general.RegisterController  : Session:org.apache.catalina.session.StandardSessionFacade@5b812db0
+2017-10-24 07:28:33,922 DEBUG --- [nio-8080-exec-7] p.controller.general.RegisterController  : Session:org.apache.catalina.session.StandardSessionFacade@66cdccb0
+2017-10-24 07:28:33,930 DEBUG --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-10-24 07:28:33,938 DEBUG --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@4dc516d1] based on requested media type 'text/html'
+2017-10-24 07:28:33,938 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@4dc516d1] in DispatcherServlet with name 'dispatcherServlet'
+2017-10-24 07:28:34,017 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:28:34,106 DEBUG --- [nio-8080-exec-1] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-10-24 07:28:34,106 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-10-24 07:28:34,119 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-10-24 07:28:34,120 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-10-24 07:28:34,121 DEBUG --- [nio-8080-exec-6] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-10-24 07:28:34,122 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-10-24 07:28:34,124 DEBUG --- [nio-8080-exec-3] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-10-24 07:28:34,125 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-10-24 07:28:34,127 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-10-24 07:28:34,129 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-10-24 07:28:34,132 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-10-24 07:28:34,135 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-10-24 07:28:34,136 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-10-24 07:28:34,138 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-10-24 07:28:34,139 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-10-24 07:28:34,139 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-10-24 07:28:34,141 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-10-24 07:28:34,141 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-10-24 07:28:34,141 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-10-24 07:28:34,141 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-10-24 07:28:34,142 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:28:34,142 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:28:34,143 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-10-24 07:28:34,143 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-10-24 07:28:34,144 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-10-24 07:28:34,144 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-10-24 07:28:34,147 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:28:34,147 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-10-24 07:28:34,151 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-10-24 07:28:34,152 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-10-24 07:28:34,154 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:28:34,154 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:28:34,154 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-10-24 07:28:34,158 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:28:34,160 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:28:34,176 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:28:34,186 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:28:34,193 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:28:34,194 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:28:34,194 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:28:37,694 DEBUG --- [nio-8080-exec-9] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-10-24 07:28:37,695 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-10-24 07:28:37,695 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-10-24 07:28:37,697 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-10-24 07:28:37,697 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-10-24 07:28:37,697 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-10-24 07:28:37,697 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:28:37,697 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-10-24 07:28:37,698 DEBUG --- [nio-8080-exec-9] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-10-24 07:28:37,701 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:28:37,702 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:01,545 DEBUG --- [nio-8080-exec-7] poi.util.TokenUtility                    : CSRF対象外：/poi/member/index
+2017-10-24 07:34:01,546 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/member/index]
+2017-10-24 07:34:01,546 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/index
+2017-10-24 07:34:01,547 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.LoginController.displayLogin(org.springframework.ui.Model)]
+2017-10-24 07:34:01,547 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/member/index] is: -1
+2017-10-24 07:34:01,556 DEBUG --- [nio-8080-exec-7] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@66cdccb0
+2017-10-24 07:34:01,556 DEBUG --- [nio-8080-exec-7] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@35617110
+2017-10-24 07:34:01,562 DEBUG --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-10-24 07:34:01,570 DEBUG --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@101f9f0d] based on requested media type 'text/html'
+2017-10-24 07:34:01,570 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@101f9f0d] in DispatcherServlet with name 'dispatcherServlet'
+2017-10-24 07:34:01,647 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:01,730 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-10-24 07:34:01,730 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-10-24 07:34:01,730 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-10-24 07:34:01,733 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-10-24 07:34:01,733 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-10-24 07:34:01,733 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-10-24 07:34:01,733 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:01,733 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-10-24 07:34:01,736 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:01,737 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:01,738 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-10-24 07:34:01,738 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-10-24 07:34:01,738 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-10-24 07:34:01,739 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-10-24 07:34:01,739 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-10-24 07:34:01,739 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-10-24 07:34:01,740 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:01,740 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-10-24 07:34:01,758 DEBUG --- [nio-8080-exec-6] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-10-24 07:34:01,758 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-10-24 07:34:01,761 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-10-24 07:34:01,762 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-10-24 07:34:01,762 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-10-24 07:34:01,769 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:01,769 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-10-24 07:34:01,787 DEBUG --- [nio-8080-exec-1] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-10-24 07:34:01,787 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:01,787 DEBUG --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:01,787 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-10-24 07:34:01,787 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-10-24 07:34:01,787 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-10-24 07:34:01,788 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-10-24 07:34:01,788 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-10-24 07:34:01,789 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-10-24 07:34:01,789 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:01,790 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-10-24 07:34:01,794 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:01,795 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:01,796 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:01,796 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:01,927 DEBUG --- [nio-8080-exec-9] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-10-24 07:34:01,927 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-10-24 07:34:01,928 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-10-24 07:34:01,929 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-10-24 07:34:01,929 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-10-24 07:34:01,929 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-10-24 07:34:01,929 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:01,929 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-10-24 07:34:01,930 DEBUG --- [nio-8080-exec-9] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-10-24 07:34:01,934 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:01,934 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:07,206 DEBUG --- [io-8080-exec-10] poi.util.TokenUtility                    : CSRF対象外：/poi/member/login
+2017-10-24 07:34:07,207 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing POST request for [/poi/member/login]
+2017-10-24 07:34:07,207 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/login
+2017-10-24 07:34:07,208 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.LoginController.login(poi.form.member.LoginForm,org.springframework.validation.BindingResult,org.springframework.ui.Model)]
+2017-10-24 07:34:07,210 DEBUG --- [io-8080-exec-10] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-10-24 07:34:07,234 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : Username:user
+2017-10-24 07:34:07,235 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : Password:1*******(1桁)
+2017-10-24 07:34:07,277 INFO  --- [io-8080-exec-10] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginIdAndPasswordAndDeletedAt]
+2017-10-24 07:34:07,591 INFO  --- [io-8080-exec-10] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/UserTDao/selectByLoginIdAndPasswordAndDeletedAt.sql],
+select
+  id, username, mail, password, password_failed_count, birthday, created_at, updated_at, deleted_at
+from
+  user_t
+where
+  username = 'user' and
+  password = '1' and
+  deleted_at is null
+2017-10-24 07:34:07,681 INFO  --- [io-8080-exec-10] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginIdAndPasswordAndDeletedAt]
+2017-10-24 07:34:07,681 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@35617110
+2017-10-24 07:34:07,682 DEBUG --- [io-8080-exec-10] poi.controller.member.LoginController    : NewSession:org.apache.catalina.session.StandardSessionFacade@39d59001
+2017-10-24 07:34:07,683 INFO  --- [io-8080-exec-10] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginId]
+2017-10-24 07:34:07,686 INFO  --- [io-8080-exec-10] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/UserTDao/selectByLoginId.sql],
+select
+  id, username, mail, password, password_failed_count, birthday, created_at, updated_at, deleted_at
+from
+  user_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-10-24 07:34:07,687 INFO  --- [io-8080-exec-10] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginId]
+2017-10-24 07:34:07,708 DEBUG --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-10-24 07:34:07,727 DEBUG --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Returning redirect view [org.springframework.web.servlet.view.RedirectView: unnamed; URL [/member/top]]
+2017-10-24 07:34:07,727 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Rendering view [org.springframework.web.servlet.view.RedirectView: unnamed; URL [/member/top]] in DispatcherServlet with name 'dispatcherServlet'
+2017-10-24 07:34:07,728 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:07,733 DEBUG --- [nio-8080-exec-8] poi.util.TokenUtility                    : CSRF対象外：/poi/member/top
+2017-10-24 07:34:07,734 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/member/top]
+2017-10-24 07:34:07,736 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/top
+2017-10-24 07:34:07,736 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.MemberTopController.index(org.springframework.ui.Model)]
+2017-10-24 07:34:07,736 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/member/top] is: -1
+2017-10-24 07:34:07,736 DEBUG --- [nio-8080-exec-8] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@39d59001
+2017-10-24 07:34:07,737 DEBUG --- [nio-8080-exec-8] poi.controller.member.LoginController    : id:19
+2017-10-24 07:34:07,737 DEBUG --- [nio-8080-exec-8] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@39d59001
+2017-10-24 07:34:07,737 DEBUG --- [nio-8080-exec-8] poi.controller.member.LoginController    : id:19
+2017-10-24 07:34:07,740 INFO  --- [nio-8080-exec-8] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.ArticleTDaoImpl], メソッド=[selectArticleCountByUsernameAndDeletedAt]
+2017-10-24 07:34:07,755 INFO  --- [nio-8080-exec-8] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/ArticleTDao/selectArticleCountByUsernameAndDeletedAt.sql],
+select
+    count(*)
+from
+    article_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-10-24 07:34:07,761 INFO  --- [nio-8080-exec-8] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.ArticleTDaoImpl], メソッド=[selectArticleCountByUsernameAndDeletedAt]
+2017-10-24 07:34:07,761 INFO  --- [nio-8080-exec-8] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.CategoryTDaoImpl], メソッド=[selectCategoryByUsernameAndDeletedAt]
+2017-10-24 07:34:07,769 INFO  --- [nio-8080-exec-8] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/CategoryTDao/selectCategoryByUsernameAndDeletedAt.sql],
+select
+    category
+from
+    category_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-10-24 07:34:07,776 INFO  --- [nio-8080-exec-8] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.CategoryTDaoImpl], メソッド=[selectCategoryByUsernameAndDeletedAt]
+2017-10-24 07:34:07,777 DEBUG --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-10-24 07:34:07,779 DEBUG --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@5d23774a] based on requested media type 'text/html'
+2017-10-24 07:34:07,779 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@5d23774a] in DispatcherServlet with name 'dispatcherServlet'
+2017-10-24 07:34:07,795 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:07,819 DEBUG --- [nio-8080-exec-3] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-10-24 07:34:07,830 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-10-24 07:34:07,830 DEBUG --- [nio-8080-exec-2] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-10-24 07:34:07,830 DEBUG --- [nio-8080-exec-7] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-10-24 07:34:07,830 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-10-24 07:34:07,830 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-10-24 07:34:07,830 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-10-24 07:34:07,831 DEBUG --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-10-24 07:34:07,831 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-10-24 07:34:07,831 DEBUG --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-10-24 07:34:07,831 DEBUG --- [nio-8080-exec-4] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-10-24 07:34:07,832 DEBUG --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-10-24 07:34:07,832 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-10-24 07:34:07,832 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-10-24 07:34:07,832 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-10-24 07:34:07,832 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-10-24 07:34:07,833 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-10-24 07:34:07,833 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-10-24 07:34:07,833 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-10-24 07:34:07,833 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-10-24 07:34:07,833 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-10-24 07:34:07,833 DEBUG --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:07,834 DEBUG --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:07,834 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:07,834 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-10-24 07:34:07,834 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-10-24 07:34:07,834 DEBUG --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-10-24 07:34:07,834 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-10-24 07:34:07,835 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-10-24 07:34:07,836 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-10-24 07:34:07,837 DEBUG --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:07,837 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-10-24 07:34:07,837 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:07,837 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:07,840 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:07,841 DEBUG --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:07,841 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:07,841 DEBUG --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:07,845 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:07,845 DEBUG --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:07,950 DEBUG --- [nio-8080-exec-5] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-10-24 07:34:07,951 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-10-24 07:34:07,951 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-10-24 07:34:07,953 DEBUG --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-10-24 07:34:07,953 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-10-24 07:34:07,953 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-10-24 07:34:07,953 DEBUG --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:07,954 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-10-24 07:34:07,954 DEBUG --- [nio-8080-exec-5] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-10-24 07:34:07,957 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:07,957 DEBUG --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:11,861 DEBUG --- [nio-8080-exec-6] poi.util.TokenUtility                    : CSRF対象外：/poi/member/setting
+2017-10-24 07:34:11,861 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/member/setting]
+2017-10-24 07:34:11,861 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /member/setting
+2017-10-24 07:34:11,863 DEBUG --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public java.lang.String poi.controller.member.WorkController.displaySetting(poi.form.general.UserForm,org.springframework.ui.Model)]
+2017-10-24 07:34:11,863 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/member/setting] is: -1
+2017-10-24 07:34:11,863 DEBUG --- [nio-8080-exec-6] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@39d59001
+2017-10-24 07:34:11,863 DEBUG --- [nio-8080-exec-6] poi.controller.member.LoginController    : id:19
+2017-10-24 07:34:11,864 DEBUG --- [nio-8080-exec-6] poi.controller.member.LoginController    : Session:org.apache.catalina.session.StandardSessionFacade@39d59001
+2017-10-24 07:34:11,864 DEBUG --- [nio-8080-exec-6] poi.controller.member.LoginController    : id:19
+2017-10-24 07:34:11,883 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2220] ENTER  : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginId]
+2017-10-24 07:34:11,887 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2076] SQLログ : SQLファイル=[META-INF/poi/domain/dao/UserTDao/selectByLoginId.sql],
+select
+  id, username, mail, password, password_failed_count, birthday, created_at, updated_at, deleted_at
+from
+  user_t
+where
+  username = 'user' and
+  deleted_at is null
+2017-10-24 07:34:11,904 INFO  --- [nio-8080-exec-6] o.seasar.doma.jdbc.UtilLoggingJdbcLogger : [DOMA2221] EXIT   : クラス=[poi.domain.dao.UserTDaoImpl], メソッド=[selectByLoginId]
+2017-10-24 07:34:11,920 DEBUG --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2017-10-24 07:34:11,921 DEBUG --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Returning [org.thymeleaf.spring4.view.ThymeleafView@7e5be1bd] based on requested media type 'text/html'
+2017-10-24 07:34:11,921 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Rendering view [org.thymeleaf.spring4.view.ThymeleafView@7e5be1bd] in DispatcherServlet with name 'dispatcherServlet'
+2017-10-24 07:34:11,962 DEBUG --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:11,988 DEBUG --- [nio-8080-exec-1] poi.util.TokenUtility                    : CSRF対象外：/poi/css/style.css
+2017-10-24 07:34:11,989 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/style.css]
+2017-10-24 07:34:11,989 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/style.css
+2017-10-24 07:34:11,990 DEBUG --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/style.css]
+2017-10-24 07:34:11,990 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/style.css] are [/**]
+2017-10-24 07:34:11,990 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/style.css] are {}
+2017-10-24 07:34:11,990 DEBUG --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/style.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:11,990 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/style.css] is: -1
+2017-10-24 07:34:11,994 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:11,994 DEBUG --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:11,997 DEBUG --- [nio-8080-exec-9] poi.util.TokenUtility                    : CSRF対象外：/poi/js/materialize.js
+2017-10-24 07:34:11,997 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/materialize.js]
+2017-10-24 07:34:11,997 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/materialize.js
+2017-10-24 07:34:11,998 DEBUG --- [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/materialize.js]
+2017-10-24 07:34:11,999 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/materialize.js] are [/**]
+2017-10-24 07:34:11,999 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/materialize.js] are {}
+2017-10-24 07:34:11,999 DEBUG --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/materialize.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:11,999 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/materialize.js] is: -1
+2017-10-24 07:34:12,001 DEBUG --- [nio-8080-exec-8] poi.util.TokenUtility                    : CSRF対象外：/poi/js/jquery-3.1.1.min.js
+2017-10-24 07:34:12,001 DEBUG --- [io-8080-exec-10] poi.util.TokenUtility                    : CSRF対象外：/poi/css/materialize.css
+2017-10-24 07:34:12,001 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/js/jquery-3.1.1.min.js]
+2017-10-24 07:34:12,002 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/css/materialize.css]
+2017-10-24 07:34:12,003 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /js/jquery-3.1.1.min.js
+2017-10-24 07:34:12,003 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /css/materialize.css
+2017-10-24 07:34:12,003 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:12,004 DEBUG --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/js/jquery-3.1.1.min.js]
+2017-10-24 07:34:12,005 DEBUG --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/css/materialize.css]
+2017-10-24 07:34:12,006 DEBUG --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:12,006 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/js/jquery-3.1.1.min.js] are [/**]
+2017-10-24 07:34:12,006 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/css/materialize.css] are [/**]
+2017-10-24 07:34:12,007 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/js/jquery-3.1.1.min.js] are {}
+2017-10-24 07:34:12,007 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/css/materialize.css] are {}
+2017-10-24 07:34:12,008 DEBUG --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/js/jquery-3.1.1.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:12,008 DEBUG --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/css/materialize.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:12,009 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/js/jquery-3.1.1.min.js] is: -1
+2017-10-24 07:34:12,009 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/css/materialize.css] is: -1
+2017-10-24 07:34:12,011 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:12,011 DEBUG --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:12,012 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:12,012 DEBUG --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 07:34:12,168 DEBUG --- [nio-8080-exec-7] poi.util.TokenUtility                    : CSRF対象外：/poi/fonts/roboto/Roboto-Regular.woff2
+2017-10-24 07:34:12,169 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/poi/fonts/roboto/Roboto-Regular.woff2]
+2017-10-24 07:34:12,169 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /fonts/roboto/Roboto-Regular.woff2
+2017-10-24 07:34:12,170 DEBUG --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/fonts/roboto/Roboto-Regular.woff2]
+2017-10-24 07:34:12,170 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/fonts/roboto/Roboto-Regular.woff2] are [/**]
+2017-10-24 07:34:12,170 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/fonts/roboto/Roboto-Regular.woff2] are {}
+2017-10-24 07:34:12,170 DEBUG --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/fonts/roboto/Roboto-Regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1640f20f]]] and 1 interceptor
+2017-10-24 07:34:12,171 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/poi/fonts/roboto/Roboto-Regular.woff2] is: -1
+2017-10-24 07:34:12,171 DEBUG --- [nio-8080-exec-7] o.s.web.cors.DefaultCorsProcessor        : Skip CORS processing: request is from same origin
+2017-10-24 07:34:12,175 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2017-10-24 07:34:12,175 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2017-10-24 21:33:57,476 INFO  --- [       Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f0b0a5e: startup date [Mon Oct 23 21:44:16 JST 2017]; root of context hierarchy
+2017-10-24 21:33:57,528 INFO  --- [       Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown

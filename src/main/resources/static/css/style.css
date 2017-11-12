@@ -1,0 +1,65 @@
+img.icon-level, #updateArticle, #deleteArticle, #updateTime, #AddCategory { 
+	vertical-align: middle; 
+}
+#confirm, #edit {
+	margin-top: 20px;
+}
+#body {
+	
+	height: 150px;
+}
+#intro-1, #intro-2, #intro-3 {
+	margin-left: 20px;
+}
+.box {
+	display: inline;
+}
+.backBtn {
+	margin: 10px;
+}
+/* webkit solution */
+::-webkit-input-placeholder {
+	font-size: 16px;
+	text-align: right;
+}
+/* ie10+ solution */
+:-ms-input-placeholder {
+	font-size: 16px;
+	text-align: right;
+}
+/* mozilla18 solution */
+:-moz-placeholder {
+	font-size: 16px;
+	text-align: right;
+}
+/* mozilla19+ solution */
+::-moz-placeholder {
+	font-size: 16px;
+	text-align: right;
+}
+/** タイトルクリックで本文表示 */
+.hidden_box {
+    margin: 2em 0;/*前後の余白*/
+    padding: 0;
+}
+
+/*チェックは見えなくする*/
+.hidden_box input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+/*クリックで中身表示*/
+.hidden_box input:checked ~ .hidden_show {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}

@@ -17,7 +17,7 @@ import poi.validator.EqualsPropertyValuesValidator;
 @Constraint(validatedBy = {EqualsPropertyValuesValidator.class})
 public @interface EqualsPropertyValues {
 
-	String message() default "{error.Field}";
+	String message() default "{error.EqualsPropertyValue}";
 
 	Class<?>[] groups() default {};
 

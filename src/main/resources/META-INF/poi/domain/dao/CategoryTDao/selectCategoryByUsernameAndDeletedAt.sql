@@ -1,5 +1,7 @@
 select
-    category
+    id
+   ,category
+   ,updated_at
 from
     category_t
 where
