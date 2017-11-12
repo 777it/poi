@@ -2,7 +2,7 @@ package poi.domain.dao;
 
 /** */
 @org.springframework.stereotype.Component()
-@javax.annotation.Generated(value = { "Doma", "2.16.0" }, date = "2017-11-12T16:38:38.429+0900")
+@javax.annotation.Generated(value = { "Doma", "2.16.0" }, date = "2017-11-12T19:24:36.247+0900")
 public class UserTDaoImpl extends org.seasar.doma.internal.jdbc.dao.AbstractDao implements poi.domain.dao.UserTDao {
 
     static {
