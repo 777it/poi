@@ -7,7 +7,6 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("org.springframework:springloaded:1.2.5.RELEASE")
 	}
 }
 
@@ -16,8 +15,6 @@ apply plugin: 'spring-boot'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
-defaultTasks "clean", "build"
 
 // for Doma 2
 // JavaクラスとSQLファイルの出力先ディレクトリを同じにする
@@ -59,19 +56,13 @@ dependencies {
 	testCompile("org.springframework.boot:spring-boot-starter-test:1.2.1.RELEASE")
 }
 
+group = 'poi'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
 repositories {
 	mavenCentral()
-	maven {
-		url 'https://oss.sonatype.org/content/repositories/snapshots/'
-	}
 }
-
-
-// start up
-bootRun {
-	jvmArgs = ['-Dspring.profiles.active=develop']
-}
-
 // for Gradle
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.9'

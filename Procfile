@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar build/libs/poi.jar --server.port=$PORT --spring.profiles.active=heroku
+web: java -jar build/libs/poi-0.0.1-SNAPSHOT.jar —spring.profiles.active=prod
