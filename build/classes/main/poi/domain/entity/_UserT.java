@@ -1,7 +1,7 @@
 package poi.domain.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.16.0" }, date = "2017-11-15T23:46:41.869+0900")
+@javax.annotation.Generated(value = { "Doma", "2.16.0" }, date = "2017-11-16T00:21:56.992+0900")
 public final class _UserT extends org.seasar.doma.jdbc.entity.AbstractEntityType<poi.domain.entity.UserT> {
 
     static {

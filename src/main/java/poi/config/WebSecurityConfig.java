@@ -92,7 +92,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				new AntPathRequestMatcher(UrlConstant.Controller.Member.DELETE_CATEGORY),
 				
 				// ルート
-				new AntPathRequestMatcher(UrlConstant.Controller.GENERAL + UrlConstant.SLASH),
+				//new AntPathRequestMatcher(UrlConstant.Controller.GENERAL + UrlConstant.SLASH),
+				new AntPathRequestMatcher(UrlConstant.SLASH),
 				// 初期表示
 				new AntPathRequestMatcher(UrlConstant.Controller.General.REDIRECT_ROOT),
 				new AntPathRequestMatcher(UrlConstant.Controller.General.INDEX),

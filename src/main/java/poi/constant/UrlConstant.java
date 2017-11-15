@@ -140,7 +140,8 @@ public final class UrlConstant {
 		public static class General {
 
 			/** ルート */
-			public static final String ROOT = GENERAL + "/";
+			//public static final String ROOT = GENERAL + "/";
+			public static final String ROOT = "/";
 			/** 初期表示（リダイレクト）. */
 			public static final String REDIRECT_ROOT = REDIRECT + ROOT;
 			/** 初期表示. */
