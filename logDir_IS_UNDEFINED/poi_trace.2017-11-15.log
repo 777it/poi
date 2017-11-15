@@ -2236,3 +2236,12 @@ where
 2017-11-15 22:56:25,689 DEBUG --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
 2017-11-15 22:58:31,881 INFO  --- [       Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@21b2e768: startup date [Wed Nov 15 22:53:36 JST 2017]; root of context hierarchy
 2017-11-15 22:58:31,884 INFO  --- [       Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-11-15 23:46:12,224 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2017-11-15 23:46:12,243 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2017-11-15 23:46:12,246 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2017-11-15 23:46:12,247 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2017-11-15 23:46:12,248 DEBUG --- [           main] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2017-11-15 23:46:12,317 INFO  --- [           main] poi.poiApplication                       : Starting poiApplication on 777 with PID 18016 (/Users/kaihatsu/Documents/Work/poi/build/classes/main started by kaihatsu in /Users/kaihatsu/Documents/Work/poi)
+2017-11-15 23:46:12,318 DEBUG --- [           main] poi.poiApplication                       : Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
+2017-11-15 23:46:12,318 INFO  --- [           main] poi.poiApplication                       : The following profiles are active: dev
+2017-11-15 23:46:12,772 INFO  --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@21b2e768: startup date [Wed Nov 15 23:46:12 JST 2017]; root of context hierarchy
