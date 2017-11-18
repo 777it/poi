@@ -13,7 +13,6 @@ import org.springframework.http.HttpStatus;
 
 import poi.constant.UrlConstant;
 
-@ImportResource("classpath:transaction-context.xml")
 @SpringBootApplication
 //下記3つのアノテーションをまとめたもの
 //@Configuration

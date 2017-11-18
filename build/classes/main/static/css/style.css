@@ -1,6 +1,12 @@
 img.icon-level, #updateArticle, #deleteArticle, #updateTime, #AddCategory { 
 	vertical-align: middle; 
 }
+p img {
+	max-width: 100%;
+}
+#title {
+	font-size: 14px;
+}
 #confirm, #edit {
 	margin-top: 20px;
 }
@@ -11,11 +17,23 @@ img.icon-level, #updateArticle, #deleteArticle, #updateTime, #AddCategory {
 #intro-1, #intro-2, #intro-3 {
 	margin-left: 20px;
 }
+.one-line p{
+ display:inline-block;
+ vertical-align:middle;
+}
 .box {
 	display: inline;
 }
-.backBtn {
+.backBtn, .searchBtn {
 	margin: 10px;
+}
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc { display: block !important; }
+.sp { display: none !important; }
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 750px) {
+.pc { display: none !important; }
+.sp { display: block !important; }
 }
 /* webkit solution */
 ::-webkit-input-placeholder {

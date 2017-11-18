@@ -16,10 +16,10 @@
 </head>
 
 <body>
-	<nav>
-		<div class="nav-wrapper red darken-4">
-			&nbsp;&nbsp;&nbsp; <a href="http://localhost:8080/poi/general/"
-				class="brand-logo">Poi</a>
+  <nav class="red darken-4">
+    <div class="nav-wrapper">
+     &nbsp;&nbsp;&nbsp;
+      <a href="index.html" th:href="@{/}" class="brand-logo left">Poi</a>
 			<ul id="nav-mobile" class="right">
 				<li><form th:action="@{/member/index}" method="get"
 						name="loginForm">
@@ -30,8 +30,8 @@
 		</div>
 	</nav>
 	<div class="row">
-		<div class="col s3"></div>
-		<div class="col s6">
+		<div class="col s0 m2 l3"></div>
+		<div class="col s12 m8 l6">
 			<h1>Confirm</h1>
 			<form th:action="@{/general/create}" method="post">
 				<div class="col s12">
@@ -90,14 +90,14 @@
 					</div>
 				</div>
 				<div class="col s12">
-				<button class="btn waves-effect waves-light" id="ok" type="submit">OK!</button>
+				<button class="btn waves-effect waves-light" id="confirm" type="submit">OK!</button>
 				</div>
 			</form>
 			<form th:action="@{/general/register}" method="post">
 				<input type="submit" class="backBtn" value="back" />
 			</form>
 		</div>
-		<div class="col s3"></div>
+		<div class="col s0 m2 l3"></div>
 	</div>
 </body>
 

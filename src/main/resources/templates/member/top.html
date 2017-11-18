@@ -15,71 +15,78 @@
 <script type="text/javascript" th:src="@{/js/poi.js}"></script>
 </head>
 <body>
-	<!-- Dropdown Structure -->
-	<ul id="dropdown1" class="dropdown-content">
+  <nav class="red darken-4">
+    <div class="nav-wrapper">
+      &nbsp;&nbsp;&nbsp;
+      <a href="index.html" th:href="@{/}" class="brand-logo left">Poi</a>
+      <ul class="right">
 		<li><a href="top.html" th:href="@{/member/top}">MyPage</a></li>
 		<li><a href="setting.html" th:href="@{/member/setting}">Setting</a></li>
 		<li class="divider"></li>
 		<li><a href="" th:name="@{/member/logout}"
 			onclick="confirmLogout(this); return false;">Logout</a></li>
-	</ul>
-	<nav>
-		<div class="nav-wrapper red darken-4">
-			&nbsp;&nbsp;&nbsp; 
-			<a href="http://localhost:8080/poi/general/" class="brand-logo">Poi</a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<!-- Dropdown Trigger -->
-				<li><a class="waves-effect waves-light btn" href="create.html"
-					th:href="@{/member/create}"><i class="material-icons right">note_add</i>Create</a></li>
-				<li><a class="dropdown-button" href="#!"
-					data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
-			</ul>
-		</div>
-	</nav>
+		<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      </ul>
+      <div class="nav-content">
+	      <a class="btn-floating btn-large halfway-fab waves-effect waves-light cyan" href="create.html" th:href="@{/member/create}">
+	        <i class="material-icons">add</i>
+	      </a>
+	  </div>
+	  </div>
+  </nav>
 	<div class="row">
-		<div class="col s4">
-			<div th:text="${message}"></div>
-			<div class="count">
-				<span>You have <span th:text="${articleCount}">0</span>
-					memo...
-				</span>
+		<div class="col s12 m12 l4">
+			<div class="col s1"></div>
+			<div class="col s10 center-align">
+				<div th:text="${message}"></div>
+				<div class="count">
+					<span>You have <span th:text="${articleCount}">0</span>
+						memo...
+					</span>
+				</div>
+				<div th:if="${articleCount == 0}">
+					<p>
+						<img src="../images/water_0.png" id="fishes" />
+					</p>
+				</div>
+				<div th:if="${articleCount != 0}">
+					<p>
+						<script type="text/javascript">
+							var imglist = new Array("../images/water_1.png",
+									"../images/water_2.png",
+									"../images/water_3.png");
+							var selectnum = Math.floor(Math.random()
+									* imglist.length);
+							var output = "<img src=" + imglist[selectnum] + " />";
+							document.write(output);
+						</script>
+					</p>
+				</div>
+				<form th:action="@{/member/search}" method="post">
+					<input type="hidden" name="username" th:value="${username}" /> <select
+						class="category" name="category">
+						<option value="">Category</option>
+						<option th:each="category : ${categoryList}"><span
+								th:text="${category.category}"></span></option>
+					</select> <select class="level" name="level">
+						<option value="">Level</option>
+						<option value="1">Level1</option>
+						<option value="2">Level2</option>
+						<option value="3">Level3</option>
+						<option value="4">Level4</option>
+						<option value="5">Level5</option>
+					</select>
+
+					<button class="btn waves-effect waves-light searchBtn"
+						type="submit"
+						onclick="Materialize.showStaggeredList('#staggered-test')">
+						<i class="material-icons right">search</i>Search
+					</button>
+				</form>
 			</div>
-			<div th:if="${articleCount == 0}">
-				<img src="../images/water_0.png" />
-			</div>
-			<div th:if="${articleCount != 0}">
-			<script type="text/javascript">
-			   var imglist = new Array(
-			      "../images/water_1.png",
-			      "../images/water_2.png",
-			      "../images/water_3.png" );
-			   var selectnum = Math.floor(Math.random() * imglist.length);
-			   var output = "<img src=" + imglist[selectnum] + " />";
-			   document.write(output);
-			</script>
-			</div>
-			<form th:action="@{/member/search}" method="post">
-			<input type="hidden" name="username" th:value="${username}" />
-				<select class="category" name="category">
-					<option value="">Category</option>
-					<option th:each="category : ${categoryList}"><span
-							th:text="${category.category}"></span></option>
-				</select> <select class="level" name="level">
-					<option value="">Level</option>
-					<option value="1">Level1</option>
-					<option value="2">Level2</option>
-					<option value="3">Level3</option>
-					<option value="4">Level4</option>
-					<option value="5">Level5</option>
-				</select>
-				<button class="btn waves-effect waves-light" id="search"
-					type="submit"
-					onclick="Materialize.showStaggeredList('#staggered-test')">
-					<i class="material-icons right">search</i>Search
-				</button>
-			</form>
 		</div>
-		<div class="col s8">
+		<div class="col s1"></div>
+		<div class="col s12 m12 l8">
 			<div class="row">
 				<div class="col s12 m12">
 					<div th:if="${not #strings.isEmpty(headerStr)}">
@@ -96,66 +103,95 @@
 				<div class="col s12 m12">
 					<div class="card-panel">
 						<div class="main">
-						  <!-- 初期表示 -->
-						  <div th:if="${#strings.isEmpty(headerStr)}">					  	
-						  	<span>1. Let's create a memo.</span>
-						  	<p>
-						  		<img src="../images/create2.png" class="introduction" id="intro-1" />
-						  	</p>
-						  	<span>2. You can use the search function.</span>
-						  	<p>
-						  		<img src="../images/search3.png" class="introduction" id="intro-2" />
-						  	</p>	
-						  	<span>3. How you use depends on you!</span>
-						  	<p>
-						  		<img src="../images/you.png" class="introduction" id="intro-3" />
-						  	</p>
-						  </div>
-						  <!-- 記事が見つからなかった場合 -->
-						  <div th:if="${resultNoArticle != null}">
-						     	<div th:text="${resultNoArticle}"></div>
-						  </div>
+							<!-- 初期表示 -->
+							<div th:if="${#strings.isEmpty(headerStr)}">
+								<span>1. Let's create a memo.</span>
+								<p>
+									<img src="../images/create.png" class="introduction pc"
+										id="intro-1" />
+									<img src="../images/create-sp.png" class="introduction sp"
+										id="intro-1" />
+								</p>
+								<span>2. You can use the search function.</span>
+								<p>
+									<img src="../images/search.png" class="introduction"
+										id="intro-2" />
+								</p>
+								<span>3. How you use depends on you!</span>
+								<p>
+									<img src="../images/you.png" class="introduction" id="intro-3" />
+								</p>
+							</div>
+							<!-- 記事が見つからなかった場合 -->
+							<div th:if="${resultNoArticle != null}">
+								<div th:text="${resultNoArticle}"></div>
+							</div>
 							<!-- 記事が見つかった場合 -->
 							<div class="post" th:each="article : ${resultArticleList}">
 								<div class="hidden_box">
 									<label th:for="*{article.id}">
 										<div th:switch="*{article.level}">
-											<span th:case="1"> <img src="../images/level1.png"
+										<div class="one-line">
+											<p><span th:case="1"> <img src="../images/level1.png"
 												class="icon-level" id="level1"
 												th:attr="src=@{/images/level1.png},alt=#{icon-level1}" />
-											</span> <span th:case="2"> <img src="../images/level2.png"
+											</span></p> 
+											<p><span th:case="2"> <img src="../images/level2.png"
 												class="icon-level" id="level2"
 												th:attr="src=@{/images/level2.png},alt=#{icon-level2}" />
-											</span> <span th:case="3"> <img src="../images/level3.png"
+											</span></p> 
+											<p><span th:case="3"> <img src="../images/level3.png"
 												class="icon-level" id="level3"
 												th:attr="src=@{/images/level3.png},alt=#{icon-level3}" />
-											</span> <span th:case="4"> <img src="../images/level4.png"
+											</span></p> 
+											<p><span th:case="4"> <img src="../images/level4.png"
 												class="icon-level" id="level4"
 												th:attr="src=@{/images/level4.png},alt=#{icon-level4}" />
-											</span> <span th:case="5"> <img src="../images/level5.png"
+											</span></p> 
+											<p><span th:case="5"> <img src="../images/level5.png"
 												class="icon-level" id="level5"
 												th:attr="src=@{/images/level5.png},alt=#{icon-level5}" />
-											</span> <span th:hidden="*{article.id}"></span> <span
-												th:hidden="*{article.level}"></span> <span
-												th:text="*{article.title}"></span>
-											<input type="hidden" name="articleId"
-												th:value="*{article.id}" /> <input type="hidden"
-												name="categoryStatus" th:value="${categoryStatus}" /> <input
-												type="hidden" name="levelStatus" th:value="${levelStatus}" />
-											<a href="" th:name="@{/member/delete/__${article.id}__}"
-												onclick="confirmDelete(this); return false;"><img
-												src="../images/icon-delete.png" class="right"
+											</span></p>
+											<span th:hidden="*{article.id}"></span>
+											<span th:hidden="*{article.level}"></span> 
+											<p><span th:text="*{article.title}" id="title"></span></p>
+											    <input type="hidden"
+												name="articleId" th:value="*{article.id}" /> <input
+												type="hidden" name="categoryStatus"
+												th:value="${categoryStatus}" /> <input type="hidden"
+												name="levelStatus" th:value="${levelStatus}" />
+											<p class="right">
+											<a href=""
+												th:name="@{/member/delete/__${article.id}__}"
+												onclick="confirmDelete(this); return false;">
+											<img
+												src="../images/icon-delete.png" class="pc"
 												id="deleteArticle"
-												th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" /></a>
+												th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" />
+											<img
+												src="../images/icon-delete.png" class="sp"
+												id="deleteArticle"
+												th:attr="src=@{/images/icon-delete-sp.png},alt=#{icon-delete}" />
+											</a>
+											</p>
+											<p class="right">
 											<a href="/member/update.html"
-												th:href="@{/member/update/__${article.id}__}"><img
-												src="../images/icon-edit.png" class="right"
+												th:href="@{/member/update/__${article.id}__}">
+											<img
+												src="../images/icon-edit.png" class="pc"
 												id="updateArticle"
-												th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" /></a>
-											</div>
-											<span class="right" id="updateTime"
-												th:text="*{#temporals.format(article.updatedAt, 'yyyy/MM/dd HH:mm')}">
-											</span>
+												th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" />
+											<img
+												src="../images/icon-edit.png" class="sp"
+												id="updateArticle"
+												th:attr="src=@{/images/icon-edit-sp.png},alt=#{icon-edit}" />
+											</a>
+											</p>
+										</div>
+										</div>
+										<span class="right" id="updateTime"
+										th:text="*{#temporals.format(article.updatedAt, 'yyyy/MM/dd HH:mm')}">
+									</span>
 									</label> <input type="checkbox" th:id="*{article.id}" />
 									<div class="hidden_show">
 										<!--非表示ここから-->

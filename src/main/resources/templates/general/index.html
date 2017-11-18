@@ -13,27 +13,25 @@
 	
 	</head>
 <body>
-  <nav>
-    <div class="nav-wrapper red darken-4">
-      &nbsp;&nbsp;&nbsp;
-      <a href="http://localhost:8080/poi/general/" class="brand-logo">Poi</a>
+  <nav class="red darken-4">
+    <div class="nav-wrapper">
+     &nbsp;&nbsp;&nbsp;
+      <a href="index.html" th:href="@{/}" class="brand-logo left">Poi</a>
        <ul id="nav-mobile" class="right">
     	<li><form th:action="@{/member/index}" method="get" name="loginForm"><a href="javascript:document.loginForm.submit()" class="waves-effect waves-light btn">Login</a></form></li>
        </ul>
     </div>
   </nav>
-		  <div class="container">
-		        <h1 class="header center teal-text text-lighten-2">Please register first!</h1>
-		        <div class="row center">
-		          <i class="large material-icons">search</i>
-		          <h5>Poi can start using it as soon as you register as a member</h5>
-		        </div>
-		        <div class="row center">
-		          <form th:action="@{/general/register}" method="post" name="registerForm"><a href="javascript:document.registerForm.submit()" id="register-button" class="btn-large waves-effect waves-light teal lighten-1">Sign Up!</a></form>
-		        </div>
-		   </div>
-
-
+  <div class="container">
+        <h1 class="header center teal-text text-lighten-2">Please register first!</h1>
+        <div class="row center">
+          <i class="large material-icons">search</i>
+          <h5>Poi can start using it as soon as you register as a member</h5>
+        </div>
+        <div class="row center">
+          <form th:action="@{/general/register}" method="post" name="registerForm"><a href="javascript:document.registerForm.submit()" id="register-button" class="btn-large waves-effect waves-light">Sign Up!</a></form>
+        </div>
+   </div>
 </body>
 
 </html>

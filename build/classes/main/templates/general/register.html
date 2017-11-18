@@ -15,9 +15,10 @@
 
 </head>
 <body onLoad="document.userForm.username.focus()">
-	<nav>
-		<div class="nav-wrapper red darken-4">
-			&nbsp;&nbsp;&nbsp; <a href="http://localhost:8080/poi/general/" class="brand-logo">Poi</a>
+  <nav class="red darken-4">
+    <div class="nav-wrapper">
+     &nbsp;&nbsp;&nbsp;
+      <a href="index.html" th:href="@{/}" class="brand-logo left">Poi</a>
 			<ul id="nav-mobile" class="right">
 				<li><form th:action="@{/member/index}" method="get"
 						name="loginForm">
@@ -27,9 +28,10 @@
 			</ul>
 		</div>
 	</nav>
+	<div class="col s12 m6 l3">
 	<div class="row">
-		<div class="col s3"></div>
-		<div class="col s6">
+		<div class="col s0 m2 l3"></div>
+		<div class="col s12 m8 l6">
 			<h1>Register</h1>
 			<form th:action="@{/general/confirm}" th:object="${userForm}" name="userForm" method="post">
 		      <ul>
@@ -240,7 +242,8 @@
 	  			</div>
 			</form>
 		</div>
-		<div class="col s3"></div>
+		<div class="col s0 m2 l3"></div>
+	</div>
 	</div>
 </body>
 
