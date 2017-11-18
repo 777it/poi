@@ -1,6 +1,7 @@
 package poi.domain.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,17 @@ public class CategoryService {
 	 * ユーザーエンティティ*/
 	protected CategoryT categoryEntity = new CategoryT();
 
+	/**
+	 * ユーザー名とカテゴリに紐づくカテゴリを取得
+	 * 新規追加のカテゴリかチェックするため
+	 * @param username
+	 * @return
+	 */
+	public String selectCategoryByselectedCategory(String username, String cateogry) {
+		String newCategory = categoryTDao.selectCategoryByUsernameAndcategoryAndDeletedAt(username, cateogry);
+		return newCategory;
+	}
+	
 	/**
 	 * カテゴリを新規登録する
 	 * @param categoryTDto

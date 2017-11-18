@@ -36,8 +36,8 @@
   </nav>
 	<div class="row">
 		<div class="col s12 m12 l4">
-			<div class="col s1"></div>
-			<div class="col s10 center-align">
+			<div class="col s2 m3 l1"></div>
+			<div class="col s8 m6 l10 center-align">
 				<div th:text="${message}"></div>
 				<div class="count">
 					<span>You have <span th:text="${articleCount}">0</span>
@@ -85,7 +85,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="col s1"></div>
+		<div class="col s2 m3 l1"></div>
 		<div class="col s12 m12 l8">
 			<div class="row">
 				<div class="col s12 m12">
@@ -109,12 +109,18 @@
 								<p>
 									<img src="../images/create.png" class="introduction pc"
 										id="intro-1" />
+									<img src="../images/create-sp.png" class="introduction tablet"
+										id="intro-1" />
 									<img src="../images/create-sp.png" class="introduction sp"
 										id="intro-1" />
 								</p>
 								<span>2. You can use the search function.</span>
 								<p>
-									<img src="../images/search.png" class="introduction"
+									<img src="../images/search.png" class="introduction pc"
+										id="intro-2" />
+									<img src="../images/search-sp.png" class="introduction tablet"
+										id="intro-2" />
+									<img src="../images/search-sp.png" class="introduction sp"
 										id="intro-2" />
 								</p>
 								<span>3. How you use depends on you!</span>
@@ -127,11 +133,151 @@
 								<div th:text="${resultNoArticle}"></div>
 							</div>
 							<!-- 記事が見つかった場合 -->
-							<div class="post" th:each="article : ${resultArticleList}">
-								<div class="hidden_box">
-									<label th:for="*{article.id}">
+							<!-- for sp -->
+							<div id="js-check-sp" class="check-size is-sp">
+								<div class="post" th:each="article : ${resultArticleList}">
+									<div class="hidden_box_sp">
+									<label th:for="'sp' + *{article.id}">
+									<div class="one-line_sp">
+									<p th:switch="*{article.level}">
+											<span th:case="1"> <img src="../images/level1.png"
+												class="icon-level" id="level1"
+												th:attr="src=@{/images/level1.png},alt=#{icon-level1}" />
+											</span>
+											<span th:case="2"> <img src="../images/level2.png"
+												class="icon-level" id="level2"
+												th:attr="src=@{/images/level2.png},alt=#{icon-level2}" />
+											</span>
+											<span th:case="3"> <img src="../images/level3.png"
+												class="icon-level" id="level3"
+												th:attr="src=@{/images/level3.png},alt=#{icon-level3}" />
+											</span>
+											<span th:case="4"> <img src="../images/level4.png"
+												class="icon-level" id="level4"
+												th:attr="src=@{/images/level4.png},alt=#{icon-level4}" />
+											</span>
+											<span th:case="5"> <img src="../images/level5.png"
+												class="icon-level" id="level5"
+												th:attr="src=@{/images/level5.png},alt=#{icon-level5}" />
+											</span>
+										</p>
+										<a href="/member/update.html"
+												th:href="@{/member/update/__${article.id}__}">
+											<p><img
+												src="../images/icon-edit.png"
+												id="updateArticle"
+												th:attr="src=@{/images/icon-edit-sp.png},alt=#{icon-edit}" />
+											</p>
+											</a>
+										<a href=""
+												th:name="@{/member/delete/__${article.id}__}"
+												onclick="confirmDelete(this); return false;">
+											<p><img
+												src="../images/icon-delete.png"
+												id="deleteArticle"
+												th:attr="src=@{/images/icon-delete-sp.png},alt=#{icon-delete}" />
+											</p>
+											</a>
+										
+									<p><span id="updateTime"
+										th:text="*{#temporals.format(article.updatedAt, 'yyyy/MM/dd HH:mm')}">
+									</span>
+									</p>
+									</div>
+											<span th:hidden="*{article.id}"></span>
+											<span th:hidden="*{article.level}"></span> 
+											<span th:text="*{article.title}" id="title"></span>
+											    <input type="hidden"
+												name="articleId" th:value="*{article.id}" /> <input
+												type="hidden" name="categoryStatus"
+												th:value="${categoryStatus}" /> <input type="hidden"
+												name="levelStatus" th:value="${levelStatus}" />
+									</label> <input type="checkbox" th:id="'sp' + *{article.id}" />
+									<div class="hidden_show_sp">
+										<!--非表示ここから-->
+										<span th:text="*{article.body}"></span>
+										<!--ここまで-->
+									</div>
+									</div>
+								</div>
+							</div>
+							<!-- for tablet -->
+							<div id="js-check-tablet" class="check-size is-tablet">
+								<div class="post" th:each="article : ${resultArticleList}">
+									<div class="hidden_box_tb">
+									<label th:for="'tb' + *{article.id}">
+									<div class="one-line_tb">
+										<p th:switch="*{article.level}">
+											<span th:case="1"> <img src="../images/level1.png"
+												class="icon-level" id="level1"
+												th:attr="src=@{/images/level1.png},alt=#{icon-level1}" />
+											</span>
+											<span th:case="2"> <img src="../images/level2.png"
+												class="icon-level" id="level2"
+												th:attr="src=@{/images/level2.png},alt=#{icon-level2}" />
+											</span>
+											<span th:case="3"> <img src="../images/level3.png"
+												class="icon-level" id="level3"
+												th:attr="src=@{/images/level3.png},alt=#{icon-level3}" />
+											</span>
+											<span th:case="4"> <img src="../images/level4.png"
+												class="icon-level" id="level4"
+												th:attr="src=@{/images/level4.png},alt=#{icon-level4}" />
+											</span> 
+											<span th:case="5"> <img src="../images/level5.png"
+												class="icon-level" id="level5"
+												th:attr="src=@{/images/level5.png},alt=#{icon-level5}" />
+											</span>
+											</p>
+											<span th:hidden="*{article.id}"></span>
+											<span th:hidden="*{article.level}"></span> 
+											<p>
+											  <span th:text="*{article.title}" id="title"></span>
+											</p>
+											    <input type="hidden"
+												name="articleId" th:value="*{article.id}" /> <input
+												type="hidden" name="categoryStatus"
+												th:value="${categoryStatus}" /> <input type="hidden"
+												name="levelStatus" th:value="${levelStatus}" />
+											<p class="right">
+											<a href=""
+												th:name="@{/member/delete/__${article.id}__}"
+												onclick="confirmDelete(this); return false;">
+											<img
+												src="../images/icon-delete.png"
+												id="deleteArticle"
+												th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" />
+											</a>
+											</p>
+											<p class="right">
+											<a href="/member/update.html"
+												th:href="@{/member/update/__${article.id}__}">
+											<img
+												src="../images/icon-edit.png"
+												id="updateArticle"
+												th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" />
+											</a>
+											</p>
+										</div>
+										<span class="right" id="updateTime"
+										th:text="*{#temporals.format(article.updatedAt, 'yyyy/MM/dd HH:mm')}">
+									</span>
+									</label> <input type="checkbox" th:id="'tb' + *{article.id}" />
+									<div class="hidden_show_tb">
+										<!--非表示ここから-->
+										<span th:text="*{article.body}"></span>
+										<!--ここまで-->
+									</div>
+									</div>
+								</div>
+							</div>
+							<!-- for pc -->
+							<div id="js-check-pc" class="check-size is-pc">
+								<div class="post" th:each="article : ${resultArticleList}">
+								<div class="hidden_box_pc">
+									<label th:for="'pc' + *{article.id}">
 										<div th:switch="*{article.level}">
-										<div class="one-line">
+										<div class="one-line_pc">
 											<p><span th:case="1"> <img src="../images/level1.png"
 												class="icon-level" id="level1"
 												th:attr="src=@{/images/level1.png},alt=#{icon-level1}" />
@@ -165,26 +311,18 @@
 												th:name="@{/member/delete/__${article.id}__}"
 												onclick="confirmDelete(this); return false;">
 											<img
-												src="../images/icon-delete.png" class="pc"
+												src="../images/icon-delete.png"
 												id="deleteArticle"
 												th:attr="src=@{/images/icon-delete.png},alt=#{icon-delete}" />
-											<img
-												src="../images/icon-delete.png" class="sp"
-												id="deleteArticle"
-												th:attr="src=@{/images/icon-delete-sp.png},alt=#{icon-delete}" />
 											</a>
 											</p>
 											<p class="right">
 											<a href="/member/update.html"
 												th:href="@{/member/update/__${article.id}__}">
 											<img
-												src="../images/icon-edit.png" class="pc"
+												src="../images/icon-edit.png"
 												id="updateArticle"
 												th:attr="src=@{/images/icon-edit.png},alt=#{icon-edit}" />
-											<img
-												src="../images/icon-edit.png" class="sp"
-												id="updateArticle"
-												th:attr="src=@{/images/icon-edit-sp.png},alt=#{icon-edit}" />
 											</a>
 											</p>
 										</div>
@@ -192,11 +330,12 @@
 										<span class="right" id="updateTime"
 										th:text="*{#temporals.format(article.updatedAt, 'yyyy/MM/dd HH:mm')}">
 									</span>
-									</label> <input type="checkbox" th:id="*{article.id}" />
-									<div class="hidden_show">
+									</label> <input type="checkbox" th:id="'pc' + *{article.id}" />
+									<div class="hidden_show_pc">
 										<!--非表示ここから-->
 										<span th:text="*{article.body}"></span>
 										<!--ここまで-->
+									</div>
 									</div>
 								</div>
 							</div>

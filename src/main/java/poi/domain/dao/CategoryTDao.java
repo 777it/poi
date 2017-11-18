@@ -18,6 +18,9 @@ import poi.util.doma.DataSourceConfiguration;
 public interface CategoryTDao {
     @Select
     List<CategoryT> selectAll();
+
+	@Select
+	String selectCategoryByUsernameAndcategoryAndDeletedAt(final String username, final String category);
 	
 	@Select
 	List<CategoryT> selectCategoryByUsernameAndDeletedAt(final String username);

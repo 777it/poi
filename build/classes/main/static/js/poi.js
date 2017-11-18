@@ -24,16 +24,29 @@ function selectArticle ( obj ) {
 }
 
 function addCategory(obj){
-
 	// 入力ダイアログを表示
-	category = window.prompt("Please enter category", "");
-	if (category != "" && category != null) {
-		var addCategoryUrl = obj.getAttribute('name');
-		location.href =　addCategoryUrl + "/" + category;		
+	newCategory = window.prompt("Please enter category", "");
+	if (newCategory != "" && newCategory != null) {
+		$(".category").append("<option>" + newCategory + "</option>");
 	}
 	else{
         /* キャンセルの時の処理 */
         return false;
 	}
-
 }
+function picSize(){
+	var size = {
+			  isSp: function() {
+			    return $('#js-check-sp').is(':visible');
+			  },
+			  isTablet: function() {
+			    return $('#js-check-tablet').is(':visible');
+			  },
+			  isPc: function() {
+			    return $('#js-check-pc').is(':visible');
+			  },
+			};
+			console.log('sp: ' + size.isSp());
+			console.log('tablet: ' + size.isTablet());
+			console.log('pc: ' + size.isPc());
+  };

@@ -17,7 +17,15 @@ p img {
 #intro-1, #intro-2, #intro-3 {
 	margin-left: 20px;
 }
-.one-line p{
+.one-line_sp p{
+ display:inline-block;
+ vertical-align:middle;
+}
+.one-line_tb p{
+ display:inline-block;
+ vertical-align:middle;
+}
+.one-line_pc p{
  display:inline-block;
  vertical-align:middle;
 }
@@ -27,13 +35,50 @@ p img {
 .backBtn, .searchBtn {
 	margin: 10px;
 }
-/* パソコンで見たときは"pc"のclassがついた画像が表示される */
-.pc { display: block !important; }
-.sp { display: none !important; }
 /* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
-@media only screen and (max-width: 750px) {
-.pc { display: none !important; }
-.sp { display: block !important; }
+@media screen and (max-width: 750px) {
+	.pc { display: none !important; }
+	.tablet { display: none !important; }
+	.sp { display: block !important; }
+	.check-size.is-sp {
+	   display: block;
+	}
+	.check-size.is-tablet {
+	    display: none;
+	}
+	.check-size.is-pc {
+	  display: none;
+	}
+}
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+/* タブレットで見たときは"tablet"のclassがついた画像が表示される */
+	.pc { display: none !important; }
+	.tablet { display: block !important; }
+	.sp { display: none !important; }
+	.check-size.is-sp {
+	   display: none;
+	}
+	.check-size.is-tablet {
+	    display: block;
+	}
+	.check-size.is-pc {
+	  display: none;
+	}
+}
+@media screen and (min-width: 1000px) {
+	/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+	.pc { display: block !important; }
+	.tablet { display: none !important; }
+	.sp { display: none !important; }
+	.check-size.is-sp {
+	   display: none;
+	}
+	.check-size.is-tablet {
+	    display: none;
+	}
+	.check-size.is-pc {
+	  display: block;
+	}
 }
 /* webkit solution */
 ::-webkit-input-placeholder {
@@ -55,19 +100,20 @@ p img {
 	font-size: 16px;
 	text-align: right;
 }
+/** for sp***************************/
 /** タイトルクリックで本文表示 */
-.hidden_box {
+.hidden_box_sp {
     margin: 2em 0;/*前後の余白*/
     padding: 0;
 }
 
 /*チェックは見えなくする*/
-.hidden_box input {
+.hidden_box_sp input {
     display: none;
 }
 
 /*中身を非表示にしておく*/
-.hidden_box .hidden_show {
+.hidden_box_sp .hidden_show_sp {
     height: 0;
     padding: 0;
     overflow: hidden;
@@ -76,8 +122,66 @@ p img {
 }
 
 /*クリックで中身表示*/
-.hidden_box input:checked ~ .hidden_show {
+.hidden_box_sp input:checked ~ .hidden_show_sp {
     padding: 10px 0;
     height: auto;
     opacity: 1;
+}
+/** for tablet***************************/
+/** タイトルクリックで本文表示 */
+.hidden_box_tb {
+    margin: 2em 0;/*前後の余白*/
+    padding: 0;
+}
+
+/*チェックは見えなくする*/
+.hidden_box_tb input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box_tb .hidden_show_tb {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+/*クリックで中身表示*/
+.hidden_box_tb input:checked ~ .hidden_show_tb {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
+/** for pc***************************/
+/** タイトルクリックで本文表示 */
+.hidden_box_pc {
+    margin: 2em 0;/*前後の余白*/
+    padding: 0;
+}
+
+/*チェックは見えなくする*/
+.hidden_box_pc input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box_pc .hidden_show_pc {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+/*クリックで中身表示*/
+.hidden_box_pc input:checked ~ .hidden_show_pc {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
+
+.check-size {
+  display: none;
 }

@@ -81,11 +81,21 @@ public class WorkController extends BaseController {
 			
 			return UrlConstant.Page.Member.CREATE;
 		}
+		// 新規カテゴリの場合
+		String username = articleForm.getUsername();
+		String category = articleForm.getCategory();
+		String newCategory = categoryService.selectCategoryByselectedCategory(username, category);
+		if (newCategory == null) {
+			CategoryTDto categoryTDto = new CategoryTDto();
+			categoryTDto.username = username;
+			categoryTDto.category = category;
+			categoryService.register(categoryTDto);
+		}
 		ArticleTDto articleTDto = new ArticleTDto();
-		articleTDto.username = articleForm.getUsername();
+		articleTDto.username = username;
 		articleTDto.title = articleForm.getTitle();
 		articleTDto.body = articleForm.getBody();
-		articleTDto.category = articleForm.getCategory();
+		articleTDto.category = category;
 		articleTDto.level = Integer.parseInt(articleForm.getLevel());
 
 		articleService.registerArticle(articleTDto);
@@ -120,11 +130,21 @@ public class WorkController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = UrlConstant.Controller.Member.UPDATE, method = RequestMethod.POST)
-	public String update(@Validated(All.class) @ModelAttribute  ArticleForm articleForm, BindingResult result, RedirectAttributes attribute, @RequestParam("articleId") String articleId) {
+	public String update(@Validated(All.class) @ModelAttribute  ArticleForm articleForm, BindingResult result, Model model, RedirectAttributes attribute, @RequestParam("articleId") String articleId) {
 		// エラーがある場合
 		if (result.hasErrors()) {
 			// TODO エラー内容が引き継がれない
 			return UrlConstant.Controller.Member.UPDATE;
+		}
+		// 新規カテゴリの場合
+		String username = articleForm.getUsername();
+		String category = articleForm.getCategory();
+		String newCategory = categoryService.selectCategoryByselectedCategory(username, category);
+		if (newCategory == null) {
+			CategoryTDto categoryTDto = new CategoryTDto();
+			categoryTDto.username = username;
+			categoryTDto.category = category;
+			categoryService.register(categoryTDto);
 		}
 		ArticleTDto articleTDto = new ArticleTDto();
 		articleTDto.username = articleForm.getUsername();
@@ -250,23 +270,24 @@ public class WorkController extends BaseController {
 		return UrlConstant.Page.Member.HELP;
 	}
 
-	/**
-	 * カテゴリ追加
-	 * 
-	 * @param model
-	 * @return 
-	 */
-	@RequestMapping(value = UrlConstant.Controller.Member.ADD_CATEGORY, method = RequestMethod.GET)
-	public String addCategory(@PathVariable("category") String category) {
-		// ユーザー情報を取得
-		String username = sessionUserDto.getUsername();
-		
-		CategoryTDto categoryTDto = new CategoryTDto();
-		categoryTDto.username = username;
-		categoryTDto.category = category;
-		categoryService.register(categoryTDto);
-		return UrlConstant.Controller.Member.REDIRECT_CREATE;
-	}
+//	/**
+//	 * カテゴリ追加
+//	 * 
+//	 * @param model
+//	 * @return 
+//	 */
+//	@RequestMapping(value = UrlConstant.Controller.Member.ADD_CATEGORY, method = RequestMethod.GET)
+//	public String addCategory(@PathVariable("category") String category) {
+//		// ユーザー情報を取得
+//		String username = sessionUserDto.getUsername();
+//		
+//		CategoryTDto categoryTDto = new CategoryTDto();
+//		categoryTDto.username = username;
+//		categoryTDto.category = category;
+//		categoryService.register(categoryTDto);
+//		
+//		return UrlConstant.Controller.Member.REDIRECT_CREATE;
+//	}
 	/**
 	 *カテゴリ設定画面へ遷移 */
 	@RequestMapping(value = UrlConstant.Controller.Member.SETTING_CATEGORY, method = RequestMethod.GET)
