@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import poi.constant.UrlConstant;
 import poi.controller.BaseController;
+import poi.domain.entity.UserT;
 import poi.domain.service.UserService;
 import poi.dto.general.UserDto;
 import poi.form.general.UserForm;
@@ -54,7 +56,15 @@ public class RegisterController extends BaseController {
 			model.addAttribute("username", userForm.getUsername());
 			model.addAttribute("mail", userForm.getMail());
 			return UrlConstant.Page.General.REGISTER;
-		}		
+		}
+		//同じユーザ名があればエラー
+		UserT user = userService.selectByUserInfo(userForm.getUsername());
+		if (user.username != null) {
+			model.addAttribute("username", userForm.getUsername());
+			model.addAttribute("mail", userForm.getMail());
+			model.addAttribute("duplication", "error");
+			return UrlConstant.Page.General.REGISTER;
+		}
 		//BeanUtils.copyProperties(userForm, userDto);
 		String date = userForm.getYear() + userForm.getMonth() + userForm.getDay();
 		userDto.setUsername(userForm.getUsername());

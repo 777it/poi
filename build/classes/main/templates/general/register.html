@@ -38,6 +38,9 @@
 		        <li th:each="error : ${#fields.detailedErrors()}">
 		            <span class="red-text text-darken-4" th:text="${error.message}">Error message</span>
 		        </li>
+		        <li th:if="${not #strings.isEmpty(duplication)}">
+		       		<span class="red-text text-darken-4" th:text="#{error.Duplication}">Error message</span>
+		        </li>
 		      </ul>
 				<div class="col s12">
 				<span>UserName</span><span class="red-text text-darken-4">*</span>
