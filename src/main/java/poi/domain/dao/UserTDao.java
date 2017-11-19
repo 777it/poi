@@ -24,6 +24,9 @@ public interface UserTDao {
 	UserT selectByLoginIdAndPasswordAndDeletedAt(final String loginId, final String password);
 	
 	@Select
+	String selectByUsername(final String username);
+	
+	@Select
 	UserT selectByLoginId(final String loginId);
 	
 	@Select

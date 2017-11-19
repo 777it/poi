@@ -68,7 +68,21 @@ public class UserService {
 		List<UserT> user = userTDao.selectAll();
 		return user;
 	}
-	
+	/**
+	 * ユーザー名を元にユーザー情報を取得する
+	 * ユーザ名のみ
+	 * @param username
+	 * @return ユーザー名が重複していた場合true
+	 *         ユーザー名がnullの場合false
+	 */
+	public Boolean selectByUser(String username) {
+		Boolean isExist = false;
+		String getusername = userTDao.selectByUsername(username);		
+		if (getusername != null) {
+			isExist = true;
+		}
+		return isExist;
+	}	
 	/**
 	 * ユーザー名を元にユーザー情報を取得する
 	 * @param username
