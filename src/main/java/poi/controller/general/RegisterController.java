@@ -59,7 +59,7 @@ public class RegisterController extends BaseController {
 		}
 		//同じユーザ名があればエラー
 		UserT user = userService.selectByUserInfo(userForm.getUsername());
-		if (user.username != null) {
+		if (user != null) {
 			model.addAttribute("username", userForm.getUsername());
 			model.addAttribute("mail", userForm.getMail());
 			model.addAttribute("duplication", "error");
