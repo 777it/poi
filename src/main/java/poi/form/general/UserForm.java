@@ -24,7 +24,7 @@ public class UserForm implements Serializable {
 
 	/** メール */
 	@NotBlank(message = "{error.NotBlank}", groups = First.class)
-	@Size(max = 20, message = "{error.Size}", groups = Second.class)
+	@Size(max = 50, message = "{error.Size}", groups = Second.class)
 	private String mail;
 
 	/** パスワード */
