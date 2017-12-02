@@ -50,3 +50,25 @@ function picSize(){
 			console.log('tablet: ' + size.isTablet());
 			console.log('pc: ' + size.isPc());
   };
+  
+//変数textareaがtextarea要素のjQueryオブジェクト。
+//変数targetがtextarea内の要素を設定する要素のjQueryオブジェクト。
+ txtarea.change(function() {
+   var txt = txtarea.val(); // textareaの値
+   target.contents().remove();
+ 
+   // まず改行らしき文字を\nに統一。\r、\r\n → \n
+   txt = txt.replace(/\r\n/g, '\n');
+   txt = txt.replace(/\r/g, '\n');
+ 
+   // 改行を区切りにして入力されたテキストを分割して配列に保存する。
+   var lines = txt.split('\n');
+ 
+   // 配列中の各テキストからテキストノードを生成して、<br />を挟みながら、元の要素に追加する。
+   for (var i = 0; i < lines.length; i++) {
+     if (0 < i) {
+       target.append('<br />');
+     };
+     target.append(document.createTextNode(lines[i]));  // ここで特殊な文字は実体参照に置き換わる。
+   };
+ });

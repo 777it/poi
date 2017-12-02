@@ -46,15 +46,16 @@
 				</div>
 				<div th:if="${articleCount == 0}">
 					<p>
-						<img src="../images/water_0.png" id="fishes" />
+						<img src="../images/water_winter_0.png" id="fishes" />
 					</p>
 				</div>
 				<div th:if="${articleCount != 0}">
 					<p>
 						<script type="text/javascript">
-							var imglist = new Array("../images/water_1.png",
-									"../images/water_2.png",
-									"../images/water_3.png");
+							var imglist = new Array("../images/water_winter_1.png",
+									"../images/water_winter_2.png",
+									"../images/water_winter_3.png",
+									"../images/water_winter_4.png");
 							var selectnum = Math.floor(Math.random()
 									* imglist.length);
 							var output = "<img src=" + imglist[selectnum] + " />";
@@ -195,7 +196,7 @@
 									</label> <input type="checkbox" th:id="'sp' + *{article.id}" />
 									<div class="hidden_show_sp">
 										<!--非表示ここから-->
-										<span th:text="*{article.body}"></span>
+										<pre th:text="*{article.body}"></pre>
 										<!--ここまで-->
 									</div>
 									</div>
@@ -265,7 +266,7 @@
 									</label> <input type="checkbox" th:id="'tb' + *{article.id}" />
 									<div class="hidden_show_tb">
 										<!--非表示ここから-->
-										<span th:text="*{article.body}"></span>
+										<pre th:text="*{article.body}"></pre>
 										<!--ここまで-->
 									</div>
 									</div>
@@ -333,7 +334,7 @@
 									</label> <input type="checkbox" th:id="'pc' + *{article.id}" />
 									<div class="hidden_show_pc">
 										<!--非表示ここから-->
-										<span th:text="*{article.body}"></span>
+										<pre th:text="*{article.body}"></pre>
 										<!--ここまで-->
 									</div>
 									</div>

@@ -133,7 +133,6 @@ public class WorkController extends BaseController {
 	public String update(@Validated(All.class) @ModelAttribute  ArticleForm articleForm, BindingResult result, Model model, RedirectAttributes attribute, @RequestParam("articleId") String articleId) {
 		// エラーがある場合
 		if (result.hasErrors()) {
-			// TODO エラー内容が引き継がれない
 			return UrlConstant.Controller.Member.UPDATE;
 		}
 		// 新規カテゴリの場合
@@ -270,24 +269,6 @@ public class WorkController extends BaseController {
 		return UrlConstant.Page.Member.HELP;
 	}
 
-//	/**
-//	 * カテゴリ追加
-//	 * 
-//	 * @param model
-//	 * @return 
-//	 */
-//	@RequestMapping(value = UrlConstant.Controller.Member.ADD_CATEGORY, method = RequestMethod.GET)
-//	public String addCategory(@PathVariable("category") String category) {
-//		// ユーザー情報を取得
-//		String username = sessionUserDto.getUsername();
-//		
-//		CategoryTDto categoryTDto = new CategoryTDto();
-//		categoryTDto.username = username;
-//		categoryTDto.category = category;
-//		categoryService.register(categoryTDto);
-//		
-//		return UrlConstant.Controller.Member.REDIRECT_CREATE;
-//	}
 	/**
 	 *カテゴリ設定画面へ遷移 */
 	@RequestMapping(value = UrlConstant.Controller.Member.SETTING_CATEGORY, method = RequestMethod.GET)
