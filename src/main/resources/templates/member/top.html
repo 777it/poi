@@ -46,16 +46,16 @@
 				</div>
 				<div th:if="${articleCount == 0}">
 					<p>
-						<img src="../images/water_winter_0.png" id="fishes" />
+						<img src="../images/water_0.png" id="fishes" />
 					</p>
 				</div>
 				<div th:if="${articleCount != 0}">
 					<p>
 						<script type="text/javascript">
-							var imglist = new Array("../images/water_winter_1.png",
-									"../images/water_winter_2.png",
-									"../images/water_winter_3.png",
-									"../images/water_winter_4.png");
+							var imglist = new Array("../images/water_1.png",
+									"../images/water_1.png",
+									"../images/water_2.png",
+									"../images/water_3.png");
 							var selectnum = Math.floor(Math.random()
 									* imglist.length);
 							var output = "<img src=" + imglist[selectnum] + " />";
